@@ -292,8 +292,17 @@ export default function KitchenExhaust() {
                 Compliance &amp; reporting →
               </Link>
             </div>
-            <p className="mt-8 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-white/45">
-              Pairs with: grease filter exchange · kitchen deep cleaning · scheduled maintenance programs
+            <p className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-white/45">
+              <span>Pairs with:</span>
+              <Link to="/services/grease-filter-exchange" className="text-white/70 underline-offset-4 hover:text-accent">
+                Grease filter exchange
+              </Link>
+              <Link to="/services/commercial-kitchen-deep-cleaning" className="text-white/70 underline-offset-4 hover:text-accent">
+                Kitchen deep cleaning
+              </Link>
+              <Link to="/services/scheduled-maintenance-programs" className="text-white/70 underline-offset-4 hover:text-accent">
+                Maintenance programs
+              </Link>
             </p>
           </Reveal>
         </div>

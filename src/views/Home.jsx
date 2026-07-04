@@ -49,37 +49,37 @@ const SERVICES = [
     t: "Grease Filter Exchange",
     b: "Scheduled swap-outs, cleaned at an SA Water approved facility.",
     tag: "Scheduled cycle",
-    to: "/services",
+    to: "/services/grease-filter-exchange",
   },
   {
     t: "Commercial Kitchen Deep Cleaning",
     b: "Equipment, surfaces and structure reset to standard.",
     tag: "Quote by inspection",
-    to: "/services",
+    to: "/services/commercial-kitchen-deep-cleaning",
   },
   {
     t: "Pressure Washing",
     b: "Grease-affected hard surfaces, docks, bin areas and carparks.",
     tag: "To 4,500 PSI",
-    to: "/services",
+    to: "/services/pressure-washing",
   },
   {
     t: "High Access & Facade Cleaning",
     b: "EWP, permits and access planning handled as part of the job.",
     tag: "Access planned",
-    to: "/services",
+    to: "/services/high-access-facade-cleaning",
   },
   {
     t: "KES Installation",
     b: "Design, manufacture and install under contractor licence.",
     tag: "PGE342023",
-    to: "/services",
+    to: "/services/kes-installation",
   },
   {
     t: "Scheduled Maintenance Programs",
     b: "Your whole year of compliance on one planner — every venue, every cycle.",
     tag: "Annual planner",
-    to: "/contact",
+    to: "/services/scheduled-maintenance-programs",
     featured: true,
   },
 ];
@@ -106,13 +106,13 @@ const CYCLES = {
 };
 
 const INDUSTRIES = [
-  "Restaurants & cafés",
-  "Hotels, pubs & clubs",
-  "Shopping centres",
-  "Food production",
-  "Facility managers",
-  "Property managers",
-  "Multi-site groups",
+  ["Restaurants & cafés", "/industries/restaurants-cafes"],
+  ["Hotels, pubs & clubs", "/industries/hotels-pubs-clubs"],
+  ["Shopping centres", "/industries/shopping-centres"],
+  ["Food production", "/industries/food-production"],
+  ["Facility managers", "/industries/facility-property-managers"],
+  ["Property managers", "/industries/facility-property-managers"],
+  ["Multi-site groups", "/industries/multi-site-groups"],
 ];
 
 const CASES = [
@@ -464,14 +464,20 @@ export default function Home() {
             </h2>
           </Reveal>
           <Reveal delay={0.08} className="mt-6 flex flex-wrap justify-center gap-2.5">
-            {INDUSTRIES.map((n) => (
-              <span
+            {INDUSTRIES.map(([n, to]) => (
+              <Link
                 key={n}
-                className="rounded-full border border-steel-200 bg-white px-4 py-2 text-[0.88rem] font-semibold text-steel-700"
+                to={to}
+                className="rounded-full border border-steel-200 bg-white px-4 py-2 text-[0.88rem] font-semibold text-steel-700 no-underline transition-colors hover:border-accent hover:text-accent-deep"
               >
                 {n}
-              </span>
+              </Link>
             ))}
+          </Reveal>
+          <Reveal delay={0.14} className="mt-5">
+            <Link to="/industries" className="text-[0.9rem] font-bold text-accent-deep no-underline hover:underline">
+              How we work in your sector →
+            </Link>
           </Reveal>
         </div>
       </section>

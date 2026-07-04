@@ -22,6 +22,7 @@ const SERVICES = [
     tags: ["SA Water approved", "Deep soak · Hot wash", "Honeycomb · Baffle · Electrostatic", "Collection & delivery"],
     after: "svc-filters.jpg",
     ba: true,
+    link: "/services/grease-filter-exchange",
   },
   {
     num: "SVC.03",
@@ -30,6 +31,7 @@ const SERVICES = [
     tags: ["Teardown · Rebuild · Polish", "Domino's & Pizza Hut SA·NT"],
     after: "svc-pizza-oven.jpg",
     ba: true,
+    link: "/services/commercial-kitchen-deep-cleaning",
   },
   {
     num: "SVC.04",
@@ -38,6 +40,7 @@ const SERVICES = [
     tags: ["Up to 4,500 PSI", "Trailer-mounted hot wash", "Buildings · Carparks · Roofs · Solar"],
     after: "svc-pressure.jpg",
     ba: true,
+    link: "/services/pressure-washing",
   },
   {
     num: "SVC.05",
@@ -46,6 +49,7 @@ const SERVICES = [
     tags: ["Custom design & manufacture", "Air-flow engineering", "PGE342023", "AS1668 & AS1668.2"],
     after: "svc-install.jpg",
     ba: false,
+    link: "/services/kes-installation",
   },
   {
     num: "SVC.06",
@@ -54,6 +58,7 @@ const SERVICES = [
     tags: ["High-access windows & louvres", "Wet-vac carpet", "Post-construction handover"],
     after: "svc-commercial.jpg",
     ba: true,
+    link: "/services/high-access-facade-cleaning",
   },
 ];
 

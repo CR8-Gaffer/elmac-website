@@ -3,6 +3,10 @@ import { Routes, Route, NavLink, Link, useLocation } from "react-router-dom";
 import Home from "./views/Home.jsx";
 import Services from "./views/Services.jsx";
 import KitchenExhaust from "./views/KitchenExhaust.jsx";
+import ServiceDetail from "./views/ServiceDetail.jsx";
+import Industries from "./views/Industries.jsx";
+import IndustryDetail from "./views/IndustryDetail.jsx";
+import Projects from "./views/Projects.jsx";
 import ComplianceReporting from "./views/ComplianceReporting.jsx";
 import Contact from "./views/Contact.jsx";
 import MagneticButton from "./components/MagneticButton.jsx";
@@ -66,14 +70,17 @@ export default function App() {
             <NavLink to="/" end className={navLink}>
               Home
             </NavLink>
-            <NavLink to="/services" end className={navLink}>
+            <NavLink to="/services" className={navLink}>
               Services
             </NavLink>
-            <NavLink to="/services/kitchen-exhaust-cleaning" className={navLink}>
-              Kitchen Exhaust
+            <NavLink to="/industries" className={navLink}>
+              Industries
             </NavLink>
             <NavLink to="/compliance-reporting" className={navLink}>
               Compliance
+            </NavLink>
+            <NavLink to="/projects" className={navLink}>
+              Projects
             </NavLink>
             <NavLink to="/contact" className={navLink}>
               Contact
@@ -93,6 +100,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/kitchen-exhaust-cleaning" element={<KitchenExhaust />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/industries/:slug" element={<IndustryDetail />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/compliance-reporting" element={<ComplianceReporting />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
@@ -117,7 +128,9 @@ export default function App() {
               {[
                 ["Services", "/services"],
                 ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
+                ["Industries", "/industries"],
                 ["Compliance & reporting", "/compliance-reporting"],
+                ["Projects", "/projects"],
                 ["Request a quote", "/contact"],
               ].map(([t, to]) => (
                 <Link key={to} to={to} className="text-[#B9C2CA] no-underline hover:text-accent">
