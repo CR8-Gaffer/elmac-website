@@ -96,3 +96,5 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.eyebrow--accent { color: var(--accent); }

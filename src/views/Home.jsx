@@ -64,7 +64,7 @@ export default function Home() {
 
         <div className="wrap relative py-[clamp(56px,10vw,120px)]">
           <motion.span
-            className="eyebrow !text-accent"
+            className="eyebrow eyebrow--accent"
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -166,7 +166,7 @@ export default function Home() {
       <section className="bg-ink py-[clamp(56px,9vw,110px)] text-white">
         <div className="wrap grid items-center gap-[clamp(28px,5vw,64px)] md:grid-cols-2">
           <Reveal>
-            <span className="eyebrow !text-accent">The Elmac finish</span>
+            <span className="eyebrow eyebrow--accent">The Elmac finish</span>
             <h2 className="balance mt-3.5 text-[clamp(1.7rem,3.2vw,2.5rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
               Every clean, documented. Drag to see why.
             </h2>

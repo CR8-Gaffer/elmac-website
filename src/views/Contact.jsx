@@ -32,7 +32,7 @@ export default function Contact() {
     <section className="bg-ink py-[clamp(56px,9vw,110px)] text-white">
       <div className="wrap grid gap-[clamp(32px,5vw,72px)] lg:grid-cols-[1.1fr_0.9fr]">
         <Reveal>
-          <span className="eyebrow !text-accent">Contact us</span>
+          <span className="eyebrow eyebrow--accent">Contact us</span>
           <h1 className="balance mt-3.5 text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.02em]">
             Let's talk about your kitchen's compliance.
           </h1>
