@@ -66,25 +66,26 @@ export default function Contact() {
 
   const submit = (e) => {
     e.preventDefault();
-    const f = e.target;
+    // read via elements: form.name is the form's own name attribute, not the input
+    const g = (n) => e.target.elements[n]?.value ?? "";
     const lines = [
-      `Name: ${f.name.value}`,
-      `Business: ${f.business.value}`,
-      `Venue / site: ${f.venue.value}`,
-      `Email: ${f.email.value}`,
-      `Phone: ${f.phone.value}`,
-      `Site address: ${f.address.value}`,
+      `Name: ${g("name")}`,
+      `Business: ${g("business")}`,
+      `Venue / site: ${g("venue")}`,
+      `Email: ${g("email")}`,
+      `Phone: ${g("phone")}`,
+      `Site address: ${g("address")}`,
       `Services: ${[...services].join(", ") || "(not specified)"}`,
-      `Canopies: ${f.canopies.value || "unknown"} · Filters: ${f.filters.value || "unknown"}`,
-      `Preferred timing: ${f.timing.value}`,
+      `Canopies: ${g("canopies") || "unknown"} · Filters: ${g("filters") || "unknown"}`,
+      `Preferred timing: ${g("timing")}`,
       `Urgency: ${URGENCY.find(([k]) => k === urgency)[1]}`,
-      `Compliance deadline: ${deadline ? f.deadlineDate.value || "yes — date TBC" : "no"}`,
+      `Compliance deadline: ${deadline ? g("deadlineDate") || "yes — date TBC" : "no"}`,
       `Multi-site enquiry: ${multiSite ? "YES" : "no"}`,
       "",
-      `Access & notes: ${f.notes.value}`,
+      `Access & notes: ${g("notes")}`,
     ];
     const subject =
-      (critical ? "[URGENT] " : "") + "Commercial quote request — " + (f.business.value || f.name.value);
+      (critical ? "[URGENT] " : "") + "Commercial quote request — " + (g("business") || g("name"));
     window.location.href = `mailto:info@elmac.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       lines.join("\n")
     )}`;
