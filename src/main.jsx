@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./styles.css";
 
-// HashRouter: works identically on GitHub Pages' /elmac-website/ subpath and
-// on a custom domain, with no server-side fallback config. Swap to
-// BrowserRouter + a 404.html fallback once the custom domain is attached if
-// clean paths are preferred.
+// BrowserRouter with real paths: the build step copies index.html into each
+// route directory (plus 404.html) so GitHub Pages serves every URL with a 200.
+// basename comes from Vite's base — "/elmac-website/" on Pages today, "/" once
+// the custom domain is attached.
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Routes, Route, NavLink, Link, useLocation } from "react-router-dom";
 import Home from "./views/Home.jsx";
 import Services from "./views/Services.jsx";
+import KitchenExhaust from "./views/KitchenExhaust.jsx";
+import ComplianceReporting from "./views/ComplianceReporting.jsx";
 import Contact from "./views/Contact.jsx";
 import MagneticButton from "./components/MagneticButton.jsx";
 
@@ -28,7 +30,7 @@ function Brand({ className = "" }) {
 }
 
 const navLink = ({ isActive }) =>
-  `rounded-md px-3.5 py-2 text-[0.9rem] font-semibold tracking-[0.01em] transition-colors ${
+  `rounded-md px-3 py-2 text-[0.88rem] font-semibold tracking-[0.01em] transition-colors ${
     isActive
       ? "text-white after:mt-1 after:block after:h-0.5 after:rounded after:bg-accent"
       : "text-[#C9D0D6] hover:bg-white/5 hover:text-white"
@@ -44,7 +46,7 @@ export default function App() {
       <ScrollToTop />
 
       <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-md">
-        <div className="wrap flex h-16 items-center gap-6">
+        <div className="wrap flex h-16 items-center gap-5">
           <Brand />
           <button
             className="ml-auto grid h-10 w-10 place-items-center rounded-lg border border-white/20 text-white md:hidden"
@@ -59,13 +61,19 @@ export default function App() {
               open
                 ? "absolute left-0 right-0 top-16 flex flex-col gap-1 border-b border-white/10 bg-ink-2 p-3"
                 : "hidden"
-            } md:static md:ml-auto md:flex md:flex-row md:gap-1 md:border-0 md:bg-transparent md:p-0`}
+            } md:static md:ml-auto md:flex md:flex-row md:gap-0.5 md:border-0 md:bg-transparent md:p-0`}
           >
             <NavLink to="/" end className={navLink}>
               Home
             </NavLink>
-            <NavLink to="/services" className={navLink}>
+            <NavLink to="/services" end className={navLink}>
               Services
+            </NavLink>
+            <NavLink to="/services/kitchen-exhaust-cleaning" className={navLink}>
+              Kitchen Exhaust
+            </NavLink>
+            <NavLink to="/compliance-reporting" className={navLink}>
+              Compliance
             </NavLink>
             <NavLink to="/contact" className={navLink}>
               Contact
@@ -75,7 +83,7 @@ export default function App() {
             to="/contact"
             className="hidden md:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#22c0cd]"
           >
-            Book a compliance clean
+            Request a quote
           </MagneticButton>
         </div>
       </header>
@@ -84,16 +92,56 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/kitchen-exhaust-cleaning" element={<KitchenExhaust />} />
+          <Route path="/compliance-reporting" element={<ComplianceReporting />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
 
-      <footer className="border-t border-white/10 bg-[#0B1116] py-9 text-[0.82rem] text-steel-400">
-        <div className="wrap flex flex-wrap items-center justify-between gap-4">
-          <Brand className="text-base" />
+      <footer className="border-t border-white/10 bg-[#0B1116] pb-8 pt-10 text-[0.84rem] text-steel-400">
+        <div className="wrap grid gap-8 md:grid-cols-[1.2fr_0.9fr_1fr]">
+          <div>
+            <Brand className="text-base" />
+            <p className="mt-3.5 max-w-[40ch] leading-relaxed">
+              Compliance-driven kitchen exhaust and industrial cleaning — scheduled, documented and certificated,
+              across South Australia and the Northern Territory.
+            </p>
+            <p className="mt-3.5 font-mono text-[0.64rem] uppercase leading-relaxed tracking-[0.12em] text-steel-600">
+              Official Supply Partner &amp; Sponsor — Adelaide Crows · Adelaide 36ers · Adelaide Oval
+            </p>
+          </div>
+          <div>
+            <div className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-steel-600">Explore</div>
+            <div className="mt-3 grid gap-2">
+              {[
+                ["Services", "/services"],
+                ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
+                ["Compliance & reporting", "/compliance-reporting"],
+                ["Request a quote", "/contact"],
+              ].map(([t, to]) => (
+                <Link key={to} to={to} className="text-[#B9C2CA] no-underline hover:text-accent">
+                  {t}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-steel-600">Contact</div>
+            <div className="mt-3 grid gap-2">
+              <a href="tel:1800435622" className="text-[#B9C2CA] no-underline hover:text-accent">
+                1800 4 ELMAC
+              </a>
+              <a href="mailto:info@elmac.au" className="text-[#B9C2CA] no-underline hover:text-accent">
+                info@elmac.au
+              </a>
+              <span>30 Chapman Road, Hackham SA 5163</span>
+            </div>
+          </div>
+        </div>
+        <div className="wrap mt-9 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.08] pt-6">
           <span>© {new Date().getFullYear()} Elmac Cleaning Services · Proudly South Australian, family owned.</span>
-          <span className="font-mono tracking-[0.08em]">AS1851-2012 · PGE342023</span>
+          <span className="font-mono tracking-[0.08em]">AS1851-2012 · AS1668 · PGE342023</span>
         </div>
       </footer>
     </div>

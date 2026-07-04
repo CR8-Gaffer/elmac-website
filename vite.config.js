@@ -3,8 +3,10 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 // GitHub Pages serves at https://<org>.github.io/elmac-website/ until a
-// custom domain is attached; base "./" keeps asset URLs relative so both work.
+// custom domain is attached. Absolute base gives BrowserRouter real paths
+// (per-route index.html copies are generated in the build script).
+// At custom-domain cutover: change base to "/".
 export default defineConfig({
-  base: "./",
+  base: "/elmac-website/",
   plugins: [react(), tailwindcss()],
 });

@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import BeforeAfter from "../components/BeforeAfter.jsx";
+import usePageMeta from "../lib/usePageMeta.js";
 
 const A = (f) => `${import.meta.env.BASE_URL}assets/${f}`;
 
@@ -11,6 +13,7 @@ const SERVICES = [
     tags: ["AS1851-2012", "Photo reporting", "Canopies · Fans · Ducts", "Compliance certificate"],
     after: "svc-canopy.jpg",
     ba: true,
+    link: "/services/kitchen-exhaust-cleaning",
   },
   {
     num: "SVC.02",
@@ -74,6 +77,11 @@ function Media({ svc }) {
 }
 
 export default function Services() {
+  usePageMeta(
+    "Commercial Cleaning Services Adelaide | Elmac Cleaning Services",
+    "Kitchen exhaust cleaning to AS1851-2012, grease filter exchange, pizza oven cleaning, pressure washing, KES installation and commercial deep cleaning — scheduled, documented and certificated across SA & NT."
+  );
+
   return (
     <>
       <section className="wrap pb-2 pt-[clamp(52px,8vw,96px)]">
@@ -82,9 +90,10 @@ export default function Services() {
           <h1 className="balance mt-3.5 max-w-[20ch] text-[clamp(2rem,4.4vw,3.3rem)] font-extrabold tracking-[-0.02em]">
             Every system, cleaned to standard — and documented.
           </h1>
-          <p className="mt-4 max-w-[56ch] text-[1.08rem] text-steel-600">
-            Drag the slider on any service to reveal the finish. Full photo reporting accompanies every compliance
-            clean.
+          <p className="mt-4 max-w-[58ch] text-[1.08rem] text-steel-600">
+            One partner across the whole maintenance cycle — every service delivered on a schedule, documented with
+            photos, and closed out with recommendations for the next cycle. Drag the slider on any service to reveal
+            the finish.
           </p>
         </Reveal>
       </section>
@@ -115,6 +124,14 @@ export default function Services() {
                     </span>
                   ))}
                 </div>
+                {svc.link && (
+                  <Link
+                    to={svc.link}
+                    className="mt-5 inline-block font-bold text-accent-deep no-underline hover:underline"
+                  >
+                    Full service detail →
+                  </Link>
+                )}
               </div>
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
                 <Media svc={svc} />
@@ -122,6 +139,27 @@ export default function Services() {
             </article>
           </Reveal>
         ))}
+      </section>
+
+      <section className="border-t border-steel-200 bg-white py-[clamp(44px,6vw,72px)]">
+        <div className="wrap flex flex-wrap items-center justify-between gap-6">
+          <Reveal>
+            <h2 className="balance max-w-[28ch] text-[clamp(1.4rem,2.6vw,2rem)] font-extrabold tracking-[-0.02em]">
+              Every service above can run on a single annual planner.
+            </h2>
+            <p className="mt-2 max-w-[54ch] text-steel-600">
+              Filters, KES cleans, deep cleans and reviews — one schedule, one contact, consolidated reporting.
+            </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink no-underline transition-colors hover:bg-[#22c0cd]"
+            >
+              Discuss a scheduled maintenance program
+            </Link>
+          </Reveal>
+        </div>
       </section>
     </>
   );

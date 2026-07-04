@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && sh -c 'for r in services services/kitchen-exhaust-cleaning compliance-reporting contact; do mkdir -p \"dist/$r\" && cp dist/index.html \"dist/$r/index.html\"; done; cp dist/index.html dist/404.html'",
     "preview": "vite preview"
   },
   "dependencies": {
