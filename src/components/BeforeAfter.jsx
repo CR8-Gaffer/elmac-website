@@ -54,7 +54,7 @@ export default function BeforeAfter({ before, after, note = "Placeholder — you
         className={`absolute inset-0 ${after ? "" : "pane-after"}`}
         style={after ? { background: `url(${after}) center/cover no-repeat` } : undefined}
       >
-        <span className="absolute right-3 top-3 rounded-md bg-accent/85 px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-[#04252a]">
+        <span className="absolute right-3 top-3 rounded-md bg-accent/85 px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-[#0A2A44]">
           After
         </span>
       </div>

@@ -113,6 +113,7 @@ const INDUSTRIES = [
   ["Facility managers", "/industries/facility-property-managers"],
   ["Property managers", "/industries/facility-property-managers"],
   ["Multi-site groups", "/industries/multi-site-groups"],
+  ["Government & institutional", "/industries/government-institutional"],
 ];
 
 const CASES = [
@@ -195,17 +196,18 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.08 }}
           >
-            Kitchen exhaust, industrial cleaning and <span className="text-accent">preventive maintenance</span> for
-            commercial sites.
+            We protect assets, reduce fire risk and keep commercial sites{" "}
+            <span className="text-accent">compliant</span>.
           </motion.h1>
           <motion.p
-            className="mt-5 max-w-[52ch] text-[clamp(1rem,1.5vw,1.14rem)] text-[#C6CFD6]"
+            className="mt-5 max-w-[54ch] text-[clamp(1rem,1.5vw,1.14rem)] text-[#C6CFD6]"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.16 }}
           >
-            Scheduled kitchen exhaust cleaning, grease filter exchange, commercial kitchen detailing, pressure washing
-            and high-access cleaning programs — documented, certificated and built around your compliance obligations.
+            Industrial asset maintenance delivered through specialist programs — kitchen exhaust cleaning, grease
+            filter exchange, pressure washing, high-access work and scheduled preventive maintenance — documented,
+            certificated and built around your compliance obligations.
           </motion.p>
           <motion.div
             className="mt-8 flex flex-wrap items-center gap-3"
@@ -215,7 +217,7 @@ export default function Home() {
           >
             <MagneticButton
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#22c0cd]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
             >
               Request a commercial quote
             </MagneticButton>
@@ -258,8 +260,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 3 · THE PROBLEM ──────────────────────────────────── */}
+      {/* ── 2b · POSITIONING MANIFESTO ───────────────────────── */}
       <section className="py-[clamp(52px,8vw,96px)]">
+        <div className="wrap grid items-center gap-[clamp(28px,5vw,64px)] lg:grid-cols-[1.1fr_0.9fr]">
+          <Reveal>
+            <span className="eyebrow">What Elmac is</span>
+            <h2 className="balance mt-3.5 max-w-[22ch] text-[clamp(1.7rem,3.4vw,2.6rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
+              Not a cleaning company. An industrial asset maintenance and compliance contractor.
+            </h2>
+            <p className="mt-4 max-w-[52ch] text-[1.02rem] text-steel-600">
+              Cleaning is one of our methods. The outcomes are what you're actually buying — and what every report,
+              cycle and certificate we issue exists to protect.
+            </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="grid gap-px overflow-hidden rounded-xl border border-steel-200 bg-steel-200">
+              {[
+                "We reduce risk",
+                "We protect assets",
+                "We maintain infrastructure",
+                "We extend equipment life",
+                "We improve compliance",
+                "We solve operational problems",
+              ].map((t, i) => (
+                <div key={t} className="flex items-center gap-3.5 bg-white px-5 py-3.5">
+                  <span className="font-mono text-[0.68rem] font-bold text-steel-400">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[0.98rem] font-bold text-ink">{t}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── 3 · THE PROBLEM ──────────────────────────────────── */}
+      <section className="border-t border-steel-200 bg-white py-[clamp(52px,8vw,96px)]">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">Why it matters</span>
@@ -326,7 +363,7 @@ export default function Home() {
           <Reveal>
             <span className="eyebrow eyebrow--accent">Compliance &amp; reporting</span>
             <h2 className="balance mt-3.5 text-[clamp(1.7rem,3.2vw,2.5rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
-              Every clean leaves evidence.
+              Every service leaves evidence.
             </h2>
             <p className="mt-4 max-w-[48ch] text-[#AEB8C0]">
               Before/after photo reporting, compliance certificates, defect notes and next-cycle recommendations with
@@ -335,7 +372,7 @@ export default function Home() {
             <div className="mt-7">
               <MagneticButton
                 to="/compliance-reporting"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-[0.95rem] font-bold text-ink hover:bg-[#22c0cd]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-[0.95rem] font-bold text-ink hover:bg-[#3D95DD]"
               >
                 See what our reporting looks like →
               </MagneticButton>
@@ -497,7 +534,7 @@ export default function Home() {
           <Reveal delay={0.08}>
             <MagneticButton
               to="/contact?type=multi-site"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink hover:bg-[#22c0cd]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink hover:bg-[#3D95DD]"
             >
               Discuss a multi-site program
             </MagneticButton>
@@ -547,7 +584,7 @@ export default function Home() {
           <Reveal delay={0.1} className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <MagneticButton
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#22c0cd]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
             >
               Request a commercial quote
             </MagneticButton>

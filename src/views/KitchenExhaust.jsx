@@ -82,12 +82,13 @@ export default function KitchenExhaust() {
             </h1>
             <p className="mt-5 max-w-[54ch] text-[clamp(1rem,1.5vw,1.12rem)] text-[#C6CFD6]">
               Grease-loaded exhaust systems are a fire path, an insurance question and a council finding waiting to
-              happen. We clean the system end to end — and hand you the certificate and photo report that prove it.
+              happen. We strip the grease from the system end to end — restoring airflow, reducing fire load, and
+              handing you the certificate and photo report that prove it.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <MagneticButton
                 to="/contact?service=kes"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#22c0cd]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
               >
                 Request a site inspection
               </MagneticButton>
@@ -130,7 +131,7 @@ export default function KitchenExhaust() {
           <Reveal>
             <span className="eyebrow">Scope</span>
             <h2 className="balance mt-3.5 text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
-              What we clean — the full system, not just what shows.
+              Full-system scope — not just what shows.
             </h2>
             <p className="mt-4 max-w-[50ch] text-[1rem] text-steel-600">
               Mechanical and chemical cleaning through every accessible section, roof access coordinated, with EWP and
@@ -281,7 +282,7 @@ export default function KitchenExhaust() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <MagneticButton
                 to="/contact?service=kes"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#22c0cd]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
               >
                 Request a site inspection
               </MagneticButton>

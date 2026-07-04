@@ -12,9 +12,9 @@
   --steel-400: #8a949d;
   --steel-300: #c4cbd1;
   --steel-200: #dde2e6;
-  --accent: #14a6b4;
-  --accent-deep: #0c8794;
-  --accent-soft: rgba(20, 166, 180, 0.12);
+  --accent: #2380cc; /* Elmac Blue — actions & links; confirm exact brand hex with Caleb */
+  --accent-deep: #135e9e;
+  --accent-soft: rgba(35, 128, 204, 0.12);
 }
 
 @theme {
@@ -27,8 +27,8 @@
   --color-steel-400: #8a949d;
   --color-steel-300: #c4cbd1;
   --color-steel-200: #dde2e6;
-  --color-accent: #14a6b4;
-  --color-accent-deep: #0c8794;
+  --color-accent: #2380cc;
+  --color-accent-deep: #135e9e;
   --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }

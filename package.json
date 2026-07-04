@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && sh -c 'for r in services services/kitchen-exhaust-cleaning services/grease-filter-exchange services/commercial-kitchen-deep-cleaning services/pressure-washing services/high-access-facade-cleaning services/kes-installation services/scheduled-maintenance-programs industries industries/restaurants-cafes industries/hotels-pubs-clubs industries/shopping-centres industries/food-production industries/facility-property-managers industries/multi-site-groups projects compliance-reporting contact; do mkdir -p \"dist/$r\" && cp dist/index.html \"dist/$r/index.html\"; done; cp dist/index.html dist/404.html'",
+    "build": "vite build && sh -c 'for r in services services/kitchen-exhaust-cleaning services/grease-filter-exchange services/commercial-kitchen-deep-cleaning services/pressure-washing services/high-access-facade-cleaning services/kes-installation services/scheduled-maintenance-programs services/window-cleaning services/industrial-cleaning services/soft-washing industries industries/government-institutional industries/restaurants-cafes industries/hotels-pubs-clubs industries/shopping-centres industries/food-production industries/facility-property-managers industries/multi-site-groups projects compliance-reporting contact; do mkdir -p \"dist/$r\" && cp dist/index.html \"dist/$r/index.html\"; done; cp dist/index.html dist/404.html'",
     "preview": "vite preview"
   },
   "dependencies": {

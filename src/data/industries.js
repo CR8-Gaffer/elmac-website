@@ -163,4 +163,31 @@ export const INDUSTRY_PAGES = {
     ],
     cta: { label: "Discuss a multi-site program", to: "/contact?type=multi-site" },
   },
+
+  "government-institutional": {
+    name: "Government & institutional sites",
+    meta: {
+      title: "Cleaning Contractor for Government & Institutional Sites | Elmac",
+      desc: "Kitchen exhaust, industrial and scheduled cleaning programs for schools, councils, correctional and institutional facilities — procurement-ready documentation, WHS-led delivery, security-conscious crews.",
+    },
+    reality:
+      "Schools, councils, correctional facilities and institutional kitchens don't buy on a handshake. They buy on documentation: insurance, SWMS, inductions, police clearances where required, and evidence that every service actually happened. The paperwork isn't the obstacle — it's the product.",
+    pains: [
+      "Procurement requiring compliance documents before a quote is even read",
+      "Sites with security, clearance and escort requirements most contractors can't work under",
+      "Institutional kitchens carrying the same fire risk as any commercial venue — with more oversight",
+      "Servicing evidence needed for internal audit, not just external compliance",
+    ],
+    program: [
+      ["Kitchen exhaust & filter programs", "Risk-based cycles with certificates per service"],
+      ["Scheduled site cleaning", "Pressure washing, high access, windows — programmed"],
+      ["Audit-ready documentation", "Photo reports and records formatted for procurement files"],
+    ],
+    why: [
+      "Experienced on institutional and secured sites — schools, correctional and government facilities",
+      "WHS documentation that passes procurement review the first time",
+      "Tender-ready: insurances, licensing (PGE342023) and capability records on request",
+    ],
+    cta: { label: "Request documentation support", to: "/contact?intent=compliance" },
+  },
 };

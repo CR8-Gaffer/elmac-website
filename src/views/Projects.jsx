@@ -3,8 +3,8 @@ import Reveal from "../components/Reveal.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
 
-// Anonymised case studies drawn from delivered work. Client names withheld
-// pending permission — swap in names/photos as approvals land.
+// Anonymised technical case studies drawn from delivered work. Client names
+// withheld pending permission — swap in names/photos as approvals land.
 const CASES = [
   {
     tag: "Shopping centre",
@@ -17,13 +17,20 @@ const CASES = [
     challenge:
       "Dozens of common kitchen exhaust fans serving food tenancies — roof-mounted, permit-controlled, and serviceable only in after-hours windows. No single record of condition existed across the asset base.",
     scope:
-      "Staged cleaning program across the centre's common exhaust fans and associated risers, coordinated with centre management around trading, permits and induction requirements.",
-    execution:
-      "Crews inducted and permitted under the centre's contractor system; works run in night windows with roof access keys and isolation managed per asset; each fan cleaned, inspected and photographed individually.",
+      "Staged maintenance program across the centre's common exhaust fans and associated risers, coordinated with centre management around trading, permits and induction requirements.",
+    methodology:
+      "Assets sequenced into night-window batches by roof zone; each fan isolated, opened, mechanically and chemically degreased, inspected and photographed individually before reinstatement and test.",
+    equipment: "Roof access systems, isolation lockouts, mechanical scraping and hot chemical degrease, per-asset photographic kit.",
+    safety:
+      "Permit-to-work per shift under the centre's contractor system; site inductions for all crew; working-at-height controls and isolation verification per asset; night-works communication protocol with centre security.",
     documentation:
       "Per-asset photo documentation with condition notes; defects — including access limitations and mechanical wear — flagged directly to centre management with recommendations.",
+    compliance:
+      "Common-infrastructure servicing evidenced per asset in line with AS1851-2012 maintenance expectations — records formatted for the centre's ESM audit file.",
     outcome:
-      "The centre moved from unknown condition to a documented, per-asset register with a repeatable 6-monthly cycle — and a defect list management could actually action.",
+      "The centre moved from unknown condition to a documented, per-asset register with a repeatable 6-monthly cycle — and a defect list management could actually action. Centre management now answers audit questions from a file, not from memory.",
+    lessons:
+      "On multi-asset infrastructure, the register is worth as much as the clean — condition data per asset turned ad-hoc maintenance into a schedulable program.",
   },
   {
     tag: "Hospitality group",
@@ -36,13 +43,21 @@ const CASES = [
     challenge:
       "Multiple venues, each with its own kitchens, grease loads and half-remembered service history — different contractors at different sites, no group-level view of what was due or overdue.",
     scope:
-      "A full financial-year planner across the group: kitchen exhaust cleans on risk-based cycles per kitchen, 4-weekly filter exchange across all venues, deep cleans and washdowns placed into quiet trading weeks.",
-    execution:
-      "Sites audited venue by venue; the planner agreed once with group management, then run without re-negotiation — every service scheduled, delivered and reported on cadence.",
+      "A full financial-year planner across the group: kitchen exhaust servicing on risk-based cycles per kitchen, 4-weekly filter exchange across all venues, deep cleans and washdowns placed into quiet trading weeks.",
+    methodology:
+      "Every site audited first — systems, cooking load, access and history. Cycles set per kitchen rather than per venue, then locked into a single FY planner agreed once with group management and run without re-negotiation.",
+    equipment:
+      "Standard KES cleaning plant per site class; exchange filter stock pool sized to the group; scheduling handled through Elmac's planning system.",
+    safety:
+      "Site-specific SWMS per venue; after-hours access protocols agreed per site; chemical handling controls consistent across all kitchens.",
     documentation:
       "One consolidated report stream: certificates and photo reports per visit, per venue, accumulating into a group-wide compliance history.",
+    compliance:
+      "Every kitchen brought onto a defined, evidenced cycle aligned to AS1851-2012 — group-level visibility of due, done and overdue for insurance and audit purposes.",
     outcome:
       "Group admin dropped to reviewing a planner instead of chasing quotes; compliance visibility went from per-venue guesswork to a single view. The model now onboards each new venue by default.",
+    lessons:
+      "Groups don't need more reminders — they need the schedule decided once, properly. The audit-first approach surfaced two kitchens on badly wrong cycles that no reminder system would have caught.",
   },
   {
     tag: "Investigation",
@@ -56,27 +71,39 @@ const CASES = [
       "Grease appearing in a tenancy that didn't cook — migrating from a neighbouring kitchen's exhaust infrastructure through the ceiling void, with the property manager holding the complaint and no clear cause.",
     scope:
       "Investigate the migration path, identify the failure point in the exhaust run, remediate the contamination and prevent recurrence.",
-    execution:
-      "Duct run traced through the void; the leaking section and its cause identified and documented; contaminated areas degreased and cleaned; the source kitchen's system cleaned and its cycle corrected.",
+    methodology:
+      "Duct run traced through the ceiling void from the source kitchen; joints and seams inspected under load; the failed section identified and documented photographically before any remediation began — evidence first, fix second.",
+    equipment:
+      "Void access equipment, inspection lighting and photography, hot chemical degrease for contaminated surfaces, duct sealing materials for the failed joint.",
+    safety:
+      "Confined-void access controls; isolation of the source system during works; protection of the affected tenancy's stock and fittings throughout.",
     documentation:
       "Investigation findings with photographic evidence of the migration path, the remediation performed, and a preventive maintenance recommendation for the source system — written for the property manager to hand to owner and tenants.",
+    compliance:
+      "Source system returned to a compliant servicing cycle; the documented investigation gave the property manager a defensible record of cause, remedy and prevention.",
     outcome:
       "Complaint closed with evidence rather than opinion; the source kitchen moved onto a compliant cycle; the property manager kept a document trail showing the issue was found, fixed and prevented.",
+    lessons:
+      "Grease complaints between tenancies are diagnosable — the failure is almost always a specific joint or breach, and photographing the path before fixing it is what turns a dispute into a closed file.",
   },
 ];
 
 const SECTIONS = [
   ["challenge", "Site challenge"],
   ["scope", "Scope of works"],
-  ["execution", "Execution"],
+  ["methodology", "Methodology"],
+  ["equipment", "Equipment"],
+  ["safety", "Safety controls"],
   ["documentation", "Documentation"],
-  ["outcome", "Outcome"],
+  ["compliance", "Compliance achieved"],
+  ["outcome", "Outcome & client benefit"],
+  ["lessons", "Lessons learned"],
 ];
 
 export default function Projects() {
   usePageMeta(
     "Projects & Case Studies | Elmac Cleaning Services",
-    "Delivered commercial cleaning work — shopping centre exhaust fan programs, multi-venue maintenance planners and grease leak investigations, documented end to end."
+    "Technical case studies from delivered work — shopping centre exhaust fan programs, multi-venue maintenance planners and grease leak investigations: challenge, methodology, safety controls, compliance and outcomes."
   );
 
   return (
@@ -88,8 +115,8 @@ export default function Projects() {
             Complex sites are the day job.
           </h1>
           <p className="mt-4 max-w-[58ch] text-[1.08rem] text-steel-600">
-            Three recent bodies of work, told the way we run them: challenge, scope, access, execution, documentation,
-            outcome. Anonymised — client names and photography will be added as permissions land.
+            These aren't galleries — they're technical case studies, told the way we run the work: challenge, scope,
+            methodology, safety controls, documentation, outcome. Anonymised until client permissions land.
           </p>
         </Reveal>
       </section>
@@ -120,7 +147,16 @@ export default function Projects() {
               </div>
               <div className="grid gap-x-[clamp(24px,4vw,56px)] gap-y-6 px-[clamp(20px,3.5vw,40px)] py-8 md:grid-cols-2">
                 {SECTIONS.map(([key, label]) => (
-                  <div key={key} className={key === "outcome" ? "md:col-span-2 rounded-xl border border-accent/[0.35] bg-accent/[0.06] p-5" : ""}>
+                  <div
+                    key={key}
+                    className={
+                      key === "outcome"
+                        ? "md:col-span-2 rounded-xl border border-accent/[0.35] bg-accent/[0.06] p-5"
+                        : key === "lessons"
+                          ? "md:col-span-2"
+                          : ""
+                    }
+                  >
                     <h3 className="font-mono text-[0.66rem] font-bold uppercase tracking-[0.16em] text-accent-deep">
                       {label}
                     </h3>
@@ -146,7 +182,7 @@ export default function Projects() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <MagneticButton
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#22c0cd]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
               >
                 Request a site inspection
               </MagneticButton>

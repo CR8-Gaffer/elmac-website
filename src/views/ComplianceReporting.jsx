@@ -209,7 +209,7 @@ export default function ComplianceReporting() {
           <Reveal delay={0.1} className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <MagneticButton
               to="/contact?intent=compliance"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#22c0cd]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
             >
               Request documentation support
             </MagneticButton>

@@ -88,7 +88,7 @@ export default function App() {
           </nav>
           <MagneticButton
             to="/contact"
-            className="hidden md:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#22c0cd]"
+            className="hidden md:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#3D95DD]"
           >
             Request a quote
           </MagneticButton>
@@ -115,8 +115,8 @@ export default function App() {
           <div>
             <Brand className="text-base" />
             <p className="mt-3.5 max-w-[40ch] leading-relaxed">
-              Compliance-driven kitchen exhaust and industrial cleaning — scheduled, documented and certificated,
-              across South Australia and the Northern Territory.
+              Industrial asset maintenance and compliance — kitchen exhaust, extraction and industrial programs,
+              scheduled, documented and certificated across South Australia and the Northern Territory.
             </p>
             <p className="mt-3.5 font-mono text-[0.64rem] uppercase leading-relaxed tracking-[0.12em] text-steel-600">
               Official Supply Partner &amp; Sponsor — Adelaide Crows · Adelaide 36ers · Adelaide Oval

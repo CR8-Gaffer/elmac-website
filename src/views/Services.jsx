@@ -74,7 +74,7 @@ function Media({ svc }) {
   return (
     <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-steel-200 shadow-[0_20px_40px_-28px_rgba(16,22,28,0.5)]">
       <img src={A(svc.after)} alt={svc.title} className="h-full w-full object-cover" loading="lazy" />
-      <span className="absolute left-3 top-3 rounded-md bg-accent/85 px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-[#04252a]">
+      <span className="absolute left-3 top-3 rounded-md bg-accent/85 px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-[#0A2A44]">
         Service
       </span>
     </div>
@@ -91,9 +91,9 @@ export default function Services() {
     <>
       <section className="wrap pb-2 pt-[clamp(52px,8vw,96px)]">
         <Reveal>
-          <span className="eyebrow">Professional cleaning services</span>
+          <span className="eyebrow">Service capability</span>
           <h1 className="balance mt-3.5 max-w-[20ch] text-[clamp(2rem,4.4vw,3.3rem)] font-extrabold tracking-[-0.02em]">
-            Every system, cleaned to standard — and documented.
+            Every system, maintained to standard — and documented.
           </h1>
           <p className="mt-4 max-w-[58ch] text-[1.08rem] text-steel-600">
             One partner across the whole maintenance cycle — every service delivered on a schedule, documented with
@@ -147,6 +147,51 @@ export default function Services() {
       </section>
 
       <section className="border-t border-steel-200 bg-white py-[clamp(44px,6vw,72px)]">
+        <div className="wrap">
+          <Reveal>
+            <span className="eyebrow">Further capability</span>
+            <h2 className="balance mt-3.5 max-w-[26ch] text-[clamp(1.4rem,2.6vw,2rem)] font-extrabold tracking-[-0.02em]">
+              The same discipline, applied wider.
+            </h2>
+          </Reveal>
+          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Window & louvre cleaning", "Ground level to EWP-coordinated high access.", "/services/window-cleaning"],
+              ["Industrial cleaning", "Production sites, high-level structures, shutdown windows.", "/services/industrial-cleaning"],
+              ["Soft washing", "Low-pressure chemistry for surfaces pressure would damage.", "/services/soft-washing"],
+            ].map(([t, b, to]) => (
+              <Reveal key={to}>
+                <Link
+                  to={to}
+                  className="group flex h-full flex-col rounded-xl border border-steel-200 bg-paper p-5 no-underline transition-colors hover:border-accent/60"
+                >
+                  <h3 className="text-[1rem] font-extrabold text-ink">{t}</h3>
+                  <p className="mt-1.5 flex-1 text-[0.88rem] leading-relaxed text-steel-600">{b}</p>
+                  <span className="mt-3 text-[0.84rem] font-bold text-accent-deep group-hover:underline">
+                    Learn more →
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+            <Reveal>
+              <div className="flex h-full flex-col rounded-xl border border-dashed border-steel-300 bg-white p-5">
+                <span className="font-mono text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-steel-400">
+                  In development
+                </span>
+                <h3 className="mt-1.5 text-[1rem] font-extrabold text-steel-600">Drone-assisted exterior cleaning</h3>
+                <p className="mt-1.5 flex-1 text-[0.88rem] leading-relaxed text-steel-400">
+                  Facade and high-structure capability currently in evaluation.
+                </p>
+                <Link to="/contact" className="mt-3 text-[0.84rem] font-bold text-steel-600 no-underline hover:text-accent-deep">
+                  Register interest →
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-steel-200 py-[clamp(44px,6vw,72px)]">
         <div className="wrap flex flex-wrap items-center justify-between gap-6">
           <Reveal>
             <h2 className="balance max-w-[28ch] text-[clamp(1.4rem,2.6vw,2rem)] font-extrabold tracking-[-0.02em]">
@@ -159,7 +204,7 @@ export default function Services() {
           <Reveal delay={0.08}>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink no-underline transition-colors hover:bg-[#22c0cd]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink no-underline transition-colors hover:bg-[#3D95DD]"
             >
               Discuss a scheduled maintenance program
             </Link>

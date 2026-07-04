@@ -292,4 +292,148 @@ export const SERVICE_PAGES = {
     ],
     cta: { label: "Discuss a multi-site program", to: "/contact?type=multi-site" },
   },
+
+  "window-cleaning": {
+    code: "SVC.08",
+    title: "Commercial window & louvre cleaning.",
+    meta: {
+      title: "Commercial Window Cleaning Adelaide | High Access | Elmac",
+      desc: "Commercial window and louvre cleaning — ground level to high access, EWP-coordinated, scheduled to keep buildings presenting the way their owners intend.",
+    },
+    lead: "Glass and louvres set a building's standard before anyone walks in. We maintain them on schedule — ground level through to EWP-coordinated high access — so presentation holds without anyone having to remember to book it.",
+    image: "svc-commercial.jpg",
+    risks: [
+      {
+        t: "Presentation drift",
+        b: "Dirty glass reads as neglect to tenants, customers and prospective lessees — and it compounds quietly until someone important notices.",
+      },
+      {
+        t: "Louvres carry more than dust",
+        b: "Ventilation louvres load with grime that restricts airflow and stains facades below them.",
+      },
+      {
+        t: "Access done casually is risk",
+        b: "Above ground level, window work is work at height — it needs planning, plant and controls, not a longer pole and hope.",
+      },
+    ],
+    scope: {
+      heading: "What the service covers",
+      items: [
+        "External and internal commercial window cleaning",
+        "High-access glass — EWP and boom-coordinated",
+        "Ventilation louvre cleaning and degrease",
+        "Frames, sills and surrounds detailed with the glass",
+        "Shopfronts, offices, institutional and strata buildings",
+        "Scheduled cycles or one-off presentation uplifts",
+      ],
+      note: "Work above ground level runs under the same access planning, SWMS and permit discipline as our facade work — one standard, any height.",
+    },
+    cycles: [
+      ["Street-level shopfronts", "Customer-facing glass", "Fortnightly – monthly"],
+      ["Commercial buildings", "Offices, strata, institutional", "Monthly – quarterly"],
+      ["High-access glass & louvres", "EWP-planned works", "Quarterly – annual"],
+    ],
+    who: "Property managers, strata managers, corporate and institutional sites, and venues that want the frontage holding standard year-round.",
+    related: [
+      ["High access & facade cleaning", "/services/high-access-facade-cleaning"],
+      ["Pressure washing", "/services/pressure-washing"],
+    ],
+    cta: { label: "Request a commercial quote", to: "/contact" },
+  },
+
+  "industrial-cleaning": {
+    code: "SVC.09",
+    title: "Industrial cleaning for production and heavy-use sites.",
+    meta: {
+      title: "Industrial Cleaning Adelaide | Production & Heavy Sites | Elmac",
+      desc: "Industrial cleaning for production, manufacturing and heavy-use commercial sites — high-level structures, plant areas, shutdown windows, WHS-led delivery with audit-ready documentation.",
+    },
+    lead: "Production and heavy-use sites accumulate contamination that ordinary cleaning contractors aren't equipped — or inducted — to touch. We maintain the hard parts: high-level structures, plant areas, grease- and particulate-loaded infrastructure, delivered inside shutdown windows under WHS controls that survive real site inductions.",
+    image: "hero-canopy.jpg",
+    risks: [
+      {
+        t: "Audit findings overhead",
+        b: "High-level beams, ledges and services collect the contamination auditors photograph — out of daily sight until the finding lands.",
+      },
+      {
+        t: "Windows that can't blow out",
+        b: "Shutdown time is production money. Works that overrun their window cost more than the contract ever saved.",
+      },
+      {
+        t: "Contractors who fail the gate",
+        b: "If the SWMS doesn't survive your induction process, the clean never starts. Site-readiness is the first deliverable.",
+      },
+    ],
+    scope: {
+      heading: "Capability",
+      items: [
+        "High-level structural cleaning — beams, ledges, services",
+        "Plant and production area degrease and washdown",
+        "Exhaust and extraction infrastructure servicing",
+        "Shutdown-window programs — planned, crewed, completed inside the window",
+        "Hot-wash and mechanical cleaning to 4,500 PSI",
+        "WHS-led delivery: SWMS, permits, isolation, documented controls",
+      ],
+      note: "Every industrial job is scoped on-site first — load, access, isolation and window are priced as they actually are, not discovered on day one.",
+    },
+    cycles: [
+      ["Production areas", "Grease and particulate load", "Scheduled per audit cycle"],
+      ["High-level structures", "Audit-driven cleaning", "6-monthly – annual"],
+      ["Shutdown works", "Planned maintenance windows", "Per shutdown calendar"],
+    ],
+    who: "Food production and manufacturing sites, breweries, processing facilities and heavy-use commercial infrastructure across SA & NT.",
+    related: [
+      ["Pressure washing", "/services/pressure-washing"],
+      ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
+    ],
+    cta: { label: "Request a compliance clean", to: "/contact?intent=compliance" },
+  },
+
+  "soft-washing": {
+    code: "SVC.10",
+    title: "Soft washing for surfaces pressure can't touch.",
+    meta: {
+      title: "Commercial Soft Washing Adelaide | Elmac Cleaning Services",
+      desc: "Low-pressure chemical soft washing for painted surfaces, renders, cladding and roofing — removing organic growth and staining without the damage high pressure causes.",
+    },
+    lead: "Some surfaces are destroyed by the pressure that cleans concrete. Soft washing uses controlled low pressure and the right chemistry to lift organic growth, staining and atmospheric grime from painted surfaces, renders, cladding and roofing — restoring presentation without stripping what's underneath.",
+    image: "svc-pressure.jpg",
+    risks: [
+      {
+        t: "High pressure on soft surfaces",
+        b: "Renders, painted finishes and older cladding fail under pressure washing — the cheap clean becomes a repaint or recladding quote.",
+      },
+      {
+        t: "Organic growth keeps working",
+        b: "Mould, algae and lichen aren't just staining — they hold moisture against the surface and degrade it season by season.",
+      },
+      {
+        t: "Patchy DIY chemistry",
+        b: "Wrong mix, wrong dwell, wrong runoff handling — bad soft washing streaks the building and burns the landscaping.",
+      },
+    ],
+    scope: {
+      heading: "Where soft washing is the right tool",
+      items: [
+        "Painted and rendered facades",
+        "Cladding and composite panels",
+        "Roofing — tiled, coated metal and membrane",
+        "Awnings, canopies and shade structures",
+        "Mould, algae and lichen treatment",
+        "Runoff and landscaping protection planned per site",
+      ],
+      note: "We choose the method by the surface, not the schedule — where pressure is safe we pressure wash; where it isn't, we soft wash. One contractor, right tool.",
+    },
+    cycles: [
+      ["Facades & renders", "Organic growth and staining", "Annual – 2-yearly"],
+      ["Roofing", "Growth treatment and washdown", "1 – 3-yearly"],
+      ["Awnings & structures", "Presentation cycle", "6-monthly – annual"],
+    ],
+    who: "Property managers, strata, building owners and venues with painted, rendered or clad exteriors that pressure washing would damage.",
+    related: [
+      ["Pressure washing", "/services/pressure-washing"],
+      ["High access & facade cleaning", "/services/high-access-facade-cleaning"],
+    ],
+    cta: { label: "Request a commercial quote", to: "/contact" },
+  },
 };
