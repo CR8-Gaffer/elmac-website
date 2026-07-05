@@ -731,6 +731,13 @@ export default function Home() {
       <section className="bg-ink py-[clamp(56px,9vw,100px)] text-white">
         <div className="wrap flex flex-col items-center text-center">
           <Reveal>
+            <img
+              src={`${import.meta.env.BASE_URL}assets/elmac-logo-reverse.png`}
+              alt=""
+              aria-hidden="true"
+              className="mx-auto mb-7 h-20 w-auto md:h-24"
+              loading="lazy"
+            />
             <h2 className="balance max-w-[24ch] text-[clamp(1.7rem,3.4vw,2.6rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
               Ready to put your site on a compliant cycle?
             </h2>

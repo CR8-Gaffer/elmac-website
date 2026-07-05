@@ -31,7 +31,7 @@ function Brand({ className = "" }) {
       <img
         src={`${import.meta.env.BASE_URL}assets/elmac-logo-reverse.png`}
         alt="Elmac Cleaning Services"
-        className="h-11 w-auto"
+        className="h-11 w-auto md:h-14"
       />
     </Link>
   );
@@ -54,7 +54,7 @@ export default function App() {
       <ScrollToTop />
 
       <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-md">
-        <div className="wrap flex h-16 items-center gap-5">
+        <div className="wrap flex h-[76px] items-center gap-5">
           <Brand />
           <button
             className="ml-auto grid h-10 w-10 place-items-center rounded-lg border border-white/20 text-white md:hidden"
@@ -67,7 +67,7 @@ export default function App() {
           <nav
             className={`${
               open
-                ? "absolute left-0 right-0 top-16 flex flex-col gap-1 border-b border-white/10 bg-ink-2 p-3"
+                ? "absolute left-0 right-0 top-[76px] flex flex-col gap-1 border-b border-white/10 bg-ink-2 p-3"
                 : "hidden"
             } md:static md:ml-auto md:flex md:flex-row md:gap-0.5 md:border-0 md:bg-transparent md:p-0`}
           >
