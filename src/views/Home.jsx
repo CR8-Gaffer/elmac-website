@@ -1,11 +1,34 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion } from "motion/react";
+import { animate, motion, useInView, useReducedMotion } from "motion/react";
 import Reveal from "../components/Reveal.jsx";
 import Stat from "../components/Stat.jsx";
 import ReportPreview from "../components/ReportPreview.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
+import InspectionTag from "../components/InspectionTag.jsx";
+import DimensionDivider from "../components/DimensionDivider.jsx";
+import CycleGraphic from "../components/CycleGraphic.jsx";
+import MarginNote from "../components/MarginNote.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+
+// Ledger numeral that counts up once when scrolled into view.
+function LedgerNum({ v, suffix = "" }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px 0px" });
+  const reduce = useReducedMotion();
+  const [n, setN] = useState(reduce ? v : 0);
+  useEffect(() => {
+    if (!inView || reduce) return;
+    const c = animate(0, v, { duration: 1.1, ease: "easeOut", onUpdate: (x) => setN(Math.round(x)) });
+    return () => c.stop();
+  }, [inView, reduce, v]);
+  return (
+    <span ref={ref}>
+      {n}
+      {suffix}
+    </span>
+  );
+}
 
 const SLIDES = [
   {
@@ -67,12 +90,14 @@ const SERVICES = [
     tag: "AS1851-2012",
     to: "/services/kitchen-exhaust-cleaning",
     featured: true,
+    note: "Scope: canopy → filters → plenum → duct → riser → fan → cowl",
   },
   {
     t: "Grease Filter Exchange",
     b: "Scheduled swap-outs, cleaned at an SA Water approved facility.",
     tag: "Scheduled cycle",
     to: "/services/grease-filter-exchange",
+    note: "Swap-out stock — the kitchen never waits on drying filters",
   },
   {
     t: "Commercial Kitchen Deep Cleaning",
@@ -217,7 +242,7 @@ export default function Home() {
             Elmaculate Service &amp; Standards
           </motion.span>
           <motion.h1
-            className="balance mt-4 max-w-[18ch] text-[clamp(2rem,4.8vw,3.7rem)] font-extrabold leading-[1.04] tracking-[-0.02em]"
+            className="display-wide balance mt-4 max-w-[18ch] text-[clamp(2rem,4.8vw,3.7rem)] font-extrabold leading-[1.04] tracking-[-0.02em]"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.08 }}
@@ -264,10 +289,12 @@ export default function Home() {
           </motion.p>
         </div>
 
-        <div className="absolute bottom-5 left-[clamp(20px,5vw,64px)] flex gap-2" aria-hidden="true">
+        <div className="absolute bottom-5 left-[clamp(20px,5vw,64px)] flex gap-2">
           {SLIDES.map((s, i) => (
             <button
               key={s.label}
+              type="button"
+              aria-label={`Show slide ${i + 1}: ${s.label}`}
               onClick={() => setSlide(i)}
               className={`h-1 w-[26px] rounded-sm ${i === slide ? "bg-accent" : "bg-white/[0.22]"}`}
             />
@@ -287,7 +314,7 @@ export default function Home() {
       </section>
 
       {/* ── 2b · POSITIONING MANIFESTO ───────────────────────── */}
-      <section className="py-[clamp(52px,8vw,96px)]">
+      <section className="blueprint py-[clamp(52px,8vw,96px)]">
         <div className="wrap grid items-center gap-[clamp(28px,5vw,64px)] lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <span className="eyebrow">How Elmac thinks</span>
@@ -335,17 +362,24 @@ export default function Home() {
               None of these were written for this website. They're how the company already operates — you'll find
               every one of them evidenced in our reports.
             </p>
+            <MarginNote className="mt-5">
+              What clients don't always see: most of these standards cost us money in the short term. That's rather
+              the point.
+            </MarginNote>
+            <DimensionDivider label="operating standards · STD.01–06" className="mt-8" />
           </Reveal>
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-2 grid gap-x-[clamp(32px,5vw,72px)] md:grid-cols-2">
             {STANDARDS.map(([lead, rest], i) => (
-              <Reveal key={lead} delay={(i % 3) * 0.06}>
-                <div className="h-full rounded-xl border border-steel-200 bg-paper p-6">
-                  <span className="font-mono text-[0.64rem] font-bold uppercase tracking-[0.16em] text-steel-400">
-                    STD.{String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="mt-3 text-[0.98rem] leading-relaxed text-steel-700">
-                    <strong className="font-extrabold text-ink">{lead}</strong> {rest}
-                  </p>
+              <Reveal key={lead} delay={(i % 2) * 0.05} className="h-full">
+                <div className="h-full border-b border-steel-200 py-6">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent-deep">
+                      STD.{String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="flex-1 text-[1.02rem] leading-relaxed text-steel-700">
+                      <strong className="font-extrabold text-ink">{lead}</strong> {rest}
+                    </p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -383,6 +417,11 @@ export default function Home() {
                   </span>
                   <h3 className="mt-3 text-[1.08rem] font-extrabold leading-snug text-ink">{s.t}</h3>
                   <p className="mt-2 flex-1 text-[0.92rem] leading-relaxed text-steel-600">{s.b}</p>
+                  {s.note && (
+                    <span className="mt-3 hidden font-mono text-[0.64rem] uppercase leading-relaxed tracking-[0.1em] text-steel-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block">
+                      {s.note}
+                    </span>
+                  )}
                   <span className="mt-4 text-[0.85rem] font-bold text-accent-deep group-hover:underline">
                     Learn more →
                   </span>
@@ -415,8 +454,10 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <ReportPreview />
-            <p className="mt-3 text-center font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/45">
+            <div className="reg-ticks reg-ticks--light">
+              <ReportPreview />
+            </div>
+            <p className="img-caption img-caption--dark text-center">
               Representative sample — the format issued after every compliance clean
             </p>
           </Reveal>
@@ -442,6 +483,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <div className="rounded-xl border border-steel-200 bg-white p-6">
+              <CycleGraphic className="mb-6" />
               <div className="flex flex-wrap gap-2" role="group" aria-label="Cooking load">
                 {Object.entries(CYCLES).map(([k, c]) => (
                   <button
@@ -528,7 +570,7 @@ export default function Home() {
       </section>
 
       {/* ── 7b · THE INVISIBLE WORK ──────────────────────────── */}
-      <section className="bg-ink-2 py-[clamp(52px,8vw,96px)] text-white">
+      <section className="blueprint--dark bg-ink-2 py-[clamp(52px,8vw,96px)] text-white">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow eyebrow--accent">The work you never see</span>
@@ -631,19 +673,23 @@ export default function Home() {
             {STORIES.map((s, i) => (
               <Reveal key={s.t} delay={i * 0.07}>
                 <div className="flex h-full flex-col rounded-xl border border-steel-200 bg-white p-6">
-                  <span className="font-mono text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-steel-400">
+                  <span className="font-mono text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-steel-600">
                     {s.stamp}
                   </span>
                   <h3 className="mt-3 text-[1.05rem] font-extrabold leading-snug">{s.t}</h3>
                   <p className="mt-2.5 flex-1 text-[0.92rem] leading-relaxed text-steel-600">{s.b}</p>
-                  <p className="mt-4 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-accent-deep">
-                    {s.pattern}
-                  </p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {s.pattern.split(" · ").map((p, x) => (
+                      <InspectionTag key={p} kind={x === 0 ? "status" : "note"}>
+                        {p}
+                      </InspectionTag>
+                    ))}
+                  </div>
                 </div>
               </Reveal>
             ))}
           </div>
-          <p className="mt-5 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-steel-400">
+          <p className="mt-5 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-steel-600">
             True patterns from delivered work — sites anonymised until permissions land.
           </p>
         </div>
@@ -654,24 +700,25 @@ export default function Home() {
         <div className="wrap">
           <div className="grid gap-px overflow-hidden rounded-xl border border-steel-200 bg-steel-200 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["543", "services completed · June 2026"],
-              ["500+", "recurring obligations under management"],
-              ["36", "sub-sites at one venue, one pre-planned year"],
-              ["SA · NT", "delivered coverage, metro to remote"],
-            ].map(([n, l]) => (
+              [543, "", "services completed · June 2026"],
+              [500, "+", "recurring obligations under management"],
+              [36, "", "sub-sites at one venue, one pre-planned year"],
+              [null, "SA · NT", "delivered coverage, metro to remote"],
+            ].map(([v, sfx, l]) => (
               <div key={l} className="bg-paper px-6 py-5">
-                <div className="text-[1.7rem] font-extrabold tracking-[-0.02em] text-ink [font-variant-numeric:tabular-nums]">
-                  {n}
+                <div className="display-wide text-[1.7rem] font-extrabold tracking-[-0.02em] text-ink [font-variant-numeric:tabular-nums]">
+                  {v === null ? sfx : <LedgerNum v={v} suffix={sfx} />}
                 </div>
-                <div className="mt-1 font-mono text-[0.64rem] uppercase leading-relaxed tracking-[0.12em] text-steel-400">
+                <div className="mt-1 font-mono text-[0.64rem] uppercase leading-relaxed tracking-[0.12em] text-steel-600">
                   {l}
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-steel-400">
-            Real figures from our operations system — refreshed monthly, because they're checkable.
-          </p>
+          <DimensionDivider
+            label="real figures from our operations system · refreshed monthly"
+            className="mt-5"
+          />
         </div>
       </section>
 

@@ -29,8 +29,8 @@
   --color-steel-200: #dde2e6;
   --color-accent: #2380cc;
   --color-accent-deep: #135e9e;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-sans: "Archivo Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 html {
@@ -98,3 +98,73 @@ body {
 }
 
 .eyebrow--accent { color: var(--accent); }
+
+/* ─── Technical linework layer (Design Direction v2 §6/§9) ─────────── */
+
+/* Registration ticks: two-corner L-marks on photographic/document frames */
+.reg-ticks { position: relative; }
+.reg-ticks::before,
+.reg-ticks::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+.reg-ticks::before {
+  top: -5px;
+  left: -5px;
+  border-top: 1.5px solid var(--steel-400);
+  border-left: 1.5px solid var(--steel-400);
+}
+.reg-ticks::after {
+  bottom: -5px;
+  right: -5px;
+  border-bottom: 1.5px solid var(--steel-400);
+  border-right: 1.5px solid var(--steel-400);
+}
+.reg-ticks--light::before,
+.reg-ticks--light::after { border-color: rgba(255, 255, 255, 0.4); }
+
+/* Blueprint grid: 4% accent grid, one section per page, ultra-slow drift */
+.blueprint {
+  background-image:
+    linear-gradient(rgba(35, 128, 204, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 128, 204, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(35, 128, 204, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 128, 204, 0.09) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px;
+  animation: blueprint-drift 120s linear infinite;
+}
+.blueprint--dark {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px;
+  animation: blueprint-drift 120s linear infinite;
+}
+@keyframes blueprint-drift {
+  from { background-position: 0 0, 0 0, 0 0, 0 0; }
+  to { background-position: 96px 96px, 96px 96px, 96px 96px, 96px 96px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blueprint, .blueprint--dark { animation: none; }
+}
+
+/* Image caption: mono, hairline rule above, conditions-honest */
+.img-caption {
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px solid var(--steel-300);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--steel-600); /* AA at caption size; steel-400 is linework-only */
+}
+.img-caption--dark { border-top-color: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.55); }
+
+/* Display stretch: Archivo width axis for oversized headlines & numerals */
+.display-wide { font-stretch: 112%; }

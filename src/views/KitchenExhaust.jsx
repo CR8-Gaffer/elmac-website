@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import BeforeAfter from "../components/BeforeAfter.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
+import SpecBlock from "../components/SpecBlock.jsx";
+import AnnotatedImage from "../components/AnnotatedImage.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
 import Doctrine from "../components/Doctrine.jsx";
 
@@ -100,6 +102,16 @@ export default function KitchenExhaust() {
                 See our reporting
               </Link>
             </div>
+            <SpecBlock
+              dark
+              className="mt-9 max-w-[640px]"
+              items={[
+                ["Standard", "AS1851-2012"],
+                ["Scope", "Canopy → cowl"],
+                ["Evidence", "Report + certificate"],
+                ["Windows", "Day · night · shutdown"],
+              ]}
+            />
           </Reveal>
         </div>
       </section>
@@ -190,15 +202,30 @@ export default function KitchenExhaust() {
               Common issues we identify — and flag in the report.
             </h2>
           </Reveal>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            {ISSUES.map((t, i) => (
-              <Reveal key={t} delay={(i % 2) * 0.05}>
-                <div className="flex items-start gap-3 rounded-lg border border-steel-200 bg-white px-5 py-4">
-                  <span className="mt-0.5 font-mono text-[0.8rem] font-bold text-[#b05c10]">▲</span>
-                  <span className="text-[0.94rem] font-medium text-steel-700">{t}</span>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-8 grid items-start gap-[clamp(28px,4vw,56px)] lg:grid-cols-[1fr_0.95fr]">
+            <div className="grid gap-3">
+              {ISSUES.map((t, i) => (
+                <Reveal key={t} delay={(i % 2) * 0.05}>
+                  <div className="flex items-start gap-3 rounded-lg border border-steel-200 bg-white px-5 py-4">
+                    <span className="mt-0.5 font-mono text-[0.8rem] font-bold text-[#b05c10]">▲</span>
+                    <span className="text-[0.94rem] font-medium text-steel-700">{t}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={0.1}>
+              <AnnotatedImage
+                src={A("svc-canopy.jpg")}
+                alt="Commercial kitchen canopy with inspection points marked"
+                markers={[
+                  { n: 1, x: 22, y: 30, label: "Canopy interior seams — first migration path" },
+                  { n: 2, x: 55, y: 46, label: "Filter bank — load and fit checked, not just swapped" },
+                  { n: 3, x: 80, y: 32, label: "Plenum access — reachable, or documented" },
+                  { n: 4, x: 66, y: 72, label: "Duct mouth — where the invisible load begins" },
+                ]}
+                caption="What we look for — concept image; real inspection photography to follow"
+              />
+            </Reveal>
           </div>
         </div>
       </section>
