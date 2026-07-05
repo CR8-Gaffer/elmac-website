@@ -598,8 +598,8 @@ export default function Home() {
               Managing multiple venues?
             </h2>
             <p className="mt-2 max-w-[52ch] text-[#AEB8C0]">
-              One contact, one schedule, consolidated reporting — venue-by-venue service cycles on a single annual
-              planner.
+              The pattern in almost every group we take on: five venues, four contractors, no single view of what's
+              due. The fix is one planner — venue-by-venue cycles, one contact, one report stream.
             </p>
           </Reveal>
           <Reveal delay={0.08}>

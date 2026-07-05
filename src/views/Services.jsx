@@ -97,9 +97,9 @@ export default function Services() {
             Every system, maintained to standard — and documented.
           </h1>
           <p className="mt-4 max-w-[58ch] text-[1.08rem] text-steel-600">
-            One partner across the whole maintenance cycle — every service delivered on a schedule, documented with
-            photos, and closed out with recommendations for the next cycle. Drag the slider on any service to reveal
-            the finish.
+            Most sites don't have a cleaning problem — they have a coordination problem: several systems, several
+            cycles, usually several contractors. Everything below runs on one schedule, documented with photos and
+            closed out with a recommendation for the next cycle. Drag the slider on any service to see the finish.
           </p>
           <Doctrine n={6} />
         </Reveal>
