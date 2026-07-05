@@ -31,7 +31,7 @@ function Brand({ className = "" }) {
       <img
         src={`${import.meta.env.BASE_URL}assets/elmac-logo-reverse.png`}
         alt="Elmac Cleaning Services"
-        className="h-9 w-auto"
+        className="h-11 w-auto"
       />
     </Link>
   );
