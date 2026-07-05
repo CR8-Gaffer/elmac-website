@@ -124,6 +124,10 @@ export default function ComplianceReporting() {
                 </div>
               ))}
             </div>
+            <p className="mt-7 rounded-lg border-l-2 border-accent bg-accent/[0.06] px-4.5 py-3.5 text-[0.95rem] font-semibold text-ink">
+              Our standard: a report should be valuable enough that a facilities manager keeps it long after the job
+              is complete.
+            </p>
           </Reveal>
         </div>
       </section>

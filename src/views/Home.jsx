@@ -22,19 +22,42 @@ const SLIDES = [
   },
 ];
 
-const PROBLEMS = [
-  {
-    t: "Fire risk & insurance exposure",
-    b: "Grease-loaded ducts are the fire path insurers ask about first. Evidence of scheduled cleaning is what premium reviews and claims want to see.",
-  },
-  {
-    t: "Council & audit pressure",
-    b: "EHO inspections and audits increasingly demand records, not assurances. A certificate and photo report answer the question before it's asked.",
-  },
-  {
-    t: "Operational disruption",
-    b: "Cleans that collide with trade cost more than they save. We schedule around service periods, access windows and night works.",
-  },
+const STANDARDS = [
+  [
+    "We don't leave hidden grease because \"it's probably fine.\"",
+    "If we can't reach a section, we document it, photograph it, and tell you what it takes to make it reachable.",
+  ],
+  [
+    "We flag what's outside our scope instead of ignoring it.",
+    "A cracked flange isn't ours to fix — but it's absolutely ours to tell you about.",
+  ],
+  [
+    "We document everything.",
+    "If it isn't photographed and written down, it didn't happen. Every service closes with its evidence.",
+  ],
+  [
+    "We communicate early.",
+    "A rescheduled service with notice beats a surprise every time. You'll never chase us for bad news.",
+  ],
+  [
+    "We leave sites operational.",
+    "Kitchens open on time. Centres trade on time. No excuses attached to our invoice.",
+  ],
+  [
+    "We build for the tenth year, not the first invoice.",
+    "Most of our clients know their technicians by name — that's not an accident, it's the model.",
+  ],
+];
+
+const INVISIBLE = [
+  ["Scheduling", "planned around your trade, not ours"],
+  ["Risk assessment", "SWMS written for your site, not recycled"],
+  ["Permits & inductions", "cleared before the day, not on it"],
+  ["Equipment & chemistry", "loaded for the system we inspected"],
+  ["Access & weather", "EWP, roof keys, wind calls — decided early"],
+  ["Isolation & protection", "the kitchen sheeted before a tool comes out"],
+  ["Quality walk-through", "checked against scope before we leave"],
+  ["Documentation", "report and certificate compiled same-cycle"],
 ];
 
 const SERVICES = [
@@ -116,21 +139,24 @@ const INDUSTRIES = [
   ["Government & institutional", "/industries/government-institutional"],
 ];
 
-const CASES = [
+const STORIES = [
   {
-    tag: "Shopping centre",
-    t: "Common exhaust fan program, night works",
-    b: "Centre-wide KEF cleaning coordinated around permits, inductions and after-hours access windows — documented per asset, defects flagged.",
+    stamp: "2:47 AM · centre rooftop",
+    t: "The night window",
+    b: "Permits cleared by ten. Roof keys signed at midnight. Fourteen common exhaust fans opened, degreased, photographed and closed before the first delivery truck backs in. The deadline isn't sunrise — it's the moment the centre wakes up and never knows we were there.",
+    pattern: "night works · permits · per-asset records",
   },
   {
-    tag: "Hotel group",
-    t: "Multi-venue annual planner",
-    b: "A full financial year of KES, filter and deep-clean cycles across the group — one schedule, one contact, one report stream.",
+    stamp: "Day 3 of 4 · 1,400 km in",
+    t: "The long run",
+    b: "Remote kitchens can't get local service, so we bring the service to them — a planned circuit, days long, filters and full system cleans and certificates delivered in one sweep. The paperwork lands before the crew is home.",
+    pattern: "remote programs · SA & NT · one sweep",
   },
   {
-    tag: "Investigation",
-    t: "Grease leak diagnosis & remediation",
-    b: "Traced grease migration between tenancies, remediated the source and documented the fix for the property manager.",
+    stamp: "3:50 PM · live kitchen",
+    t: "Between lunch and dinner",
+    b: "Prep tables sheeted at half past two. Canopy and filters done in the dead window between services. Gone by 4:15, benches wiped, chef never breaks stride. Working around a trading kitchen isn't a favour — it's the baseline skill.",
+    pattern: "live sites · trade-aware · zero disruption",
   },
 ];
 
@@ -264,13 +290,15 @@ export default function Home() {
       <section className="py-[clamp(52px,8vw,96px)]">
         <div className="wrap grid items-center gap-[clamp(28px,5vw,64px)] lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
-            <span className="eyebrow">What Elmac is</span>
-            <h2 className="balance mt-3.5 max-w-[22ch] text-[clamp(1.7rem,3.4vw,2.6rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
-              Not a cleaning company. An industrial asset maintenance and compliance contractor.
+            <span className="eyebrow">How Elmac thinks</span>
+            <h2 className="balance mt-3.5 max-w-[24ch] text-[clamp(1.7rem,3.4vw,2.6rem)] font-extrabold leading-[1.12] tracking-[-0.02em]">
+              "When we inspect an exhaust system, we aren't looking for grease to remove. We're looking for the
+              problems that get <span className="text-accent-deep">expensive six months from now</span>."
             </h2>
             <p className="mt-4 max-w-[52ch] text-[1.02rem] text-steel-600">
-              Cleaning is one of our methods. The outcomes are what you're actually buying — and what every report,
-              cycle and certificate we issue exists to protect.
+              That's the difference between a cleaning contractor and a maintenance partner. Elmac is the second one —
+              not a cleaning company, but an industrial asset maintenance and compliance contractor. Cleaning is just
+              one of our methods. These are the outcomes:
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -295,21 +323,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 3 · THE PROBLEM ──────────────────────────────────── */}
+      {/* ── 3 · THE ELMACULATE STANDARD ──────────────────────── */}
       <section className="border-t border-steel-200 bg-white py-[clamp(52px,8vw,96px)]">
         <div className="wrap">
           <Reveal>
-            <span className="eyebrow">Why it matters</span>
+            <span className="eyebrow">The Elmaculate Standard</span>
             <h2 className="balance mt-3.5 max-w-[26ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
-              Grease is a fire path, an insurance question and a council finding.
+              Standards we hold whether anyone is checking or not.
             </h2>
+            <p className="mt-4 max-w-[56ch] text-[1rem] text-steel-600">
+              None of these were written for this website. They're how the company already operates — you'll find
+              every one of them evidenced in our reports.
+            </p>
           </Reveal>
-          <div className="mt-9 grid gap-4 md:grid-cols-3">
-            {PROBLEMS.map((p, i) => (
-              <Reveal key={p.t} delay={i * 0.07}>
-                <div className="h-full rounded-xl border border-steel-200 bg-white p-6">
-                  <h3 className="text-[1.05rem] font-extrabold">{p.t}</h3>
-                  <p className="mt-2.5 text-[0.95rem] leading-relaxed text-steel-600">{p.b}</p>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {STANDARDS.map(([lead, rest], i) => (
+              <Reveal key={lead} delay={(i % 3) * 0.06}>
+                <div className="h-full rounded-xl border border-steel-200 bg-paper p-6">
+                  <span className="font-mono text-[0.64rem] font-bold uppercase tracking-[0.16em] text-steel-400">
+                    STD.{String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="mt-3 text-[0.98rem] leading-relaxed text-steel-700">
+                    <strong className="font-extrabold text-ink">{lead}</strong> {rest}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -491,6 +527,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 7b · THE INVISIBLE WORK ──────────────────────────── */}
+      <section className="bg-ink-2 py-[clamp(52px,8vw,96px)] text-white">
+        <div className="wrap">
+          <Reveal>
+            <span className="eyebrow eyebrow--accent">The work you never see</span>
+            <h2 className="balance mt-3.5 max-w-[28ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
+              By the time our crew knocks at 5:30 AM, most of the job has already happened.
+            </h2>
+            <p className="mt-4 max-w-[54ch] text-[#AEB8C0]">
+              Clients see technicians arrive. They don't see the week before — and the week before is where
+              professional and average part ways.
+            </p>
+          </Reveal>
+          <div className="mt-9 grid gap-px overflow-hidden rounded-xl border border-white/[0.12] bg-white/[0.12] sm:grid-cols-2 lg:grid-cols-4">
+            {INVISIBLE.map(([t, d], i) => (
+              <div key={t} className="bg-ink px-5 py-4.5">
+                <span className="font-mono text-[0.62rem] font-bold text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="mt-1.5 text-[0.95rem] font-bold text-white">{t}</div>
+                <div className="mt-1 text-[0.82rem] leading-relaxed text-[#8f9aa3]">{d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 8 · INDUSTRIES ───────────────────────────────────── */}
       <section className="py-[clamp(44px,6vw,72px)]">
         <div className="wrap flex flex-col items-center text-center">
@@ -542,30 +605,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10 · RECENT WORK ─────────────────────────────────── */}
+      {/* ── 10 · FROM THE FIELD ──────────────────────────────── */}
       <section className="py-[clamp(52px,8vw,96px)]">
         <div className="wrap">
-          <Reveal>
-            <span className="eyebrow">Recent work</span>
-            <h2 className="balance mt-3.5 max-w-[24ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
-              Complex sites are the day job.
-            </h2>
+          <Reveal className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <span className="eyebrow">From the field</span>
+              <h2 className="balance mt-3.5 max-w-[24ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
+                What thirty years of this work actually looks like.
+              </h2>
+            </div>
+            <Link to="/projects" className="font-semibold text-accent-deep no-underline hover:underline">
+              Full case studies →
+            </Link>
           </Reveal>
           <div className="mt-9 grid gap-4 md:grid-cols-3">
-            {CASES.map((c, i) => (
-              <Reveal key={c.t} delay={i * 0.07}>
+            {STORIES.map((s, i) => (
+              <Reveal key={s.t} delay={i * 0.07}>
                 <div className="flex h-full flex-col rounded-xl border border-steel-200 bg-white p-6">
-                  <span className="font-mono text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-accent-deep">
-                    {c.tag}
+                  <span className="font-mono text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-steel-400">
+                    {s.stamp}
                   </span>
-                  <h3 className="mt-3 text-[1.05rem] font-extrabold leading-snug">{c.t}</h3>
-                  <p className="mt-2.5 flex-1 text-[0.92rem] leading-relaxed text-steel-600">{c.b}</p>
+                  <h3 className="mt-3 text-[1.05rem] font-extrabold leading-snug">{s.t}</h3>
+                  <p className="mt-2.5 flex-1 text-[0.92rem] leading-relaxed text-steel-600">{s.b}</p>
+                  <p className="mt-4 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-accent-deep">
+                    {s.pattern}
+                  </p>
                 </div>
               </Reveal>
             ))}
           </div>
           <p className="mt-5 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-steel-400">
-            Anonymised — named case studies to follow with client permission.
+            True patterns from delivered work — sites anonymised until permissions land.
           </p>
         </div>
       </section>

@@ -7,6 +7,7 @@ import ServiceDetail from "./views/ServiceDetail.jsx";
 import Industries from "./views/Industries.jsx";
 import IndustryDetail from "./views/IndustryDetail.jsx";
 import Projects from "./views/Projects.jsx";
+import FieldNotes from "./views/FieldNotes.jsx";
 import ComplianceReporting from "./views/ComplianceReporting.jsx";
 import Contact from "./views/Contact.jsx";
 import MagneticButton from "./components/MagneticButton.jsx";
@@ -34,7 +35,7 @@ function Brand({ className = "" }) {
 }
 
 const navLink = ({ isActive }) =>
-  `rounded-md px-3 py-2 text-[0.88rem] font-semibold tracking-[0.01em] transition-colors ${
+  `rounded-md px-2.5 py-2 text-[0.86rem] font-semibold tracking-[0.01em] transition-colors ${
     isActive
       ? "text-white after:mt-1 after:block after:h-0.5 after:rounded after:bg-accent"
       : "text-[#C9D0D6] hover:bg-white/5 hover:text-white"
@@ -82,6 +83,9 @@ export default function App() {
             <NavLink to="/projects" className={navLink}>
               Projects
             </NavLink>
+            <NavLink to="/field-notes" className={navLink}>
+              Field Notes
+            </NavLink>
             <NavLink to="/contact" className={navLink}>
               Contact
             </NavLink>
@@ -104,6 +108,7 @@ export default function App() {
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:slug" element={<IndustryDetail />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/field-notes" element={<FieldNotes />} />
           <Route path="/compliance-reporting" element={<ComplianceReporting />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
@@ -131,6 +136,7 @@ export default function App() {
                 ["Industries", "/industries"],
                 ["Compliance & reporting", "/compliance-reporting"],
                 ["Projects", "/projects"],
+                ["Field notes", "/field-notes"],
                 ["Request a quote", "/contact"],
               ].map(([t, to]) => (
                 <Link key={to} to={to} className="text-[#B9C2CA] no-underline hover:text-accent">
