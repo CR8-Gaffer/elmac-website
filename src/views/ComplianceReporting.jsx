@@ -126,23 +126,7 @@ export default function ComplianceReporting() {
         <div className="wrap grid items-start gap-[clamp(32px,5vw,72px)] lg:grid-cols-[1.15fr_0.85fr]">
           <Reveal>
             <div className="reg-ticks relative">
-              <ReportPreview />
-              {[
-                [1, 47],
-                [2, 33],
-                [3, 70],
-                [4, 64],
-                [5, 89],
-              ].map(([n, y]) => (
-                <span
-                  key={n}
-                  className="absolute -right-3 grid h-6 w-6 -translate-y-1/2 place-items-center rounded-[4px] border border-accent-deep/60 bg-white font-mono text-[0.62rem] font-bold text-accent-deep shadow-sm max-lg:hidden"
-                  style={{ top: `${y}%` }}
-                  aria-hidden="true"
-                >
-                  {n}
-                </span>
-              ))}
+              <ReportPreview annotated />
             </div>
             <p className="img-caption text-center">
               Representative sample — layout of the report issued after every compliance clean

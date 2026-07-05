@@ -64,7 +64,8 @@ const SERVICES = [
   },
 ];
 
-const RAIL = SERVICES.map((s) => ({ id: s.num.replace(".", "").toLowerCase(), label: s.num }));
+const svcId = (num) => num.replace(".", "").toLowerCase();
+const RAIL = SERVICES.map((s) => ({ id: svcId(s.num), label: s.num }));
 
 function Media({ svc }) {
   if (svc.ba) {
@@ -113,7 +114,7 @@ export default function Services() {
       <section className="wrap flex flex-col gap-[clamp(26px,4vw,46px)] pb-[clamp(60px,8vw,110px)] pt-9">
         {SERVICES.map((svc, i) => (
           <Reveal key={svc.num}>
-            <article id={svc.num.replace(".", "").toLowerCase()} className="scroll-mt-24 grid items-center gap-[clamp(24px,4vw,56px)] md:grid-cols-2">
+            <article id={svcId(svc.num)} className="scroll-mt-24 grid items-center gap-[clamp(24px,4vw,56px)] md:grid-cols-2">
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 <span className="font-mono text-[0.74rem] font-semibold tracking-[0.14em] text-accent-deep">
                   {svc.num}
