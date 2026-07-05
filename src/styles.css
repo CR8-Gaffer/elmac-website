@@ -168,3 +168,61 @@ body {
 
 /* Display stretch: Archivo width axis for oversized headlines & numerals */
 .display-wide { font-stretch: 112%; }
+
+/* ─── Theme previews (?theme=blueprint | paperink | default) ──────── */
+/* Shortlist candidates for the palette decision. Winner gets a proper
+   reskin; these previews run on token overrides + targeted surface rules
+   (unlayered CSS deliberately outranks Tailwind's layered utilities).   */
+
+/* 1 · BLUEPRINT — structural dark becomes the logo's navy; cyan at full
+   logo brightness. High-fidelity preview. */
+html[data-theme="blueprint"] {
+  --ink: #12305e; --ink-2: #173a70; --ink-3: #0e2549;
+  --paper: #f6f8fa;
+  --steel-700: #3d4a5c; --steel-600: #4d5a68; --steel-400: #8494a6;
+  --steel-300: #c3cdd8; --steel-200: #dfe6ee;
+  --accent: #44c8f4; --accent-deep: #18459a; --accent-soft: rgba(68, 200, 244, 0.14);
+  --color-ink: #12305e; --color-ink-2: #173a70; --color-ink-3: #0e2549;
+  --color-paper: #f6f8fa;
+  --color-steel-700: #3d4a5c; --color-steel-600: #4d5a68; --color-steel-400: #8494a6;
+  --color-steel-300: #c3cdd8; --color-steel-200: #dfe6ee;
+  --color-accent: #44c8f4; --color-accent-deep: #18459a;
+}
+html[data-theme="blueprint"] footer { background: #0e2549; }
+html[data-theme="blueprint"] .bg-accent { color: #0a2a44; }
+
+/* 4 · PAPER & INK — near-monochrome light; the site dressed as its own
+   report. ~90% fidelity preview; winner gets the real reskin. */
+html[data-theme="paperink"] {
+  --ink: #182027; --ink-2: #f2f4f5; --ink-3: #e8ecef;
+  --paper: #ffffff;
+  --steel-700: #3d4a5c; --steel-600: #4d5a68; --steel-400: #8494a6;
+  --steel-300: #cdd4da; --steel-200: #e2e7ea;
+  --accent: #182027; --accent-deep: #18459a; --accent-soft: rgba(24, 32, 39, 0.07);
+  --color-ink: #182027; --color-ink-2: #f2f4f5; --color-ink-3: #e8ecef;
+  --color-paper: #ffffff;
+  --color-steel-700: #3d4a5c; --color-steel-600: #4d5a68; --color-steel-400: #8494a6;
+  --color-steel-300: #cdd4da; --color-steel-200: #e2e7ea;
+  --color-accent: #182027; --color-accent-deep: #18459a;
+}
+html[data-theme="paperink"] body { background: #ffffff; }
+html[data-theme="paperink"] .bg-ink { background: #f2f4f5; }
+html[data-theme="paperink"] header { background: rgba(255, 255, 255, 0.94); border-bottom-color: #e2e7ea; }
+html[data-theme="paperink"] footer { background: #f2f4f5; border-top-color: #e2e7ea; }
+html[data-theme="paperink"] [class*="text-white"] { color: #182027; }
+html[data-theme="paperink"] header nav a { color: #4d5a68; }
+html[data-theme="paperink"] [class*="#C6CFD6"], html[data-theme="paperink"] [class*="#AEB8C0"],
+html[data-theme="paperink"] [class*="#DCE3E8"], html[data-theme="paperink"] [class*="#EAEFF2"],
+html[data-theme="paperink"] [class*="#B9C2CA"], html[data-theme="paperink"] [class*="#C9D0D6"] { color: #4d5a68; }
+html[data-theme="paperink"] [class*="#8f9aa3"], html[data-theme="paperink"] [class*="#93A0A9"],
+html[data-theme="paperink"] [class*="#7f8b94"], html[data-theme="paperink"] [class*="#7b8791"],
+html[data-theme="paperink"] [class*="#67727b"] { color: #6a7684; }
+html[data-theme="paperink"] [class*="border-white"] { border-color: #d5dbe0; }
+html[data-theme="paperink"] [class*="bg-white/"] { background: #ffffff; }
+html[data-theme="paperink"] section img[aria-hidden="true"] { display: none; }
+html[data-theme="paperink"] [class*="rgba(16,22,28"] { display: none; }
+html[data-theme="paperink"] .blueprint--dark { background-image: none; }
+html[data-theme="paperink"] .eyebrow--accent { color: #18459a; }
+html[data-theme="paperink"] .img-caption--dark { border-top-color: #d5dbe0; color: #6a7684; }
+html[data-theme="paperink"] .bg-accent { color: #ffffff; }
+html[data-theme="paperink"] img[alt="Elmac Cleaning Services"] { content: url("/elmac-website/assets/elmac-logo.png"); }
