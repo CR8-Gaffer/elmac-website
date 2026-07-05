@@ -30,18 +30,22 @@ function LedgerNum({ v, suffix = "" }) {
   );
 }
 
+const HERO_IMG = `${import.meta.env.BASE_URL}assets/doc-hero-night.jpg`;
+
+// Night-rooftop documentary base under per-slide tints; labels hold the
+// partnership slots until approved photography arrives.
 const SLIDES = [
   {
-    label: "Adelaide Crows — partnership photo",
-    cls: "bg-[radial-gradient(120%_120%_at_20%_0%,#2a3947_0%,#141d26_55%,#0b1117_100%)]",
+    label: "Adelaide Crows — partnership photo to follow",
+    grad: "radial-gradient(120% 120% at 20% 0%, rgba(42,57,71,0.55) 0%, rgba(20,29,38,0.62) 55%, rgba(11,17,23,0.78) 100%)",
   },
   {
-    label: "Adelaide Oval — partnership photo",
-    cls: "bg-[radial-gradient(120%_120%_at_80%_10%,#26424a_0%,#132027_55%,#0b1117_100%)]",
+    label: "Adelaide Oval — partnership photo to follow",
+    grad: "radial-gradient(120% 120% at 80% 10%, rgba(38,66,74,0.5) 0%, rgba(19,32,39,0.6) 55%, rgba(11,17,23,0.78) 100%)",
   },
   {
-    label: "Adelaide 36ers — partnership photo",
-    cls: "bg-[radial-gradient(120%_120%_at_50%_100%,#33303f_0%,#171b26_55%,#0b1117_100%)]",
+    label: "Adelaide 36ers — partnership photo to follow",
+    grad: "radial-gradient(120% 120% at 50% 100%, rgba(51,48,63,0.5) 0%, rgba(23,27,38,0.6) 55%, rgba(11,17,23,0.78) 100%)",
   },
 ];
 
@@ -211,9 +215,10 @@ export default function Home() {
           {SLIDES.map((s, i) => (
             <div
               key={s.label}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${s.cls} ${
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
                 i === slide ? "opacity-100" : "opacity-0"
               }`}
+              style={{ backgroundImage: `${s.grad}, url(${HERO_IMG})` }}
             >
               <span className="absolute bottom-3.5 right-4 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-white/50">
                 {s.label}

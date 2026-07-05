@@ -109,7 +109,7 @@ export default function Projects() {
 
   return (
     <>
-      <section className="wrap pb-2 pt-[clamp(52px,8vw,96px)]">
+      <section className="wrap grid items-center gap-[clamp(28px,5vw,64px)] pb-2 pt-[clamp(52px,8vw,96px)] lg:grid-cols-[1.25fr_0.75fr]">
         <Reveal>
           <span className="eyebrow">Projects</span>
           <h1 className="balance mt-3.5 max-w-[20ch] text-[clamp(2rem,4.4vw,3.3rem)] font-extrabold tracking-[-0.02em]">
@@ -119,6 +119,21 @@ export default function Projects() {
             These aren't galleries — they're technical case studies, told the way we run the work: challenge, scope,
             methodology, safety controls, documentation, outcome. Anonymised until client permissions land.
           </p>
+        </Reveal>
+        <Reveal delay={0.1} className="hidden lg:block">
+          <figure>
+            <div className="reg-ticks">
+              <img
+                src={`${import.meta.env.BASE_URL}assets/doc-harness-check.jpg`}
+                alt="Technician performing a pre-lift harness check"
+                className="aspect-[4/3] w-full rounded-xl border border-steel-200 object-cover"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="img-caption">
+              Pre-lift checks — concept imagery, real crew photography to follow
+            </figcaption>
+          </figure>
         </Reveal>
       </section>
 

@@ -215,15 +215,15 @@ export default function KitchenExhaust() {
             </div>
             <Reveal delay={0.1}>
               <AnnotatedImage
-                src={A("svc-canopy.jpg")}
-                alt="Commercial kitchen canopy with inspection points marked"
+                src={A("doc-kes-plenum.jpg")}
+                alt="Opened kitchen exhaust canopy during inspection with marked inspection points"
                 markers={[
-                  { n: 1, x: 22, y: 30, label: "Canopy interior seams — first migration path" },
-                  { n: 2, x: 55, y: 46, label: "Filter bank — load and fit checked, not just swapped" },
-                  { n: 3, x: 80, y: 32, label: "Plenum access — reachable, or documented" },
-                  { n: 4, x: 66, y: 72, label: "Duct mouth — where the invisible load begins" },
+                  { n: 1, x: 24, y: 34, label: "Canopy interior seams — first migration path" },
+                  { n: 2, x: 52, y: 58, label: "Filter bank — load and fit checked, not just swapped" },
+                  { n: 3, x: 78, y: 30, label: "Plenum interior — reachable, or documented" },
+                  { n: 4, x: 68, y: 74, label: "Duct mouth — where the invisible load begins" },
                 ]}
-                caption="What we look for — concept image; real inspection photography to follow"
+                caption="What we look for — concept imagery, real inspection photography to follow"
               />
             </Reveal>
           </div>

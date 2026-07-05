@@ -58,8 +58,18 @@ export default function ComplianceReporting() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-ink py-[clamp(52px,9vw,110px)] text-white">
-        <div className="wrap">
+      <section className="relative isolate overflow-hidden bg-ink py-[clamp(52px,9vw,110px)] text-white">
+        <img
+          src={`${import.meta.env.BASE_URL}assets/doc-report-bench.jpg`}
+          alt=""
+          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-25"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,22,28,0.95)_0%,rgba(16,22,28,0.82)_55%,rgba(16,22,28,0.6)_100%)]" />
+        <span className="absolute bottom-3.5 right-4 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-white/40">
+          The deliverable — concept imagery, real report photography to follow
+        </span>
+        <div className="wrap relative">
           <Reveal>
             <span className="eyebrow eyebrow--accent">Compliance &amp; reporting</span>
             <h1 className="balance mt-4 max-w-[20ch] text-[clamp(1.9rem,4.4vw,3.3rem)] font-extrabold leading-[1.05] tracking-[-0.02em]">

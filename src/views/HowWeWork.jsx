@@ -55,8 +55,18 @@ export default function HowWeWork() {
 
   return (
     <>
-      <section className="bg-ink py-[clamp(52px,8vw,100px)] text-white">
-        <div className="wrap">
+      <section className="relative isolate overflow-hidden bg-ink py-[clamp(52px,8vw,100px)] text-white">
+        <img
+          src={`${import.meta.env.BASE_URL}assets/doc-depot-dawn.jpg`}
+          alt=""
+          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,22,28,0.95)_0%,rgba(16,22,28,0.8)_55%,rgba(16,22,28,0.55)_100%)]" />
+        <span className="absolute bottom-3.5 right-4 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-white/40">
+          05:00 · the depot — concept imagery, real crews to follow
+        </span>
+        <div className="wrap relative">
           <Reveal>
             <span className="eyebrow eyebrow--accent">The invisible work</span>
             <h1 className="balance mt-4 max-w-[22ch] text-[clamp(1.9rem,4.4vw,3.3rem)] font-extrabold leading-[1.05] tracking-[-0.02em]">

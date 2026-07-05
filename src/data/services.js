@@ -108,7 +108,7 @@ export const SERVICE_PAGES = {
       desc: "Trailer-mounted hot-wash pressure cleaning to 4,500 PSI — bin rooms, loading docks, grease-affected concrete, carparks, building exteriors, roofs and solar. Runoff-aware practice, after-hours available.",
     },
     lead: "Commercial external and hard-surface cleaning — not driveway washing. Trailer-mounted hot-wash systems to 4,500 PSI for the areas that carry a site's grease, grime and presentation risk: bin rooms, docks, back-of-house concrete, carparks and building exteriors. Wash-down and runoff handled properly, after hours where the site needs it.",
-    image: "svc-pressure.jpg",
+    image: "doc-pressure-dawn.jpg",
     slider: "svc-pressure.jpg",
     risks: [
       {
@@ -157,7 +157,7 @@ export const SERVICE_PAGES = {
       desc: "EWP-coordinated facade, external window, louvre and signage cleaning for commercial property — permits, risk assessment and access planning handled as part of the job.",
     },
     lead: "At height, the access plan is the product. We coordinate the EWP, the permits, the risk assessment and the traffic or pedestrian controls — then do the cleaning: facades and cladding, external windows and louvres, signage and high-level structures on commercial property.",
-    image: "svc-install.jpg",
+    image: "doc-highaccess-ewp.jpg",
     risks: [
       {
         t: "Unmanaged work-at-height risk",
@@ -253,7 +253,7 @@ export const SERVICE_PAGES = {
       desc: "Annual maintenance planning across kitchen exhaust cleaning, filter exchange, deep cleans and pressure washing — one contact, consolidated reporting, venue-by-venue cycles for groups and facility managers.",
     },
     lead: "The end state for every site we service: one financial-year planner carrying every cycle — filters on their short cadence, KES cleans on the risk-based cycle, deep cleans and washdowns where they belong, and an annual review across the lot. You see the year; we run it; the documents accumulate on their own.",
-    image: "hero-canopy.jpg",
+    image: "doc-depot-dawn.jpg",
     risks: [
       {
         t: "Memory-driven maintenance misses",
@@ -350,7 +350,7 @@ export const SERVICE_PAGES = {
       desc: "Industrial cleaning for production, manufacturing and heavy-use commercial sites — high-level structures, plant areas, shutdown windows, WHS-led delivery with audit-ready documentation.",
     },
     lead: "Production and heavy-use sites accumulate contamination that ordinary cleaning contractors aren't equipped — or inducted — to touch. We maintain the hard parts: high-level structures, plant areas, grease- and particulate-loaded infrastructure, delivered inside shutdown windows under WHS controls that survive real site inductions.",
-    image: "hero-canopy.jpg",
+    image: "doc-roof-array.jpg",
     risks: [
       {
         t: "Audit findings overhead",

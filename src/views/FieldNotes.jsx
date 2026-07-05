@@ -21,7 +21,7 @@ export default function FieldNotes() {
 
   return (
     <>
-      <section className="wrap pb-2 pt-[clamp(52px,8vw,96px)]">
+      <section className="wrap grid items-center gap-[clamp(28px,5vw,64px)] pb-2 pt-[clamp(52px,8vw,96px)] lg:grid-cols-[1.25fr_0.75fr]">
         <Reveal>
           <span className="eyebrow">Field Notes — the handbook</span>
           <h1 className="balance mt-3.5 max-w-[24ch] text-[clamp(2rem,4.4vw,3.3rem)] font-extrabold tracking-[-0.02em]">
@@ -32,6 +32,21 @@ export default function FieldNotes() {
             answer it on-site: verdict first, mechanism second, opinion included. It grows as the questions do.
           </p>
           <Doctrine n={28} />
+        </Reveal>
+        <Reveal delay={0.1} className="hidden lg:block">
+          <figure>
+            <div className="reg-ticks">
+              <img
+                src={`${import.meta.env.BASE_URL}assets/doc-duct-torch.jpg`}
+                alt="Torchlit interior of a kitchen exhaust duct during inspection"
+                className="aspect-[4/3] w-full rounded-xl border border-steel-200 object-cover"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="img-caption">
+              The inspection's point of view — concept imagery, real duct photography to follow
+            </figcaption>
+          </figure>
         </Reveal>
       </section>
 
