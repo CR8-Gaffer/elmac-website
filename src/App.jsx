@@ -8,6 +8,7 @@ import Industries from "./views/Industries.jsx";
 import IndustryDetail from "./views/IndustryDetail.jsx";
 import Projects from "./views/Projects.jsx";
 import FieldNotes from "./views/FieldNotes.jsx";
+import FieldNoteDetail from "./views/FieldNoteDetail.jsx";
 import ComplianceReporting from "./views/ComplianceReporting.jsx";
 import Contact from "./views/Contact.jsx";
 import MagneticButton from "./components/MagneticButton.jsx";
@@ -109,6 +110,7 @@ export default function App() {
           <Route path="/industries/:slug" element={<IndustryDetail />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/field-notes" element={<FieldNotes />} />
+          <Route path="/field-notes/:slug" element={<FieldNoteDetail />} />
           <Route path="/compliance-reporting" element={<ComplianceReporting />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
