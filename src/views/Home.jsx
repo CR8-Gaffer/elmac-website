@@ -273,7 +273,7 @@ export default function Home() {
           >
             <MagneticButton
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#57bce8]"
             >
               Request a commercial quote
             </MagneticButton>
@@ -452,7 +452,7 @@ export default function Home() {
             <div className="mt-7">
               <MagneticButton
                 to="/compliance-reporting"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-[0.95rem] font-bold text-ink hover:bg-[#3D95DD]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-[0.95rem] font-bold text-ink hover:bg-[#57bce8]"
               >
                 See what our reporting looks like →
               </MagneticButton>
@@ -652,7 +652,7 @@ export default function Home() {
           <Reveal delay={0.08}>
             <MagneticButton
               to="/contact?type=multi-site"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink hover:bg-[#3D95DD]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink hover:bg-[#57bce8]"
             >
               Discuss a multi-site program
             </MagneticButton>
@@ -741,7 +741,7 @@ export default function Home() {
           <Reveal delay={0.1} className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <MagneticButton
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#57bce8]"
             >
               Request a commercial quote
             </MagneticButton>

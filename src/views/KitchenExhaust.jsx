@@ -102,7 +102,7 @@ export default function KitchenExhaust() {
             <div className="mt-8 flex flex-wrap gap-3">
               <MagneticButton
                 to="/contact?service=kes"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#57bce8]"
               >
                 Request a site inspection
               </MagneticButton>
@@ -330,7 +330,7 @@ export default function KitchenExhaust() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <MagneticButton
                 to="/contact?service=kes"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#57bce8]"
               >
                 Request a site inspection
               </MagneticButton>

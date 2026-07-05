@@ -206,7 +206,7 @@ export default function Services() {
           <Reveal delay={0.08}>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink no-underline transition-colors hover:bg-[#3D95DD]"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink no-underline transition-colors hover:bg-[#57bce8]"
             >
               Discuss a scheduled maintenance program
             </Link>

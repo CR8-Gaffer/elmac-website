@@ -199,7 +199,7 @@ export default function Projects() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <MagneticButton
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#3D95DD]"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#57bce8]"
               >
                 Request a site inspection
               </MagneticButton>

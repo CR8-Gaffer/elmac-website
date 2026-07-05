@@ -35,7 +35,7 @@ const field =
   "w-full rounded-lg border border-white/[0.14] bg-white/5 px-3.5 py-3 text-[0.95rem] text-white placeholder-[#67727b] focus:border-accent focus:bg-accent/[0.08] focus:outline-none";
 const label = "font-mono text-[0.66rem] uppercase tracking-[0.1em] text-[#93A0A9]";
 const check =
-  "h-4 w-4 shrink-0 accent-[#2380CC]";
+  "h-4 w-4 shrink-0 accent-[#3ba5dc]";
 
 export default function Contact() {
   usePageMeta(
@@ -247,7 +247,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="mt-1 justify-self-start rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink transition-colors hover:bg-[#3D95DD]"
+              className="mt-1 justify-self-start rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink transition-colors hover:bg-[#57bce8]"
             >
               Request quote / inspection
             </button>

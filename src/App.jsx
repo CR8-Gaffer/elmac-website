@@ -29,7 +29,7 @@ function Brand({ className = "" }) {
       to="/"
       className={`flex items-baseline gap-0.5 font-extrabold tracking-wide text-white no-underline text-[1.22rem] ${className}`}
     >
-      ELM<b className="text-accent">A</b>C
+      <span className="display-wide italic text-accent">ELMAC</span>
       <small className="ml-2 -translate-y-0.5 font-mono text-[0.52rem] font-medium uppercase tracking-[0.18em] text-steel-400">
         Cleaning&nbsp;Services
       </small>
@@ -95,7 +95,7 @@ export default function App() {
           </nav>
           <MagneticButton
             to="/contact"
-            className="hidden md:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#3D95DD]"
+            className="hidden md:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#57bce8]"
           >
             Request a quote
           </MagneticButton>

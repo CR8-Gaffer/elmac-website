@@ -12,9 +12,9 @@
   --steel-400: #8a949d;
   --steel-300: #c4cbd1;
   --steel-200: #dde2e6;
-  --accent: #2380cc; /* Elmac Blue — actions & links; confirm exact brand hex with Caleb */
-  --accent-deep: #135e9e;
-  --accent-soft: rgba(35, 128, 204, 0.12);
+  --accent: #3ba5dc; /* Elmac Blue — actions & links; confirm exact brand hex with Caleb */
+  --accent-deep: #1b4699;
+  --accent-soft: rgba(59, 165, 220, 0.12);
 }
 
 @theme {
@@ -27,8 +27,8 @@
   --color-steel-400: #8a949d;
   --color-steel-300: #c4cbd1;
   --color-steel-200: #dde2e6;
-  --color-accent: #2380cc;
-  --color-accent-deep: #135e9e;
+  --color-accent: #3ba5dc;
+  --color-accent-deep: #1b4699;
   --font-sans: "Archivo Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -129,10 +129,10 @@ body {
 /* Blueprint grid: 4% accent grid, one section per page, ultra-slow drift */
 .blueprint {
   background-image:
-    linear-gradient(rgba(35, 128, 204, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(35, 128, 204, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(35, 128, 204, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(35, 128, 204, 0.09) 1px, transparent 1px);
+    linear-gradient(rgba(59, 165, 220, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 165, 220, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(59, 165, 220, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 165, 220, 0.09) 1px, transparent 1px);
   background-size: 24px 24px, 24px 24px, 96px 96px, 96px 96px;
   animation: blueprint-drift 120s linear infinite;
 }
