@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import Doctrine from "../components/Doctrine.jsx";
 
 // Anonymised technical case studies drawn from delivered work. Client names
 // withheld pending permission — swap in names/photos as approvals land.
@@ -172,6 +173,7 @@ export default function Projects() {
       <section className="bg-ink py-[clamp(48px,7vw,88px)] text-white">
         <div className="wrap flex flex-col items-center text-center">
           <Reveal>
+            <Doctrine n={16} dark center />
             <h2 className="balance max-w-[26ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
               Your site has its own complications. Good.
             </h2>

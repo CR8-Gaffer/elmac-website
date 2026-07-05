@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import Doctrine from "../components/Doctrine.jsx";
 import { INDUSTRY_PAGES } from "../data/industries.js";
 
 export default function Industries() {
@@ -21,6 +22,7 @@ export default function Industries() {
             Fire risk, hygiene, evidence — every sector carries them. We build service programs around how your sites
             actually run: trade hours, access windows, permits, inductions and the people who have to sign off.
           </p>
+          <Doctrine n={18} />
         </Reveal>
       </section>
 

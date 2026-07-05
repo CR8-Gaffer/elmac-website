@@ -3,7 +3,9 @@ import Reveal from "../components/Reveal.jsx";
 import BeforeAfter from "../components/BeforeAfter.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import Doctrine from "../components/Doctrine.jsx";
 import { SERVICE_PAGES } from "../data/services.js";
+import { DOCTRINE_BY_SLUG } from "../data/doctrine.js";
 
 const A = (f) => `${import.meta.env.BASE_URL}assets/${f}`;
 
@@ -210,6 +212,7 @@ export default function ServiceDetail() {
       <section className="bg-ink py-[clamp(52px,8vw,96px)] text-white">
         <div className="wrap flex flex-col items-center text-center">
           <Reveal>
+            <Doctrine n={DOCTRINE_BY_SLUG[slug]} dark center />
             <h2 className="balance max-w-[26ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
               Documented every visit — certificate-backed where compliance applies.
             </h2>

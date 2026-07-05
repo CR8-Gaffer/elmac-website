@@ -3,6 +3,7 @@ import Reveal from "../components/Reveal.jsx";
 import ReportPreview from "../components/ReportPreview.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import Doctrine from "../components/Doctrine.jsx";
 
 const RECEIVE = [
   {
@@ -202,6 +203,7 @@ export default function ComplianceReporting() {
       <section className="bg-ink py-[clamp(52px,8vw,100px)] text-white">
         <div className="wrap flex flex-col items-center text-center">
           <Reveal>
+            <Doctrine n={10} dark center />
             <h2 className="balance max-w-[24ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
               Council inspection or insurance renewal coming up?
             </h2>

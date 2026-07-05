@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import Doctrine from "../components/Doctrine.jsx";
 
 // The questions we actually get asked on-site, answered the way we answer
 // them on-site. This page is the company's accumulated judgement, written down.
@@ -87,6 +88,7 @@ export default function FieldNotes() {
       <section className="bg-ink py-[clamp(48px,7vw,88px)] text-white">
         <div className="wrap flex flex-col items-center text-center">
           <Reveal>
+            <Doctrine n={28} dark center />
             <h2 className="balance max-w-[26ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
               Got a question your contractor couldn't answer?
             </h2>

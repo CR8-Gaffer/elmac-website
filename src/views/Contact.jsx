@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
+import Doctrine from "../components/Doctrine.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
 
 const SERVICES = [
@@ -104,6 +105,7 @@ export default function Contact() {
             Commercial and industrial sites across South Australia and the Northern Territory. The more you can tell
             us, the faster the quote.
           </p>
+          <Doctrine n={11} dark />
 
           {critical && (
             <div className="mt-6 rounded-xl border border-[#E8730C]/60 bg-[#E8730C]/10 px-5 py-4">

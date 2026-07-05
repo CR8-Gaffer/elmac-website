@@ -3,6 +3,7 @@ import Reveal from "../components/Reveal.jsx";
 import BeforeAfter from "../components/BeforeAfter.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import Doctrine from "../components/Doctrine.jsx";
 
 const A = (f) => `${import.meta.env.BASE_URL}assets/${f}`;
 
@@ -275,6 +276,7 @@ export default function KitchenExhaust() {
       <section className="bg-ink py-[clamp(52px,8vw,100px)] text-white">
         <div className="wrap">
           <Reveal className="flex flex-col items-center text-center">
+            <Doctrine n={5} dark center />
             <span className="eyebrow eyebrow--accent">After the clean</span>
             <h2 className="balance mt-3.5 max-w-[26ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.08] tracking-[-0.02em]">
               You get the evidence: certificate, photo report, defects, next due.

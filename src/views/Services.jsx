@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import BeforeAfter from "../components/BeforeAfter.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import Doctrine from "../components/Doctrine.jsx";
 
 const A = (f) => `${import.meta.env.BASE_URL}assets/${f}`;
 
@@ -100,6 +101,7 @@ export default function Services() {
             photos, and closed out with recommendations for the next cycle. Drag the slider on any service to reveal
             the finish.
           </p>
+          <Doctrine n={6} />
         </Reveal>
       </section>
 
