@@ -24,15 +24,15 @@ function ScrollToTop() {
 }
 
 function Brand({ className = "" }) {
+  // The real mark — reversed variant generated from the original artwork
+  // (navy → white) for dark surfaces.
   return (
-    <Link
-      to="/"
-      className={`flex items-baseline gap-0.5 font-extrabold tracking-wide text-white no-underline text-[1.22rem] ${className}`}
-    >
-      <span className="display-wide italic text-accent">ELMAC</span>
-      <small className="ml-2 -translate-y-0.5 font-mono text-[0.52rem] font-medium uppercase tracking-[0.18em] text-steel-400">
-        Cleaning&nbsp;Services
-      </small>
+    <Link to="/" className={`inline-flex items-center no-underline ${className}`}>
+      <img
+        src={`${import.meta.env.BASE_URL}assets/elmac-logo-reverse.png`}
+        alt="Elmac Cleaning Services"
+        className="h-9 w-auto"
+      />
     </Link>
   );
 }

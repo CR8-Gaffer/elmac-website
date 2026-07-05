@@ -575,33 +575,33 @@ export default function Home() {
       </section>
 
       {/* ── 7b · THE INVISIBLE WORK ──────────────────────────── */}
-      <section className="blueprint--dark bg-ink-2 py-[clamp(52px,8vw,96px)] text-white">
+      <section className="py-[clamp(52px,8vw,96px)]">
         <div className="wrap">
           <Reveal>
-            <span className="eyebrow eyebrow--accent">The work you never see</span>
+            <span className="eyebrow">The work you never see</span>
             <h2 className="balance mt-3.5 max-w-[28ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
               By the time our crew knocks at 5:30 AM, most of the job has already happened.
             </h2>
-            <p className="mt-4 max-w-[54ch] text-[#AEB8C0]">
+            <p className="mt-4 max-w-[54ch] text-steel-600">
               Clients see technicians arrive. They don't see the week before — and the week before is where
               professional and average part ways.
             </p>
           </Reveal>
-          <div className="mt-9 grid gap-px overflow-hidden rounded-xl border border-white/[0.12] bg-white/[0.12] sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-9 grid gap-px overflow-hidden rounded-xl border border-steel-200 bg-steel-200 sm:grid-cols-2 lg:grid-cols-4">
             {INVISIBLE.map(([t, d], i) => (
-              <div key={t} className="bg-ink px-5 py-4.5">
-                <span className="font-mono text-[0.62rem] font-bold text-accent">
+              <div key={t} className="bg-white px-5 py-4.5">
+                <span className="font-mono text-[0.62rem] font-bold text-accent-deep">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div className="mt-1.5 text-[0.95rem] font-bold text-white">{t}</div>
-                <div className="mt-1 text-[0.82rem] leading-relaxed text-[#8f9aa3]">{d}</div>
+                <div className="mt-1.5 text-[0.95rem] font-bold text-ink">{t}</div>
+                <div className="mt-1 text-[0.82rem] leading-relaxed text-steel-600">{d}</div>
               </div>
             ))}
           </div>
           <Reveal delay={0.1}>
             <Link
               to="/how-we-work"
-              className="mt-6 inline-block font-bold text-accent no-underline hover:underline"
+              className="mt-6 inline-block font-bold text-accent-deep no-underline hover:underline"
             >
               The full anatomy — 17 steps, T−14 days to next cycle →
             </Link>
@@ -638,13 +638,13 @@ export default function Home() {
       </section>
 
       {/* ── 9 · MULTI-SITE BAND ──────────────────────────────── */}
-      <section className="bg-ink-2 py-[clamp(44px,6vw,72px)] text-white">
+      <section className="border-y border-steel-200 bg-white py-[clamp(44px,6vw,72px)]">
         <div className="wrap flex flex-wrap items-center justify-between gap-6">
           <Reveal>
             <h2 className="balance text-[clamp(1.5rem,2.8vw,2.1rem)] font-extrabold tracking-[-0.02em]">
               Managing multiple venues?
             </h2>
-            <p className="mt-2 max-w-[52ch] text-[#AEB8C0]">
+            <p className="mt-2 max-w-[52ch] text-steel-600">
               The pattern in almost every group we take on: five venues, four contractors, no single view of what's
               due. The fix is one planner — venue-by-venue cycles, one contact, one report stream.
             </p>
