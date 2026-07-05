@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import BeforeAfter from "../components/BeforeAfter.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import SideRail from "../components/SideRail.jsx";
 import Doctrine from "../components/Doctrine.jsx";
 
 const A = (f) => `${import.meta.env.BASE_URL}assets/${f}`;
@@ -63,6 +64,8 @@ const SERVICES = [
   },
 ];
 
+const RAIL = SERVICES.map((s) => ({ id: s.num.replace(".", "").toLowerCase(), label: s.num }));
+
 function Media({ svc }) {
   if (svc.ba) {
     return (
@@ -105,10 +108,12 @@ export default function Services() {
         </Reveal>
       </section>
 
+      <SideRail items={RAIL} />
+
       <section className="wrap flex flex-col gap-[clamp(26px,4vw,46px)] pb-[clamp(60px,8vw,110px)] pt-9">
         {SERVICES.map((svc, i) => (
           <Reveal key={svc.num}>
-            <article className="grid items-center gap-[clamp(24px,4vw,56px)] md:grid-cols-2">
+            <article id={svc.num.replace(".", "").toLowerCase()} className="scroll-mt-24 grid items-center gap-[clamp(24px,4vw,56px)] md:grid-cols-2">
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 <span className="font-mono text-[0.74rem] font-semibold tracking-[0.14em] text-accent-deep">
                   {svc.num}
@@ -156,7 +161,7 @@ export default function Services() {
               The same discipline, applied wider.
             </h2>
           </Reveal>
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["Window & louvre cleaning", "Ground level to EWP-coordinated high access.", "/services/window-cleaning"],
               ["Industrial cleaning", "Production sites, high-level structures, shutdown windows.", "/services/industrial-cleaning"],
@@ -175,20 +180,6 @@ export default function Services() {
                 </Link>
               </Reveal>
             ))}
-            <Reveal>
-              <div className="flex h-full flex-col rounded-xl border border-dashed border-steel-300 bg-white p-5">
-                <span className="font-mono text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-steel-400">
-                  In development
-                </span>
-                <h3 className="mt-1.5 text-[1rem] font-extrabold text-steel-600">Drone-assisted exterior cleaning</h3>
-                <p className="mt-1.5 flex-1 text-[0.88rem] leading-relaxed text-steel-400">
-                  Facade and high-structure capability currently in evaluation.
-                </p>
-                <Link to="/contact" className="mt-3 text-[0.84rem] font-bold text-steel-600 no-underline hover:text-accent-deep">
-                  Register interest →
-                </Link>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>

@@ -125,8 +125,26 @@ export default function ComplianceReporting() {
       <section id="report" className="scroll-mt-24 border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
         <div className="wrap grid items-start gap-[clamp(32px,5vw,72px)] lg:grid-cols-[1.15fr_0.85fr]">
           <Reveal>
-            <ReportPreview />
-            <p className="mt-3 text-center font-mono text-[0.66rem] uppercase tracking-[0.14em] text-steel-600">
+            <div className="reg-ticks relative">
+              <ReportPreview />
+              {[
+                [1, 47],
+                [2, 33],
+                [3, 70],
+                [4, 64],
+                [5, 89],
+              ].map(([n, y]) => (
+                <span
+                  key={n}
+                  className="absolute -right-3 grid h-6 w-6 -translate-y-1/2 place-items-center rounded-[4px] border border-accent-deep/60 bg-white font-mono text-[0.62rem] font-bold text-accent-deep shadow-sm max-lg:hidden"
+                  style={{ top: `${y}%` }}
+                  aria-hidden="true"
+                >
+                  {n}
+                </span>
+              ))}
+            </div>
+            <p className="img-caption text-center">
               Representative sample — layout of the report issued after every compliance clean
             </p>
           </Reveal>
@@ -136,9 +154,11 @@ export default function ComplianceReporting() {
               Built to be handed straight to whoever's asking.
             </h2>
             <div className="mt-6 grid gap-4">
-              {ANNOTATIONS.map(([t, b]) => (
+              {ANNOTATIONS.map(([t, b], i) => (
                 <div key={t} className="flex items-start gap-3.5">
-                  <span className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-accent" />
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-[4px] border border-accent-deep/60 bg-white font-mono text-[0.62rem] font-bold text-accent-deep">
+                    {i + 1}
+                  </span>
                   <div>
                     <div className="text-[0.98rem] font-extrabold text-ink">{t}</div>
                     <p className="mt-1 text-[0.9rem] leading-relaxed text-steel-600">{b}</p>

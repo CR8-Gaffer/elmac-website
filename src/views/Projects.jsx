@@ -4,6 +4,7 @@ import RevealImage from "../components/RevealImage.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
 import Doctrine from "../components/Doctrine.jsx";
+import SpecBlock from "../components/SpecBlock.jsx";
 
 // Anonymised technical case studies drawn from delivered work. Client names
 // withheld pending permission — swap in names/photos as approvals land.
@@ -143,23 +144,12 @@ export default function Projects() {
             <article className="overflow-hidden rounded-2xl border border-steel-200 bg-white">
               <div className="border-b border-steel-200 bg-paper px-[clamp(20px,3.5vw,40px)] py-6">
                 <span className="font-mono text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-accent-deep">
-                  Case {String(i + 1).padStart(2, "0")} — {c.tag}
+                  Operational debrief · Case {String(i + 1).padStart(2, "0")} — {c.tag}
                 </span>
                 <h2 className="balance mt-2.5 text-[clamp(1.4rem,2.6vw,2rem)] font-extrabold leading-[1.1] tracking-[-0.015em]">
                   {c.title}
                 </h2>
-                <div className="mt-4 flex flex-wrap gap-x-8 gap-y-2">
-                  {c.spec.map(([k, v]) => (
-                    <div key={k}>
-                      <span className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-steel-400">
-                        {k}:{" "}
-                      </span>
-                      <span className="font-mono text-[0.72rem] font-semibold tracking-[0.04em] text-steel-700">
-                        {v}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <SpecBlock items={c.spec} className="mt-4" />
               </div>
               <div className="grid gap-x-[clamp(24px,4vw,56px)] gap-y-6 px-[clamp(20px,3.5vw,40px)] py-8 md:grid-cols-2">
                 {SECTIONS.map(([key, label]) => (

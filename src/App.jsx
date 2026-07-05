@@ -168,7 +168,7 @@ export default function App() {
         </div>
         <div className="wrap mt-9 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.08] pt-6">
           <span>© {new Date().getFullYear()} Elmac Cleaning Services · Proudly South Australian, family owned.</span>
-          <span className="font-mono tracking-[0.08em]">AS1851-2012 · AS1668 · PGE342023</span>
+          <span className="font-mono tracking-[0.08em]">AS1851-2012 · AS1668 · PGE342023 · Rev. Jul 2026</span>
         </div>
       </footer>
     </div>
