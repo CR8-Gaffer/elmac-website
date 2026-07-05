@@ -3,6 +3,15 @@ import Reveal from "../components/Reveal.jsx";
 import ReportPreview from "../components/ReportPreview.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+import SideRail from "../components/SideRail.jsx";
+
+const RAIL = [
+  { id: "receive", label: "Deliverables" },
+  { id: "report", label: "The report" },
+  { id: "who", label: "Who asks" },
+  { id: "records", label: "Over a year" },
+  { id: "verify", label: "Check us" },
+];
 import Doctrine from "../components/Doctrine.jsx";
 
 const RECEIVE = [
@@ -85,8 +94,10 @@ export default function ComplianceReporting() {
         </div>
       </section>
 
+      <SideRail items={RAIL} />
+
       {/* WHAT YOU RECEIVE */}
-      <section className="py-[clamp(48px,7vw,88px)]">
+      <section id="receive" className="scroll-mt-24 py-[clamp(48px,7vw,88px)]">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">After every service</span>
@@ -111,11 +122,11 @@ export default function ComplianceReporting() {
       </section>
 
       {/* THE REPORT, ANNOTATED */}
-      <section className="border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
+      <section id="report" className="scroll-mt-24 border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
         <div className="wrap grid items-start gap-[clamp(32px,5vw,72px)] lg:grid-cols-[1.15fr_0.85fr]">
           <Reveal>
             <ReportPreview />
-            <p className="mt-3 text-center font-mono text-[0.66rem] uppercase tracking-[0.14em] text-steel-400">
+            <p className="mt-3 text-center font-mono text-[0.66rem] uppercase tracking-[0.14em] text-steel-600">
               Representative sample — layout of the report issued after every compliance clean
             </p>
           </Reveal>
@@ -144,7 +155,7 @@ export default function ComplianceReporting() {
       </section>
 
       {/* WHO ASKS */}
-      <section className="py-[clamp(48px,7vw,88px)]">
+      <section id="who" className="scroll-mt-24 py-[clamp(48px,7vw,88px)]">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">Who asks for this</span>
@@ -166,7 +177,7 @@ export default function ComplianceReporting() {
       </section>
 
       {/* RECORDS OVER TIME */}
-      <section className="border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
+      <section id="records" className="scroll-mt-24 border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
         <div className="wrap grid items-center gap-[clamp(28px,5vw,64px)] lg:grid-cols-2">
           <Reveal>
             <span className="eyebrow">Over a year</span>
@@ -210,7 +221,7 @@ export default function ComplianceReporting() {
       </section>
 
       {/* VERIFY US */}
-      <section className="py-[clamp(48px,7vw,88px)]">
+      <section id="verify" className="scroll-mt-24 py-[clamp(48px,7vw,88px)]">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">Check everything</span>

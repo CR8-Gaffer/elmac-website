@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
+import RevealImage from "../components/RevealImage.jsx";
 import Doctrine from "../components/Doctrine.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
@@ -36,11 +37,10 @@ export default function FieldNotes() {
         <Reveal delay={0.1} className="hidden lg:block">
           <figure>
             <div className="reg-ticks">
-              <img
+              <RevealImage
                 src={`${import.meta.env.BASE_URL}assets/doc-duct-torch.jpg`}
                 alt="Torchlit interior of a kitchen exhaust duct during inspection"
                 className="aspect-[4/3] w-full rounded-xl border border-steel-200 object-cover"
-                loading="lazy"
               />
             </div>
             <figcaption className="img-caption">

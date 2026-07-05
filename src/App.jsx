@@ -13,6 +13,7 @@ import HowWeWork from "./views/HowWeWork.jsx";
 import ComplianceReporting from "./views/ComplianceReporting.jsx";
 import Contact from "./views/Contact.jsx";
 import MagneticButton from "./components/MagneticButton.jsx";
+import StickyCta from "./components/StickyCta.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -118,6 +119,8 @@ export default function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+
+      <StickyCta />
 
       <footer className="border-t border-white/10 bg-[#0B1116] pb-8 pt-10 text-[0.84rem] text-steel-400">
         <div className="wrap grid gap-8 md:grid-cols-[1.2fr_0.9fr_1fr]">

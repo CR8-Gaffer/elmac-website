@@ -4,7 +4,18 @@ import BeforeAfter from "../components/BeforeAfter.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import SpecBlock from "../components/SpecBlock.jsx";
 import AnnotatedImage from "../components/AnnotatedImage.jsx";
+import SideRail from "../components/SideRail.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
+
+const RAIL = [
+  { id: "risks", label: "Stakes" },
+  { id: "scope", label: "Scope" },
+  { id: "finish", label: "Finish" },
+  { id: "issues", label: "Issues" },
+  { id: "process", label: "Process" },
+  { id: "frequency", label: "Frequency" },
+  { id: "after", label: "After" },
+];
 import Doctrine from "../components/Doctrine.jsx";
 
 const A = (f) => `${import.meta.env.BASE_URL}assets/${f}`;
@@ -116,8 +127,10 @@ export default function KitchenExhaust() {
         </div>
       </section>
 
+      <SideRail items={RAIL} />
+
       {/* RISKS */}
-      <section className="py-[clamp(48px,7vw,88px)]">
+      <section id="risks" className="scroll-mt-24 py-[clamp(48px,7vw,88px)]">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">What's at stake</span>
@@ -139,7 +152,7 @@ export default function KitchenExhaust() {
       </section>
 
       {/* SCOPE */}
-      <section className="border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
+      <section id="scope" className="scroll-mt-24 border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
         <div className="wrap grid items-start gap-[clamp(28px,5vw,64px)] lg:grid-cols-[1fr_1.1fr]">
           <Reveal>
             <span className="eyebrow">Scope</span>
@@ -171,7 +184,7 @@ export default function KitchenExhaust() {
       </section>
 
       {/* FINISH SLIDER */}
-      <section className="bg-ink py-[clamp(52px,8vw,100px)] text-white">
+      <section id="finish" className="scroll-mt-24 bg-ink py-[clamp(52px,8vw,100px)] text-white">
         <div className="wrap grid items-center gap-[clamp(28px,5vw,64px)] md:grid-cols-2">
           <Reveal>
             <span className="eyebrow eyebrow--accent">The Elmac finish</span>
@@ -194,7 +207,7 @@ export default function KitchenExhaust() {
       </section>
 
       {/* COMMON ISSUES */}
-      <section className="py-[clamp(48px,7vw,88px)]">
+      <section id="issues" className="scroll-mt-24 py-[clamp(48px,7vw,88px)]">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">Found on real sites</span>
@@ -231,7 +244,7 @@ export default function KitchenExhaust() {
       </section>
 
       {/* PROCESS */}
-      <section className="border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
+      <section id="process" className="scroll-mt-24 border-y border-steel-200 bg-white py-[clamp(48px,7vw,88px)]">
         <div className="wrap">
           <Reveal>
             <span className="eyebrow">How it runs</span>
@@ -262,7 +275,7 @@ export default function KitchenExhaust() {
       </section>
 
       {/* FREQUENCY */}
-      <section className="py-[clamp(48px,7vw,88px)]">
+      <section id="frequency" className="scroll-mt-24 py-[clamp(48px,7vw,88px)]">
         <div className="wrap grid items-start gap-[clamp(28px,5vw,64px)] lg:grid-cols-[1fr_1.1fr]">
           <Reveal>
             <span className="eyebrow">Frequency</span>
@@ -306,7 +319,7 @@ export default function KitchenExhaust() {
       </section>
 
       {/* DOCS + RELATED + CTA */}
-      <section className="bg-ink py-[clamp(52px,8vw,100px)] text-white">
+      <section id="after" className="scroll-mt-24 bg-ink py-[clamp(52px,8vw,100px)] text-white">
         <div className="wrap">
           <Reveal className="flex flex-col items-center text-center">
             <Doctrine n={5} dark center />

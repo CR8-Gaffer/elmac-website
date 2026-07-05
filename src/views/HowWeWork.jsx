@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
+import { motion, useReducedMotion } from "motion/react";
 import Reveal from "../components/Reveal.jsx";
+import SideRail from "../components/SideRail.jsx";
 import Doctrine from "../components/Doctrine.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
 
 // The anatomy of a "four-hour clean": the visible hours are a thin slice of
 // the actual job. Timeline stamps are the argument — show time, not effort.
+const RAIL = [
+  { id: "before", label: "Before" },
+  { id: "visible", label: "The 4 hours" },
+  { id: "after", label: "After" },
+];
+
 const PHASES = [
   {
+    id: "before",
     label: "Before the knock",
     span: "T−14 days → T−1",
     tone: "before",
@@ -22,6 +31,7 @@ const PHASES = [
     ],
   },
   {
+    id: "visible",
     label: "The part you see",
     span: "Day 0 · roughly four hours",
     tone: "visible",
@@ -35,6 +45,7 @@ const PHASES = [
     ],
   },
   {
+    id: "after",
     label: "After the crew leaves",
     span: "T+0 → next cycle",
     tone: "after",
@@ -48,6 +59,7 @@ const PHASES = [
 ];
 
 export default function HowWeWork() {
+  const reduce = useReducedMotion();
   usePageMeta(
     "How a Job Actually Runs — The Invisible Work | Elmac",
     "The anatomy of a four-hour commercial clean: two weeks of scheduling, permits, SWMS, plant bookings and loadout before the knock — and the reporting cycle after. Operational excellence, step by step."
@@ -86,10 +98,12 @@ export default function HowWeWork() {
 
       <section className="py-[clamp(52px,8vw,96px)]">
         <div className="wrap max-w-[880px]">
+          <SideRail items={RAIL} />
           {PHASES.map((phase) => (
             <Reveal key={phase.label}>
               <div
-                className={`mb-8 overflow-hidden rounded-2xl border ${
+                id={phase.id}
+                className={`scroll-mt-24 mb-8 overflow-hidden rounded-2xl border ${
                   phase.tone === "visible"
                     ? "border-accent/[0.5] bg-white shadow-[0_24px_48px_-32px_rgba(19,94,158,0.45)]"
                     : "border-steel-200 bg-white"
@@ -108,7 +122,15 @@ export default function HowWeWork() {
                     {phase.span}
                   </span>
                 </div>
-                <div className="grid">
+                <div className="relative grid">
+                  <motion.div
+                    className="absolute bottom-4 left-[46px] top-4 hidden w-px origin-top bg-steel-200 sm:block"
+                    aria-hidden="true"
+                    initial={reduce ? false : { scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true, margin: "-60px 0px" }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                  />
                   {phase.steps.map(([t, title, body], i) => (
                     <div
                       key={t + title}

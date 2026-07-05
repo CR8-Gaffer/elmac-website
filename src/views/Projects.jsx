@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
+import RevealImage from "../components/RevealImage.jsx";
 import MagneticButton from "../components/MagneticButton.jsx";
 import usePageMeta from "../lib/usePageMeta.js";
 import Doctrine from "../components/Doctrine.jsx";
@@ -123,11 +124,10 @@ export default function Projects() {
         <Reveal delay={0.1} className="hidden lg:block">
           <figure>
             <div className="reg-ticks">
-              <img
+              <RevealImage
                 src={`${import.meta.env.BASE_URL}assets/doc-harness-check.jpg`}
                 alt="Technician performing a pre-lift harness check"
                 className="aspect-[4/3] w-full rounded-xl border border-steel-200 object-cover"
-                loading="lazy"
               />
             </div>
             <figcaption className="img-caption">
