@@ -276,6 +276,7 @@ export const SERVICE_PAGES = {
         "Venue-by-venue cycles — each site on its own right cadence",
         "One point of contact, consistent pricing across sites",
         "Consolidated invoicing and a single report stream",
+        "Every site's cycles, windows and access requirements held in-system, not in inboxes",
         "Annual review: cycles adjusted to what the reports actually found",
       ],
       note: "This is the same planner model already running Elmac's largest multi-venue clients — productised, not invented for the website.",

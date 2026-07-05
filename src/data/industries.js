@@ -131,6 +131,7 @@ export const INDUSTRY_PAGES = {
     ],
     why: [
       "Documentation designed to be handed straight up the chain",
+      "Every asset's cycle, access requirements and service history held in our system — not reconstructed from an inbox",
       "Form 3 support on essential safety measure servicing",
       "One contractor across exhaust, filters, washdowns and high access",
     ],
@@ -158,6 +159,7 @@ export const INDUSTRY_PAGES = {
     ],
     why: [
       "This is the exact model running Elmac's largest group clients today",
+      "Your venues' cycles, access requirements and service windows live in our system — not in anyone's inbox",
       "New venues onboard onto the planner, not onto a new negotiation",
       "Priority response across the group when something urgent lands",
     ],
