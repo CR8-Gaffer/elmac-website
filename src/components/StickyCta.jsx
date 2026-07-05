@@ -8,7 +8,9 @@ export default function StickyCta() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 380);
+    // Hysteresis: show past 440, hide only below 320. The 120px dead zone
+    // stops momentum-scroll jitter at the boundary from double-toggling the bar.
+    const onScroll = () => setShow((prev) => (prev ? window.scrollY > 320 : window.scrollY > 440));
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
