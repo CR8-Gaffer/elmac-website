@@ -551,6 +551,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <Reveal delay={0.1}>
+            <Link
+              to="/how-we-work"
+              className="mt-6 inline-block font-bold text-accent no-underline hover:underline"
+            >
+              The full anatomy — 17 steps, T−14 days to next cycle →
+            </Link>
+          </Reveal>
         </div>
       </section>
 

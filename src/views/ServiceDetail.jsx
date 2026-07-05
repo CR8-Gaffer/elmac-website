@@ -167,6 +167,12 @@ export default function ServiceDetail() {
               </Reveal>
             ))}
           </div>
+          <Link
+            to="/how-we-work"
+            className="mt-6 inline-block font-bold text-accent-deep no-underline hover:underline"
+          >
+            The full anatomy of a job — everything around the visible hours →
+          </Link>
         </div>
       </section>
 

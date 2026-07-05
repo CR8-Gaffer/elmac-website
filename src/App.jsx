@@ -9,6 +9,7 @@ import IndustryDetail from "./views/IndustryDetail.jsx";
 import Projects from "./views/Projects.jsx";
 import FieldNotes from "./views/FieldNotes.jsx";
 import FieldNoteDetail from "./views/FieldNoteDetail.jsx";
+import HowWeWork from "./views/HowWeWork.jsx";
 import ComplianceReporting from "./views/ComplianceReporting.jsx";
 import Contact from "./views/Contact.jsx";
 import MagneticButton from "./components/MagneticButton.jsx";
@@ -111,6 +112,7 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/field-notes" element={<FieldNotes />} />
           <Route path="/field-notes/:slug" element={<FieldNoteDetail />} />
+          <Route path="/how-we-work" element={<HowWeWork />} />
           <Route path="/compliance-reporting" element={<ComplianceReporting />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
@@ -139,6 +141,7 @@ export default function App() {
                 ["Compliance & reporting", "/compliance-reporting"],
                 ["Projects", "/projects"],
                 ["Field notes", "/field-notes"],
+                ["How a job actually runs", "/how-we-work"],
                 ["Request a quote", "/contact"],
               ].map(([t, to]) => (
                 <Link key={to} to={to} className="text-[#B9C2CA] no-underline hover:text-accent">
