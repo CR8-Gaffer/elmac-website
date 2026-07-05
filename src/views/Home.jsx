@@ -649,6 +649,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 10b · THE LEDGER ─────────────────────────────────── */}
+      <section className="border-y border-steel-200 bg-white py-[clamp(40px,5vw,64px)]">
+        <div className="wrap">
+          <div className="grid gap-px overflow-hidden rounded-xl border border-steel-200 bg-steel-200 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["543", "services completed · June 2026"],
+              ["500+", "recurring obligations under management"],
+              ["36", "sub-sites at one venue, one pre-planned year"],
+              ["SA · NT", "delivered coverage, metro to remote"],
+            ].map(([n, l]) => (
+              <div key={l} className="bg-paper px-6 py-5">
+                <div className="text-[1.7rem] font-extrabold tracking-[-0.02em] text-ink [font-variant-numeric:tabular-nums]">
+                  {n}
+                </div>
+                <div className="mt-1 font-mono text-[0.64rem] uppercase leading-relaxed tracking-[0.12em] text-steel-400">
+                  {l}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-steel-400">
+            Real figures from our operations system — refreshed monthly, because they're checkable.
+          </p>
+        </div>
+      </section>
+
       {/* ── 11 · FINAL CTA ───────────────────────────────────── */}
       <section className="bg-ink py-[clamp(56px,9vw,100px)] text-white">
         <div className="wrap flex flex-col items-center text-center">

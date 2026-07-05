@@ -199,6 +199,42 @@ export default function ComplianceReporting() {
         </div>
       </section>
 
+      {/* VERIFY US */}
+      <section className="py-[clamp(48px,7vw,88px)]">
+        <div className="wrap">
+          <Reveal>
+            <span className="eyebrow">Check everything</span>
+            <h2 className="balance mt-3.5 max-w-[24ch] text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
+              A website is claims. Here's how to verify ours.
+            </h2>
+            <p className="mt-4 max-w-[56ch] text-[1rem] text-steel-600">
+              Everything on this site is checkable, and we'd rather you checked. If another contractor's website says
+              all of this too — good. Ask them for the same evidence.
+            </p>
+          </Reveal>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {[
+              ["Contractor licence — PGE342023", "Plumbing, gas and electrical. Searchable on the SA Consumer & Business Services public licence register in under a minute."],
+              ["A sample report", "Ask us for one before you book anything. The format is the argument — anonymised, from a real job."],
+              ["SA Water approved facility", "Our filter-cleaning facility approval — evidence available on request."],
+              ["Partnerships", "Official Supply Partner & Sponsor of the Adelaide Crows, Adelaide 36ers and Adelaide Oval. Ring the clubs."],
+              ["Insurance certificates", "Certificates of currency issued to your procurement team on request — before the quote if you like."],
+              ["References", "Facility managers and venue operators who've run our cycles for years, available on request."],
+            ].map(([t, b], i) => (
+              <Reveal key={t} delay={(i % 2) * 0.05}>
+                <div className="flex h-full items-start gap-3.5 rounded-xl border border-steel-200 bg-white p-5">
+                  <span className="mt-0.5 font-mono text-[0.8rem] font-bold text-accent-deep">✓</span>
+                  <div>
+                    <div className="text-[0.98rem] font-extrabold text-ink">{t}</div>
+                    <p className="mt-1 text-[0.9rem] leading-relaxed text-steel-600">{b}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-ink py-[clamp(52px,8vw,100px)] text-white">
         <div className="wrap flex flex-col items-center text-center">

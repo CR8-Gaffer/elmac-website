@@ -150,6 +150,33 @@ export const NOTES = [
     meta: "How to read a kitchen exhaust cleaning report like an auditor: the evidence to check, the limitations section that reveals honesty, defect flags, and the red flags of a report with no bad news.",
   },
   {
+    slug: "questions-that-sort-contractors",
+    code: "FN 2.04",
+    section: 2,
+    q: "Which questions sort exhaust cleaning contractors fastest?",
+    verdict: "Not the quote — the questions where experience is the only way to have an answer.",
+    body: [
+      "Quotes for exhaust cleaning are hard to compare because the cheapest number usually describes the smallest job — you just can't see which sections it quietly excludes. Questions work better than numbers, because a contractor can shave a price in seconds but can't manufacture an answer that takes years to earn.",
+      "Ask these seven, of anyone — including us. None of them are trick questions. Every one of them has a right answer that only exists if the work has actually been done, hundreds of times, on systems like yours.",
+    ],
+    list: [
+      ["Can I see a sample report from a recent job?", "The format tells you everything in ten seconds. Photo pairs per section, limitations declared, defects flagged — or one glamour shot and a certificate."],
+      ["How will you access the vertical riser?", "The classic. Risers are the hardest, most-skipped section of any system. The length of the pause is the answer."],
+      ["What happens when you can't reach a section?", "Real systems have unreachable corners. 'We always reach everything' is the wrong answer — the right one involves the words document, photograph and recommend."],
+      ["What's your licence number?", "Installation and mechanical work needs a licensed contractor. A real number checks out on the public register in under a minute."],
+      ["Who will actually be on-site — and have they worked here before?", "Familiar crews see what strangers miss. High-churn contractors send whoever's available."],
+      ["When is the system due again, and why that interval?", "Frequency reasoning separates a maintenance plan from a contract. 'It depends what you cook' is the start of a right answer."],
+      ["What did the previous contractor miss?", "Asked after the first service. A good answer comes with photographs, not adjectives."],
+    ],
+    field:
+      "We wrote this list knowing competitors' prospects will use it too. Good. We'd rather win work from clients who ask hard questions — they're the ones who keep score, and keeping score favours whoever is actually doing the work.",
+    take: "Ask all seven. The contractor who welcomes the questions is the one who has the answers.",
+    doctrine: 28,
+    related: ["how-to-read-a-kes-report", "why-vertical-risers-load-differently", "why-cleaning-frequencies-differ"],
+    offramp: ["Compliance & reporting", "/compliance-reporting"],
+    meta: "Seven questions that sort kitchen exhaust cleaning contractors in minutes — sample reports, riser access, unreachable sections, licence numbers, crew continuity and frequency reasoning.",
+  },
+  {
     slug: "why-cleaning-frequencies-differ",
     code: "FN 3.01",
     section: 3,

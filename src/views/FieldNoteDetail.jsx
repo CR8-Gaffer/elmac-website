@@ -45,6 +45,21 @@ export default function FieldNoteDetail() {
               <p key={i}>{p}</p>
             ))}
           </div>
+          {note.list && (
+            <ol className="mt-7 grid list-none gap-3 p-0">
+              {note.list.map(([q, why], i) => (
+                <li key={q} className="rounded-xl border border-steel-200 bg-white p-5">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-[0.74rem] font-bold text-accent-deep">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[1rem] font-extrabold text-ink">{q}</span>
+                  </div>
+                  <p className="mt-2 pl-8 text-[0.92rem] leading-relaxed text-steel-600">{why}</p>
+                </li>
+              ))}
+            </ol>
+          )}
         </Reveal>
 
         <Reveal>
