@@ -122,7 +122,7 @@ export default function App() {
 
       <StickyCta />
 
-      <footer className="border-t border-white/10 bg-[#0B1116] pb-8 pt-10 text-[0.84rem] text-steel-400">
+      <footer className="border-t border-white/10 bg-ink-3 pb-8 pt-10 text-[0.84rem] text-steel-400">
         <div className="wrap grid gap-8 md:grid-cols-[1.2fr_0.9fr_1fr]">
           <div>
             <Brand className="text-base" />

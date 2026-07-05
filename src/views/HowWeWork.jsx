@@ -74,7 +74,7 @@ export default function HowWeWork() {
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,22,28,0.95)_0%,rgba(16,22,28,0.8)_55%,rgba(16,22,28,0.55)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,37,73,0.95)_0%,rgba(14,37,73,0.8)_55%,rgba(14,37,73,0.55)_100%)]" />
         <span className="absolute bottom-3.5 right-4 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-white/40">
           05:00 · the depot — concept imagery, real crews to follow
         </span>

@@ -74,7 +74,7 @@ export default function ComplianceReporting() {
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-25"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,22,28,0.95)_0%,rgba(16,22,28,0.82)_55%,rgba(16,22,28,0.6)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,37,73,0.95)_0%,rgba(14,37,73,0.82)_55%,rgba(14,37,73,0.6)_100%)]" />
         <span className="absolute bottom-3.5 right-4 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-white/40">
           The deliverable — concept imagery, real report photography to follow
         </span>

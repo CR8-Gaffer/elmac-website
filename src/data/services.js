@@ -61,6 +61,7 @@ export const SERVICE_PAGES = {
     lead: "A different service from exhaust cleaning — and a different result from nightly cleaning. A full reset of the kitchen: equipment detailed, behind and beneath cleared and degreased, walls, ceilings, floors and drains brought back to standard. The right tool before a council inspection, after fit-out, at end of lease, or whenever the kitchen has drifted.",
     image: "svc-commercial.jpg",
     slider: "svc-pizza-oven.jpg",
+    sliderBefore: "doc-before-pizza.jpg",
     risks: [
       {
         t: "Inspection findings",
@@ -110,6 +111,7 @@ export const SERVICE_PAGES = {
     lead: "Commercial external and hard-surface cleaning — not driveway washing. Trailer-mounted hot-wash systems to 4,500 PSI for the areas that carry a site's grease, grime and presentation risk: bin rooms, docks, back-of-house concrete, carparks and building exteriors. Wash-down and runoff handled properly, after hours where the site needs it.",
     image: "doc-pressure-dawn.jpg",
     slider: "svc-pressure.jpg",
+    sliderBefore: "doc-before-pressure.jpg",
     risks: [
       {
         t: "Slip and grease hazards",

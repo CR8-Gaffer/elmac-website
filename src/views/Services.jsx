@@ -14,6 +14,7 @@ const SERVICES = [
     body: "Professional deep clean and detail of all kitchen exhaust and extraction systems, including full photo reporting of all associated areas — including but not limited to canopies, exhaust fans, discharge cowls, duct plenums, linkup ductwork, and risers specific to AS1851-2012.",
     tags: ["AS1851-2012", "Photo reporting", "Canopies · Fans · Ducts", "Compliance certificate"],
     after: "svc-canopy.jpg",
+    before: "doc-before-canopy.jpg",
     ba: true,
     link: "/services/kitchen-exhaust-cleaning",
   },
@@ -23,6 +24,7 @@ const SERVICES = [
     body: "Metro and outer-metro collection and delivery of all size and design extraction-system grease filters, with all cleaning undertaken at a fully SA Water approved facility utilising deep-soak, hot-wash and rinse practice. All honeycomb, stainless baffle and electrostatic filters inclusive.",
     tags: ["SA Water approved", "Deep soak · Hot wash", "Honeycomb · Baffle · Electrostatic", "Collection & delivery"],
     after: "svc-filters.jpg",
+    before: "doc-before-filters.jpg",
     ba: true,
     link: "/services/grease-filter-exchange",
   },
@@ -32,6 +34,7 @@ const SERVICES = [
     body: "Professionally trained technicians covering all aspects of pizza oven and cooking-equipment teardown, deep clean, rebuild and polish to the highest of standards. Main pizza-oven cleaning contractor to Domino's and Pizza Hut in SA & NT.",
     tags: ["Teardown · Rebuild · Polish", "Domino's & Pizza Hut SA·NT"],
     after: "svc-pizza-oven.jpg",
+    before: "doc-before-pizza.jpg",
     ba: true,
     link: "/services/commercial-kitchen-deep-cleaning",
   },
@@ -41,6 +44,7 @@ const SERVICES = [
     body: "Highly capable large-scale-area and high-restriction pressure washing services utilising trailer-mounted hot-wash systems capable of up to 4,500 PSI. This service can include full building, carpark, roof and solar-panel cleaning services in addition to routine cleaning requirements.",
     tags: ["Up to 4,500 PSI", "Trailer-mounted hot wash", "Buildings · Carparks · Roofs · Solar"],
     after: "svc-pressure.jpg",
+    before: "doc-before-pressure.jpg",
     ba: true,
     link: "/services/pressure-washing",
   },
@@ -59,6 +63,7 @@ const SERVICES = [
     body: "Extensive commercial cleaning services such as high-access window and louvre cleaning, wet-vac carpet cleaning, full kitchen deep clean and detail requirements, and builders' post-construction presentation and handover cleaning. No cleaning service outside of scope or capability.",
     tags: ["High-access windows & louvres", "Wet-vac carpet", "Post-construction handover"],
     after: "svc-commercial.jpg",
+    before: "doc-before-commercial.jpg",
     ba: true,
     link: "/services/high-access-facade-cleaning",
   },
@@ -72,12 +77,13 @@ function Media({ svc }) {
     return (
       <BeforeAfter
         after={A(svc.after)}
+        before={svc.before ? A(svc.before) : undefined}
         note="Concept imagery — real job before/after photos to follow"
       />
     );
   }
   return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-steel-200 shadow-[0_20px_40px_-28px_rgba(16,22,28,0.5)]">
+    <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-steel-200 shadow-[0_20px_40px_-28px_rgba(14,37,73,0.5)]">
       <img src={A(svc.after)} alt={svc.title} className="h-full w-full object-cover" loading="lazy" />
       <span className="absolute left-3 top-3 rounded-md bg-accent/85 px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-[#0A2A44]">
         Service

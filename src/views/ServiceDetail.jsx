@@ -40,7 +40,7 @@ export default function ServiceDetail() {
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,22,28,0.95)_0%,rgba(16,22,28,0.82)_55%,rgba(16,22,28,0.6)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,37,73,0.95)_0%,rgba(14,37,73,0.82)_55%,rgba(14,37,73,0.6)_100%)]" />
         <div className="wrap relative py-[clamp(52px,8vw,100px)]">
           <Reveal>
             <span className="eyebrow eyebrow--accent">{svc.code} — Service</span>
@@ -137,6 +137,7 @@ export default function ServiceDetail() {
             <Reveal delay={0.1}>
               <BeforeAfter
                 tease
+                before={svc.sliderBefore ? A(svc.sliderBefore) : undefined}
                 after={A(svc.slider)}
                 note="Concept imagery — real job before/after photos to follow"
               />

@@ -39,7 +39,7 @@ export default function BeforeAfter({ before, after, note = "Placeholder — you
   return (
     <div
       ref={ref}
-      className="relative aspect-[4/3] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-2xl border border-steel-200 shadow-[0_20px_40px_-28px_rgba(16,22,28,0.5)]"
+      className="relative aspect-[4/3] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-2xl border border-steel-200 shadow-[0_20px_40px_-28px_rgba(14,37,73,0.5)]"
       onPointerDown={(e) => {
         dragging.current = true;
         e.currentTarget.setPointerCapture(e.pointerId);
@@ -80,7 +80,7 @@ export default function BeforeAfter({ before, after, note = "Placeholder — you
 
       {/* divider + grip */}
       <div
-        className="absolute inset-y-0 w-0.5 -translate-x-px bg-white shadow-[0_0_0_1px_rgba(16,22,28,0.15)]"
+        className="absolute inset-y-0 w-0.5 -translate-x-px bg-white shadow-[0_0_0_1px_rgba(14,37,73,0.15)]"
         style={{ left: `${pos}%` }}
       />
       <div

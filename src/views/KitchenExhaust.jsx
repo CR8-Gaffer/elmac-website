@@ -87,7 +87,7 @@ export default function KitchenExhaust() {
           className="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,22,28,0.95)_0%,rgba(16,22,28,0.8)_55%,rgba(16,22,28,0.55)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,37,73,0.95)_0%,rgba(14,37,73,0.8)_55%,rgba(14,37,73,0.55)_100%)]" />
         <div className="wrap relative py-[clamp(52px,9vw,110px)]">
           <Reveal>
             <span className="eyebrow eyebrow--accent">SVC.01 — Kitchen exhaust system cleaning</span>
@@ -199,6 +199,7 @@ export default function KitchenExhaust() {
           <Reveal delay={0.1}>
             <BeforeAfter
               tease
+              before={A("doc-before-canopy.jpg")}
               after={A("svc-canopy.jpg")}
               note="Concept imagery — real job before/after photos to follow"
             />

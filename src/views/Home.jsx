@@ -30,22 +30,22 @@ function LedgerNum({ v, suffix = "" }) {
   );
 }
 
-const HERO_IMG = `${import.meta.env.BASE_URL}assets/doc-hero-night.jpg`;
+const HERO_IMG = `${import.meta.env.BASE_URL}assets/doc-hero-kitchen.jpg`;
 
-// Night-rooftop documentary base under per-slide tints; labels hold the
+// Kitchen-canopy documentary base under per-slide tints; labels hold the
 // partnership slots until approved photography arrives.
 const SLIDES = [
   {
     label: "Adelaide Crows — partnership photo to follow",
-    grad: "radial-gradient(120% 120% at 20% 0%, rgba(42,57,71,0.55) 0%, rgba(20,29,38,0.62) 55%, rgba(11,17,23,0.78) 100%)",
+    grad: "radial-gradient(120% 120% at 20% 0%, rgba(24,69,154,0.45) 0%, rgba(18,48,94,0.6) 55%, rgba(11,28,56,0.78) 100%)",
   },
   {
     label: "Adelaide Oval — partnership photo to follow",
-    grad: "radial-gradient(120% 120% at 80% 10%, rgba(38,66,74,0.5) 0%, rgba(19,32,39,0.6) 55%, rgba(11,17,23,0.78) 100%)",
+    grad: "radial-gradient(120% 120% at 80% 10%, rgba(20,90,140,0.45) 0%, rgba(16,43,84,0.6) 55%, rgba(11,28,56,0.78) 100%)",
   },
   {
     label: "Adelaide 36ers — partnership photo to follow",
-    grad: "radial-gradient(120% 120% at 50% 100%, rgba(51,48,63,0.5) 0%, rgba(23,27,38,0.6) 55%, rgba(11,17,23,0.78) 100%)",
+    grad: "radial-gradient(120% 120% at 50% 100%, rgba(40,52,110,0.45) 0%, rgba(17,40,80,0.6) 55%, rgba(11,28,56,0.78) 100%)",
   },
 ];
 
@@ -226,7 +226,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(16,22,28,0.94)_0%,rgba(16,22,28,0.7)_46%,rgba(16,22,28,0.28)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,37,73,0.94)_0%,rgba(14,37,73,0.7)_46%,rgba(14,37,73,0.28)_100%)]" />
         <div
           className="absolute inset-0 -z-10 opacity-50 [mask-image:linear-gradient(90deg,#000,transparent_80%)]"
           style={{
