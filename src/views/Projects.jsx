@@ -126,13 +126,13 @@ export default function Projects() {
           <figure>
             <div className="reg-ticks">
               <RevealImage
-                src={`${import.meta.env.BASE_URL}assets/doc-harness-check.jpg`}
-                alt="Technician performing a pre-lift harness check"
+                src={`${import.meta.env.BASE_URL}assets/doc-projects-ewp.jpg`}
+                alt="Technician on an elevated work platform servicing facade louvres"
                 className="aspect-[4/3] w-full rounded-xl border border-steel-200 object-cover"
               />
             </div>
             <figcaption className="img-caption">
-              Pre-lift checks — concept imagery, real crew photography to follow
+              High-access works, planned and crewed — concept imagery, real crew photography to follow
             </figcaption>
           </figure>
         </Reveal>
