@@ -107,7 +107,7 @@ export default function App() {
           </nav>
           <a
             href="tel:1800435622"
-            className="hidden whitespace-nowrap text-[0.85rem] font-bold text-white no-underline hover:text-accent md:inline-flex md:items-center"
+            className="hidden whitespace-nowrap text-[0.85rem] font-bold text-white no-underline hover:text-accent xl:inline-flex xl:items-center"
           >
             1800 435 622
           </a>

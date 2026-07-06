@@ -215,6 +215,53 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {/* OPTIONAL EXTRA — page-specific block (features table, coverage, etc.) */}
+      {svc.extra && (
+        <section className="py-[clamp(48px,7vw,88px)]">
+          <div
+            className={`wrap ${
+              svc.extra.rows ? "grid items-start gap-[clamp(28px,5vw,64px)] lg:grid-cols-[1fr_1.1fr]" : ""
+            }`}
+          >
+            <Reveal>
+              <span className="eyebrow">{svc.extra.eyebrow}</span>
+              <h2 className="balance mt-3.5 max-w-[26ch] text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-[1.1] tracking-[-0.02em]">
+                {svc.extra.heading}
+              </h2>
+              {svc.extra.body.map((p) => (
+                <p key={p} className="mt-4 max-w-[52ch] text-[0.98rem] leading-relaxed text-steel-600">
+                  {p}
+                </p>
+              ))}
+            </Reveal>
+            {svc.extra.rows && (
+              <Reveal delay={0.08}>
+                <div className="overflow-hidden rounded-xl border border-steel-200">
+                  {svc.extra.rows.map(([t, hint, f], i) => (
+                    <div
+                      key={t}
+                      className={`flex flex-wrap items-center justify-between gap-3 px-5.5 py-4.5 ${
+                        i % 2 ? "bg-white" : "bg-paper"
+                      } ${i > 0 ? "border-t border-steel-200" : ""}`}
+                    >
+                      <div>
+                        <div className="text-[0.98rem] font-extrabold text-ink">{t}</div>
+                        <div className="mt-0.5 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-steel-400">
+                          {hint}
+                        </div>
+                      </div>
+                      <span className="rounded-full border border-accent/40 bg-accent/10 px-3.5 py-1.5 font-mono text-[0.78rem] font-bold text-accent-deep">
+                        {f}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* CTA + RELATED */}
       <section className="bg-ink py-[clamp(52px,8vw,96px)] text-white">
         <div className="wrap flex flex-col items-center text-center">

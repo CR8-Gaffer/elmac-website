@@ -291,6 +291,19 @@ export const SERVICE_PAGES = {
       ["Deep cleans & washdowns", "Where the sites need them", "Scheduled"],
     ],
     who: "Hospitality groups, franchise operators, facility and property managers — anyone responsible for more kitchens than one calendar can hold.",
+    extra: {
+      eyebrow: "Coverage",
+      heading: "Adelaide to the Northern Territory — the planner travels.",
+      body: [
+        "Remote kitchens can't get local service, so the service travels. Elmac runs planned multi-day circuits through regional South Australia and into the Northern Territory: routes clustered so venues hundreds of kilometres apart share one sweep, with filters, full system cleans and certification delivered in a single visit.",
+        "A remote venue on a planner gets the same documented cycle as a CBD kitchen — the cycle is set to the site, the visit is scheduled to the route, and the report follows regardless of the postcode. Joining the next circuit is a matter of getting your site on the planner.",
+      ],
+      rows: [
+        ["Adelaide metro", "Scheduled crews, every week of the year", "Standing cycles"],
+        ["Regional SA", "Barossa · Fleurieu · Riverland · Murraylands · South-East · Eyre", "Route-clustered"],
+        ["Northern Territory & remote", "Multi-day circuits — filters, cleans and certificates in one sweep", "Planned runs"],
+      ],
+    },
     related: [
       ["Compliance & reporting", "/compliance-reporting"],
       ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
@@ -483,6 +496,19 @@ export const SERVICE_PAGES = {
       ["Rent-to-own term", "Chemicals included for the term", "12 months"],
     ],
     who: "Pubs, hotels and clubs, food courts, production kitchens and multi-site groups — any kitchen where degreasing is a standing roster line rather than an occasional job.",
+    extra: {
+      eyebrow: "The tank itself",
+      heading: "Three sizes, one job: carbon off, overnight.",
+      body: [
+        "STRIPTANK units are Australian-designed and built: fully welded stainless steel, a thermostatically controlled heated bath, a lift-out basket sized to the tank and a safety catch on the lid. The chemistry is SAFESTRIP — non-caustic and biodegradable, with HD STRIP as the heavy-duty alternative — and it strips stainless, cast iron, aluminium and plastic alike: pots, filters, burners, racks and trays.",
+        "Every tank lands with the full folder: starter chemical dose on delivery, wall charts, SWMS and SDS, insurance documentation and on-site staff training on day one. Components are covered under warranty for normal operational use, and custom sizes are available on request.",
+      ],
+      rows: [
+        ["Small", "750 × 500 × 780 mm external · 6 filters a soak", "4-week lead"],
+        ["Medium", "900 × 550 × 870 mm external · 12 filters a soak", "4-week lead"],
+        ["Large", "1000 × 660 × 1050 mm external · 20 filters a soak", "Built to order · 12 wks"],
+      ],
+    },
     related: [
       ["Grease filter exchange", "/services/grease-filter-exchange"],
       ["Commercial kitchen deep cleaning", "/services/commercial-kitchen-deep-cleaning"],
