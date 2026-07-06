@@ -171,7 +171,7 @@ export const NOTES = [
     field:
       "We wrote this list knowing competitors' prospects will use it too. Good. We'd rather win work from clients who ask hard questions — they're the ones who keep score, and keeping score favours whoever is actually doing the work.",
     take: "Ask all seven. The contractor who welcomes the questions is the one who has the answers.",
-    doctrine: 28,
+    doctrine: 29,
     related: ["how-to-read-a-kes-report", "why-vertical-risers-load-differently", "why-cleaning-frequencies-differ"],
     offramp: ["Compliance & reporting", "/compliance-reporting"],
     meta: "Seven questions that sort kitchen exhaust cleaning contractors in minutes — sample reports, riser access, unreachable sections, licence numbers, crew continuity and frequency reasoning.",

@@ -32,7 +32,7 @@ export default function FieldNotes() {
             Not a blog — a working handbook. Numbered sections, one real question per entry, answered the way we
             answer it on-site: verdict first, mechanism second, opinion included. It grows as the questions do.
           </p>
-          <Doctrine n={28} />
+          <Doctrine n={8} />
         </Reveal>
         <Reveal delay={0.1} className="hidden lg:block">
           <figure>
