@@ -31,14 +31,14 @@ function Brand({ className = "" }) {
       <img
         src={`${import.meta.env.BASE_URL}assets/elmac-logo-reverse.png`}
         alt="Elmac Cleaning Services"
-        className="h-11 w-auto md:h-14"
+        className="h-11 w-auto xl:h-14"
       />
     </Link>
   );
 }
 
 const navLink = ({ isActive }) =>
-  `rounded-md px-2.5 py-2 text-[0.86rem] font-semibold tracking-[0.01em] transition-colors ${
+  `whitespace-nowrap rounded-md px-2.5 py-2 text-[0.86rem] font-semibold tracking-[0.01em] transition-colors ${
     isActive
       ? "text-white after:mt-1 after:block after:h-0.5 after:rounded after:bg-accent"
       : "text-[#C9D0D6] hover:bg-white/5 hover:text-white"
@@ -57,7 +57,7 @@ export default function App() {
         <div className="wrap flex h-[76px] items-center gap-5">
           <Brand />
           <button
-            className="ml-auto grid h-10 w-10 place-items-center rounded-lg border border-white/20 text-white md:hidden"
+            className="ml-auto grid h-10 w-10 place-items-center rounded-lg border border-white/20 text-white lg:hidden"
             aria-label="Menu"
             aria-expanded={open}
             onClick={() => setOpen(!open)}
@@ -69,7 +69,7 @@ export default function App() {
               open
                 ? "absolute left-0 right-0 top-[76px] flex flex-col gap-1 border-b border-white/10 bg-ink-2 p-3"
                 : "hidden"
-            } md:static md:ml-auto md:flex md:flex-row md:gap-0.5 md:border-0 md:bg-transparent md:p-0`}
+            } lg:static lg:ml-auto lg:flex lg:flex-row lg:gap-0.5 lg:border-0 lg:bg-transparent lg:p-0`}
           >
             <NavLink to="/" end className={navLink}>
               Home
@@ -94,13 +94,13 @@ export default function App() {
             </NavLink>
             <a
               href="tel:1800435622"
-              className="rounded-md px-2.5 py-2 text-[0.86rem] font-semibold tracking-[0.01em] text-[#C9D0D6] no-underline hover:bg-white/5 hover:text-white md:hidden"
+              className="rounded-md px-2.5 py-2 text-[0.86rem] font-semibold tracking-[0.01em] text-[#C9D0D6] no-underline hover:bg-white/5 hover:text-white lg:hidden"
             >
               1800 435 622
             </a>
             <Link
               to="/contact"
-              className="mt-1 rounded-lg bg-accent px-4 py-2.5 text-center text-[0.85rem] font-bold text-ink no-underline md:hidden"
+              className="mt-1 rounded-lg bg-accent px-4 py-2.5 text-center text-[0.85rem] font-bold text-ink no-underline lg:hidden"
             >
               Request a quote or inspection
             </Link>
@@ -113,9 +113,10 @@ export default function App() {
           </a>
           <MagneticButton
             to="/contact"
-            className="hidden md:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#57bce8]"
+            className="hidden lg:inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#57bce8]"
           >
-            Request a quote or inspection
+            <span className="hidden xl:inline">Request a quote or inspection</span>
+            <span className="xl:hidden">Request a quote</span>
           </MagneticButton>
         </div>
       </header>
