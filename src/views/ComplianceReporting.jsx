@@ -242,8 +242,8 @@ export default function ComplianceReporting() {
               ["Contractor licence — PGE342023", "Plumbing, gas and electrical. Searchable on the SA Consumer & Business Services public licence register in under a minute."],
               ["A sample report", "Ask us for one before you book anything. The format is the argument — anonymised, from a real job."],
               ["SA Water approved facility", "Our filter-cleaning facility approval — evidence available on request."],
-              ["Partnerships", "Official Supply Partner & Sponsor of the Adelaide Crows, Adelaide 36ers and Adelaide Oval. Ring the clubs."],
-              ["Insurance certificates", "Certificates of currency issued to your procurement team on request — before the quote if you like."],
+              ["Partnerships", "Official Supply Partner & Sponsor of the Adelaide Crows, Adelaide 36ers and Adelaide Oval."],
+              ["Insurance certificates", "Certificates of currency issued to your procurement team on request, ahead of the quote."],
               ["References", "Facility managers and venue operators who've run our cycles for years, available on request."],
             ].map(([t, b], i) => (
               <Reveal key={t} delay={(i % 2) * 0.05}>

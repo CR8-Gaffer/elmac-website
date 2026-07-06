@@ -39,4 +39,5 @@ export const DOCTRINE_BY_SLUG = {
   "window-cleaning": 26,
   "industrial-cleaning": 20,
   "soft-washing": 4,
+  "heated-soak-tanks": 19,
 };

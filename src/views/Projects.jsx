@@ -98,7 +98,7 @@ const SECTIONS = [
   ["equipment", "Equipment"],
   ["safety", "Safety controls"],
   ["documentation", "Documentation"],
-  ["compliance", "Compliance achieved"],
+  ["compliance", "Compliance evidence"],
   ["outcome", "Outcome & client benefit"],
   ["lessons", "Lessons learned"],
 ];

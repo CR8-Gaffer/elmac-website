@@ -11,7 +11,7 @@ const SERVICES = [
   {
     num: "SVC.01",
     title: "Kitchen Canopy, Exhaust, Extraction & Deep Cleaning",
-    body: "Professional deep clean and detail of all kitchen exhaust and extraction systems, including full photo reporting of all associated areas — including but not limited to canopies, exhaust fans, discharge cowls, duct plenums, linkup ductwork, and risers specific to AS1851-2012.",
+    body: "The full system, not just the canopy: exhaust fans, discharge cowls, duct plenums, linkup ductwork and risers, deep cleaned and detailed to AS1851-2012 — with photo reporting on every associated area, because the sections you can't see carry the heaviest fire load.",
     tags: ["AS1851-2012", "Photo reporting", "Canopies · Fans · Ducts", "Compliance certificate"],
     after: "svc-canopy.jpg",
     before: "doc-before-canopy.jpg",
@@ -21,7 +21,7 @@ const SERVICES = [
   {
     num: "SVC.02",
     title: "Grease Filter Clean & Exchange Service",
-    body: "Metro and outer-metro collection and delivery of all size and design extraction-system grease filters, with all cleaning undertaken at a fully SA Water approved facility utilising deep-soak, hot-wash and rinse practice. All honeycomb, stainless baffle and electrostatic filters inclusive.",
+    body: "Filters carry the first and heaviest grease load in the kitchen. Swap-out exchange on a scheduled cycle — clean filters in, loaded filters out, metro and outer-metro collection and delivery — with cleaning at an SA Water approved facility using deep-soak, hot-wash and rinse practice. Honeycomb, stainless baffle and electrostatic, all sizes and designs.",
     tags: ["SA Water approved", "Deep soak · Hot wash", "Honeycomb · Baffle · Electrostatic", "Collection & delivery"],
     after: "svc-filters.jpg",
     before: "doc-before-filters.jpg",
@@ -31,8 +31,8 @@ const SERVICES = [
   {
     num: "SVC.03",
     title: "Pizza Oven & Equipment Deep Cleaning",
-    body: "Professionally trained technicians covering all aspects of pizza oven and cooking-equipment teardown, deep clean, rebuild and polish to the highest of standards. Main pizza-oven cleaning contractor to Domino's and Pizza Hut in SA & NT.",
-    tags: ["Teardown · Rebuild · Polish", "Domino's & Pizza Hut SA·NT"],
+    body: "Pizza ovens and cooking equipment torn down, deep cleaned, rebuilt and polished — then photographed, because a rebuild you can't verify is a rumour. We run pizza-oven programs for national franchise kitchens across SA & NT.",
+    tags: ["Teardown · Rebuild · Polish", "National franchise programs · SA & NT"],
     after: "svc-pizza-oven.jpg",
     before: "doc-before-pizza.jpg",
     ba: true,
@@ -41,7 +41,7 @@ const SERVICES = [
   {
     num: "SVC.04",
     title: "Hot & Cold Pressure Washing",
-    body: "Highly capable large-scale-area and high-restriction pressure washing services utilising trailer-mounted hot-wash systems capable of up to 4,500 PSI. This service can include full building, carpark, roof and solar-panel cleaning services in addition to routine cleaning requirements.",
+    body: "Trailer-mounted hot-wash to 4,500 PSI for the surfaces that carry a site's grease and grime: bin rooms, docks, back-of-house concrete, carparks, buildings, roofs and solar. Runoff is planned before the trigger gets pulled — not explained after.",
     tags: ["Up to 4,500 PSI", "Trailer-mounted hot wash", "Buildings · Carparks · Roofs · Solar"],
     after: "svc-pressure.jpg",
     before: "doc-before-pressure.jpg",
@@ -50,22 +50,31 @@ const SERVICES = [
   },
   {
     num: "SVC.05",
+    title: "High Access, Windows & Commercial Cleaning",
+    body: "Commercial cleaning where the access or the standard is the hard part: high-access windows and louvres, and builders' post-construction handover cleans. Scoped at inspection, quoted fixed — and anything outside scope gets named in writing, not absorbed and skimped.",
+    tags: ["High-access windows & louvres", "Post-construction handover"],
+    after: "svc-commercial.jpg",
+    before: "doc-before-commercial.jpg",
+    ba: true,
+    link: "/services/high-access-facade-cleaning",
+  },
+  {
+    num: "SVC.06",
     title: "Kitchen Exhaust & Extraction Installation",
-    body: "Full-scope, inception-to-completion installation of all kitchen exhaust and extraction systems — inclusive of custom design, manufacture and air-flow analysis engineering. Fully accredited with Plumbing, Gas and Electrical contractor licensing (PGE342023) for confidence in conformance required by AS1668 & AS1668.2.",
-    tags: ["Custom design & manufacture", "Air-flow engineering", "PGE342023", "AS1668 & AS1668.2"],
+    body: "Licensed plumbing, gas and electrical contractor (PGE342023). Design, manufacture and installation of kitchen exhaust and extraction systems, scoped and completed with reference to relevant Australian Standards, including AS 1668.2 where applicable.",
+    tags: ["Custom design & manufacture", "Air-flow engineering", "AS 1668.2 · PGE342023"],
     after: "svc-install.jpg",
     ba: false,
     link: "/services/kes-installation",
   },
   {
-    num: "SVC.06",
-    title: "Commercial Cleaning & Kitchen Deep Clean / Detail",
-    body: "Extensive commercial cleaning services such as high-access window and louvre cleaning, wet-vac carpet cleaning, full kitchen deep clean and detail requirements, and builders' post-construction presentation and handover cleaning. No cleaning service outside of scope or capability.",
-    tags: ["High-access windows & louvres", "Wet-vac carpet", "Post-construction handover"],
-    after: "svc-commercial.jpg",
-    before: "doc-before-commercial.jpg",
-    ba: true,
-    link: "/services/high-access-facade-cleaning",
+    num: "SVC.07",
+    title: "Scheduled Maintenance Programs",
+    body: "Your whole year of compliance on one planner — every venue, every cycle. More than 500 recurring obligations already run this way, each with its service history on file.",
+    tags: ["One FY planner", "Every venue · Every cycle", "Consolidated reporting"],
+    after: "doc-depot-dawn.jpg",
+    ba: false,
+    link: "/services/scheduled-maintenance-programs",
   },
 ];
 
@@ -168,11 +177,12 @@ export default function Services() {
               The same discipline, applied wider.
             </h2>
           </Reveal>
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               ["Window & louvre cleaning", "Ground level to EWP-coordinated high access.", "/services/window-cleaning"],
               ["Industrial cleaning", "Production sites, high-level structures, shutdown windows.", "/services/industrial-cleaning"],
               ["Soft washing", "Low-pressure chemistry for surfaces pressure would damage.", "/services/soft-washing"],
+              ["Heated soak tanks", "Pots, filters and racks stripped overnight on site — not scrubbed by your staff. Supplied, serviced and restocked by Elmac.", "/services/heated-soak-tanks"],
             ].map(([t, b, to]) => (
               <Reveal key={to}>
                 <Link
@@ -203,10 +213,10 @@ export default function Services() {
           </Reveal>
           <Reveal delay={0.08}>
             <Link
-              to="/contact"
+              to="/services/scheduled-maintenance-programs"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.95rem] font-bold text-ink no-underline transition-colors hover:bg-[#57bce8]"
             >
-              Discuss a scheduled maintenance program
+              See how the program works
             </Link>
           </Reveal>
         </div>

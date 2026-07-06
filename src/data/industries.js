@@ -53,7 +53,7 @@ export const INDUSTRY_PAGES = {
       "One report stream per venue — renewal evidence in one place",
       "Group planner available when there's more than one venue",
     ],
-    cta: { label: "Plan around your venue calendar", to: "/contact" },
+    cta: { label: "Request a program quote", to: "/contact?service=kes" },
   },
 
   "shopping-centres": {
@@ -107,7 +107,7 @@ export const INDUSTRY_PAGES = {
       "Photo documentation aligned to your audit evidence needs",
       "Crews sized to finish inside the window you actually have",
     ],
-    cta: { label: "Request a compliance clean", to: "/contact?intent=compliance" },
+    cta: { label: "Request a compliance clean", to: "/contact?service=industrial" },
   },
 
   "facility-property-managers": {
@@ -170,10 +170,10 @@ export const INDUSTRY_PAGES = {
     name: "Government & institutional sites",
     meta: {
       title: "Cleaning Contractor for Government & Institutional Sites | Elmac",
-      desc: "Kitchen exhaust, industrial and scheduled cleaning programs for schools, councils, correctional and institutional facilities — procurement-ready documentation, WHS-led delivery, security-conscious crews.",
+      desc: "Kitchen exhaust, industrial and scheduled cleaning programs for schools, councils and institutional facilities — procurement-ready documentation, WHS-led delivery, security-conscious crews.",
     },
     reality:
-      "Schools, councils, correctional facilities and institutional kitchens don't buy on a handshake. They buy on documentation: insurance, SWMS, inductions, police clearances where required, and evidence that every service actually happened. The paperwork isn't the obstacle — it's the product.",
+      "Schools, councils and institutional kitchens don't buy on a handshake. They buy on documentation: insurance, SWMS, inductions and evidence that every service actually happened. The paperwork isn't the obstacle — it's the product.",
     pains: [
       "Procurement requiring compliance documents before a quote is even read",
       "Sites with security, clearance and escort requirements most contractors can't work under",
@@ -186,7 +186,7 @@ export const INDUSTRY_PAGES = {
       ["Audit-ready documentation", "Photo reports and records formatted for procurement files"],
     ],
     why: [
-      "Experienced on institutional and secured sites — schools, correctional and government facilities",
+      "Experienced on institutional sites — schools, councils and government facilities",
       "WHS documentation that passes procurement review the first time",
       "Tender-ready: insurances, licensing (PGE342023) and capability records on request",
     ],

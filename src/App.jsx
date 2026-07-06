@@ -92,12 +92,30 @@ export default function App() {
             <NavLink to="/contact" className={navLink}>
               Contact
             </NavLink>
+            <a
+              href="tel:1800435622"
+              className="rounded-md px-2.5 py-2 text-[0.86rem] font-semibold tracking-[0.01em] text-[#C9D0D6] no-underline hover:bg-white/5 hover:text-white md:hidden"
+            >
+              1800 435 622
+            </a>
+            <Link
+              to="/contact"
+              className="mt-1 rounded-lg bg-accent px-4 py-2.5 text-center text-[0.85rem] font-bold text-ink no-underline md:hidden"
+            >
+              Request a quote or inspection
+            </Link>
           </nav>
+          <a
+            href="tel:1800435622"
+            className="hidden whitespace-nowrap text-[0.85rem] font-bold text-white no-underline hover:text-accent md:inline-flex md:items-center"
+          >
+            1800 435 622
+          </a>
           <MagneticButton
             to="/contact"
             className="hidden md:inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-[0.85rem] font-bold text-ink hover:bg-[#57bce8]"
           >
-            Request a quote
+            Request a quote or inspection
           </MagneticButton>
         </div>
       </header>
@@ -128,7 +146,8 @@ export default function App() {
             <Brand className="text-base" />
             <p className="mt-3.5 max-w-[40ch] leading-relaxed">
               Industrial asset maintenance and compliance — kitchen exhaust, extraction and industrial programs,
-              scheduled, documented and certificated across South Australia and the Northern Territory.
+              scheduled, documented and certificated across Adelaide, regional South Australia and the Northern
+              Territory.
             </p>
             <p className="mt-3.5 font-mono text-[0.64rem] uppercase leading-relaxed tracking-[0.12em] text-steel-600">
               Official Supply Partner &amp; Sponsor — Adelaide Crows · Adelaide 36ers · Adelaide Oval
@@ -140,6 +159,7 @@ export default function App() {
               {[
                 ["Services", "/services"],
                 ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
+                ["Scheduled maintenance programs", "/services/scheduled-maintenance-programs"],
                 ["Industries", "/industries"],
                 ["Compliance & reporting", "/compliance-reporting"],
                 ["Projects", "/projects"],
@@ -159,8 +179,8 @@ export default function App() {
               <a href="tel:1800435622" className="text-[#B9C2CA] no-underline hover:text-accent">
                 1800 4 ELMAC
               </a>
-              <a href="mailto:info@elmac.au" className="text-[#B9C2CA] no-underline hover:text-accent">
-                info@elmac.au
+              <a href="mailto:operations@elmac.au" className="text-[#B9C2CA] no-underline hover:text-accent">
+                operations@elmac.au
               </a>
               <span>30 Chapman Road, Hackham SA 5163</span>
             </div>
@@ -168,7 +188,7 @@ export default function App() {
         </div>
         <div className="wrap mt-9 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.08] pt-6">
           <span>© {new Date().getFullYear()} Elmac Cleaning Services · Proudly South Australian, family owned.</span>
-          <span className="font-mono tracking-[0.08em]">AS1851-2012 · AS1668 · PGE342023 · Rev. Jul 2026</span>
+          <span className="font-mono tracking-[0.08em]">PGE342023 (licence) · AS1851-2012 · AS 1668.2</span>
         </div>
       </footer>
     </div>

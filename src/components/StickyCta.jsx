@@ -3,6 +3,24 @@ import { Link, useLocation } from "react-router-dom";
 
 // Mobile-only conversion bar: appears after real scroll intent, never on the
 // contact page itself. Two actions only — inspect or call.
+
+// Preserve intent: page-specific query params pre-fill the contact form with
+// the service (or intent) the visitor was reading about.
+const INTENT_PARAMS = {
+  "/services/kitchen-exhaust-cleaning": "?service=kes",
+  "/services/grease-filter-exchange": "?service=filters",
+  "/services/commercial-kitchen-deep-cleaning": "?service=deep-clean",
+  "/services/pressure-washing": "?service=pressure",
+  "/services/high-access-facade-cleaning": "?service=high-access",
+  "/services/kes-installation": "?service=install",
+  "/services/scheduled-maintenance-programs": "?service=program",
+  "/services/window-cleaning": "?service=window",
+  "/services/industrial-cleaning": "?service=industrial",
+  "/services/soft-washing": "?service=soft-wash",
+  "/services/heated-soak-tanks": "?service=tank",
+  "/compliance-reporting": "?intent=compliance",
+};
+
 export default function StickyCta() {
   const { pathname } = useLocation();
   const [show, setShow] = useState(false);
@@ -16,7 +34,8 @@ export default function StickyCta() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (pathname.replace(/\/+$/, "") === "/contact") return null;
+  const path = pathname.replace(/\/+$/, "");
+  if (path === "/contact") return null;
 
   return (
     <div
@@ -27,10 +46,10 @@ export default function StickyCta() {
     >
       <div className="flex gap-2.5">
         <Link
-          to="/contact"
+          to={`/contact${INTENT_PARAMS[path] || ""}`}
           className="flex-1 rounded-lg bg-accent py-3 text-center text-[0.92rem] font-bold text-ink no-underline"
         >
-          Request a site inspection
+          Request a quote or inspection
         </Link>
         <a
           href="tel:1800435622"

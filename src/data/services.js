@@ -36,10 +36,10 @@ export const SERVICE_PAGES = {
         "Damaged and mismatched filters reported, replacements supplied",
         "Multi-site scheduling on a single cadence and invoice",
       ],
-      note: "Filters that come back damaged or past service life get flagged with a replacement recommendation — not silently rotated back in.",
+      note: "Filters that come back damaged or past service life get flagged with a replacement recommendation — not silently rotated back in. Venues that want the soak process between exchanges run a heated soak tank on site — pots, racks and burners stripped overnight, no one scrubbing them.",
     },
     cycles: [
-      ["Heavy grease load", "Solid fuel · charcoal · wok cooking", "2-weekly"],
+      ["Heavy grease load", "Solid fuel · charcoal · wok cooking", "2–4-weekly"],
       ["Standard commercial", "Most restaurant, hotel & pub kitchens", "4-weekly"],
       ["Light use", "Low-grease or limited-hours kitchens", "4–8-weekly"],
     ],
@@ -47,8 +47,9 @@ export const SERVICE_PAGES = {
     related: [
       ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
       ["Scheduled maintenance programs", "/services/scheduled-maintenance-programs"],
+      ["Heated soak tanks — the same soak process, on your site", "/services/heated-soak-tanks"],
     ],
-    cta: { label: "Book grease filter exchange", to: "/contact" },
+    cta: { label: "Book grease filter exchange", to: "/contact?service=filters" },
   },
 
   "commercial-kitchen-deep-cleaning": {
@@ -93,12 +94,13 @@ export const SERVICE_PAGES = {
       ["Operational uplift", "High-volume kitchens holding standard", "Quarterly – 6-monthly"],
       ["Transition", "End of lease · post-fitout · new operator", "One-off, documented"],
     ],
-    who: "Venues preparing for council inspections or audits, operators taking over or handing back kitchens, and groups pairing periodic deep cleans with their exhaust cycle. Main pizza-oven cleaning contractor to Domino's and Pizza Hut in SA & NT.",
+    who: "Venues preparing for council inspections or audits, operators taking over or handing back kitchens, and groups pairing periodic deep cleans with their exhaust cycle. Pizza-oven cleaning contractor to two national pizza franchise networks across SA & NT.",
     related: [
       ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
       ["Grease filter exchange", "/services/grease-filter-exchange"],
+      ["Heated soak tanks", "/services/heated-soak-tanks"],
     ],
-    cta: { label: "Request a quote by inspection", to: "/contact" },
+    cta: { label: "Request a quote by inspection", to: "/contact?service=deep-clean" },
   },
 
   "pressure-washing": {
@@ -148,7 +150,7 @@ export const SERVICE_PAGES = {
       ["High access & facade cleaning", "/services/high-access-facade-cleaning"],
       ["Scheduled maintenance programs", "/services/scheduled-maintenance-programs"],
     ],
-    cta: { label: "Request a commercial quote", to: "/contact" },
+    cta: { label: "Request a commercial quote", to: "/contact?service=pressure" },
   },
 
   "high-access-facade-cleaning": {
@@ -196,7 +198,7 @@ export const SERVICE_PAGES = {
       ["Pressure washing", "/services/pressure-washing"],
       ["Scheduled maintenance programs", "/services/scheduled-maintenance-programs"],
     ],
-    cta: { label: "Request a site inspection", to: "/contact" },
+    cta: { label: "Request a site inspection", to: "/contact?service=high-access" },
   },
 
   "kes-installation": {
@@ -204,9 +206,9 @@ export const SERVICE_PAGES = {
     title: "Kitchen exhaust & extraction installation.",
     meta: {
       title: "Kitchen Exhaust Installation Adelaide | PGE342023 | Elmac",
-      desc: "Full-scope kitchen exhaust and extraction installation — custom design, manufacture, air-flow engineering and licensed installation to AS1668 & AS1668.2 under PGE342023.",
+      desc: "Full-scope kitchen exhaust and extraction installation — custom design, manufacture, air-flow engineering and licensed installation under PGE342023, with reference to relevant Australian Standards, including AS 1668.2 where applicable.",
     },
-    lead: "Inception to completion: custom design, manufacture, air-flow analysis engineering and installation of kitchen exhaust and extraction systems — delivered under Plumbing, Gas and Electrical contractor licensing (PGE342023) for confidence in the conformance AS1668 and AS1668.2 require.",
+    lead: "Inception to completion: custom design, manufacture, air-flow analysis engineering and installation of kitchen exhaust and extraction systems — delivered under Plumbing, Gas and Electrical contractor licensing (PGE342023), with reference to relevant Australian Standards, including AS 1668.2 where applicable.",
     image: "svc-install.jpg",
     risks: [
       {
@@ -228,11 +230,11 @@ export const SERVICE_PAGES = {
         "System design and air-flow analysis engineering",
         "Custom canopy and duct manufacture",
         "Licensed installation — plumbing, gas and electrical (PGE342023)",
-        "Conformance to AS1668 & AS1668.2",
+        "Conformance with relevant Australian Standards, including AS 1668.2",
         "Exhaust fan, cowl and make-up air supply",
         "Commissioning, then handover onto a maintenance cycle",
       ],
-      note: "Every install is handed over with its cleaning and filter cycle already mapped — the system arrives compliant and stays that way.",
+      note: "Every install is handed over with its cleaning and filter cycle already mapped — commissioned, certificated, and scheduled so the maintenance evidence starts accumulating from day one.",
     },
     cycles: [
       ["New venue fitout", "Design → manufacture → install → commission", "Project"],
@@ -244,7 +246,7 @@ export const SERVICE_PAGES = {
       ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
       ["Scheduled maintenance programs", "/services/scheduled-maintenance-programs"],
     ],
-    cta: { label: "Discuss an installation", to: "/contact" },
+    cta: { label: "Discuss an installation", to: "/contact?service=install" },
   },
 
   "scheduled-maintenance-programs": {
@@ -293,7 +295,7 @@ export const SERVICE_PAGES = {
       ["Compliance & reporting", "/compliance-reporting"],
       ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
     ],
-    cta: { label: "Discuss a multi-site program", to: "/contact?type=multi-site" },
+    cta: { label: "Discuss a multi-site program", to: "/contact?service=program&type=multi-site" },
   },
 
   "window-cleaning": {
@@ -341,7 +343,7 @@ export const SERVICE_PAGES = {
       ["High access & facade cleaning", "/services/high-access-facade-cleaning"],
       ["Pressure washing", "/services/pressure-washing"],
     ],
-    cta: { label: "Request a commercial quote", to: "/contact" },
+    cta: { label: "Request a commercial quote", to: "/contact?service=window" },
   },
 
   "industrial-cleaning": {
@@ -389,7 +391,7 @@ export const SERVICE_PAGES = {
       ["Pressure washing", "/services/pressure-washing"],
       ["Kitchen exhaust cleaning", "/services/kitchen-exhaust-cleaning"],
     ],
-    cta: { label: "Request a compliance clean", to: "/contact?intent=compliance" },
+    cta: { label: "Request a compliance clean", to: "/contact?service=industrial" },
   },
 
   "soft-washing": {
@@ -437,6 +439,55 @@ export const SERVICE_PAGES = {
       ["Pressure washing", "/services/pressure-washing"],
       ["High access & facade cleaning", "/services/high-access-facade-cleaning"],
     ],
-    cta: { label: "Request a commercial quote", to: "/contact" },
+    cta: { label: "Request a commercial quote", to: "/contact?service=soft-wash" },
+  },
+
+  "heated-soak-tanks": {
+    code: "SVC.11",
+    title: "Heated soak tanks — the degreasing job, off the roster.",
+    meta: {
+      title: "Heated Soak Tank Supply & Rental Adelaide | STRIPTANK | Elmac",
+      desc: "Heated soak tanks supplied, installed and serviced across Adelaide, SA & NT — pots, filters and racks stripped overnight in a non-caustic bath. Rental, purchase and rent-to-own, with chemical resupply and six-monthly service visits.",
+    },
+    lead: "Every kitchen has a job nobody wants: scrubbing baked-on carbon off pots, filters, burners and racks at close-down. It lands on whoever's newest, and how many hours a week it eats depends on the menu and the volume — counting them is the first thing we do in a walkthrough. A heated soak tank takes the job off the roster: loaded at close, stripped overnight in a heated non-caustic bath, rinsed and back on the line before prep. Elmac is the South Australian representative for STRIPTANK — tanks supplied, installed and serviced across SA and the NT, on the same cycle discipline as everything else we maintain.",
+    image: "svc-filters.jpg",
+    risks: [
+      {
+        t: "Labour lost at the pot sink",
+        b: "Hand-scrubbing carbon is paid hours at close-down, every week, indefinitely. A tank does the same work overnight, unattended.",
+      },
+      {
+        t: "Caustic chemistry burns people",
+        b: "Traditional strip products are caustic — splash injuries at the pot sink are a standing WHS exposure. A non-caustic bath removes the hazard, not just the carbon.",
+      },
+      {
+        t: "Scrubbing never quite wins",
+        b: "Baked-on carbon builds faster than a scourer removes it. Equipment darkens year on year, heats unevenly and gets replaced early.",
+      },
+    ],
+    scope: {
+      heading: "What the arrangement covers",
+      items: [
+        "Tank supply and on-site installation with day-one training",
+        "SWMS and SDS in the folder before the first soak",
+        "Non-caustic, biodegradable chemistry — less scrubbing, fewer burns at the pot sink",
+        "Monthly SAFESTRIP chemical resupply on a standing cycle",
+        "Six-monthly service visits — checked, serviced, documented",
+        "Three ways in: outright purchase, monthly rental, or rent-to-own over 12 months with chemicals included",
+      ],
+      note: "Rental from $210 a month ex GST · outright from $3,950 · rent-to-own over 12 months with chemicals included. Freight quoted on order confirmation.",
+    },
+    cycles: [
+      ["Chemical resupply", "SAFESTRIP on a standing cycle", "Monthly"],
+      ["Service visit", "Checked, serviced, documented", "6-monthly"],
+      ["Rent-to-own term", "Chemicals included for the term", "12 months"],
+    ],
+    who: "Pubs, hotels and clubs, food courts, production kitchens and multi-site groups — any kitchen where degreasing is a standing roster line rather than an occasional job.",
+    related: [
+      ["Grease filter exchange", "/services/grease-filter-exchange"],
+      ["Commercial kitchen deep cleaning", "/services/commercial-kitchen-deep-cleaning"],
+      ["Scheduled maintenance programs", "/services/scheduled-maintenance-programs"],
+    ],
+    cta: { label: "Book a kitchen walkthrough", to: "/contact?service=tank" },
   },
 };

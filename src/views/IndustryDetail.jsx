@@ -25,7 +25,7 @@ export default function IndustryDetail() {
           <Reveal>
             <span className="eyebrow eyebrow--accent">Industries — {ind.name}</span>
             <h1 className="balance mt-4 max-w-[22ch] text-[clamp(1.8rem,4vw,3rem)] font-extrabold leading-[1.06] tracking-[-0.02em]">
-              Cleaning programs built for {ind.name.toLowerCase()}.
+              Maintenance programs built for {ind.name.toLowerCase()}.
             </h1>
             <p className="mt-5 max-w-[58ch] text-[clamp(0.98rem,1.45vw,1.1rem)] text-[#C6CFD6]">{ind.reality}</p>
             <div className="mt-8">

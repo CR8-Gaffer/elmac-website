@@ -47,6 +47,8 @@ print("1/5 vite base -> /")
 sub("vite.config.js", 'base: "/elmac-website/",', 'base: "/",')
 
 print("2/5 static origins (index.html, sitemap, robots)")
+# index.html's JSON-LD "url" now uses the github.io origin, so this same
+# replacement rewrites it to the new origin at cutover — no separate step.
 for f in ["index.html", "public/sitemap.xml", "public/robots.txt"]:
     sub(f, OLD, NEW)
 
@@ -64,7 +66,9 @@ for f in ROOT.rglob("*"):
             and "node_modules" not in f.parts and "dist" not in f.parts \
             and f.name != "cutover.py":
         t = f.read_text(errors="ignore")
-        if OLD in t or "/elmac-website/" in t:
+        if OLD in t or "/elmac-website/" in t or "elmacindustrial.com.au" in t:
             leftovers.append(str(f.relative_to(ROOT)))
-print(f"  residual old-origin/base references: {leftovers or 'none'}")
+if leftovers:
+    sys.exit(f"ABORT — residual old-origin/base references: {leftovers}")
+print("  residual old-origin/base references: none")
 print("\nDone. Review with git diff, then commit + push. Manual steps are in this file's docstring.")

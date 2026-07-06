@@ -32,22 +32,10 @@ function LedgerNum({ v, suffix = "" }) {
 
 const HERO_IMG = `${import.meta.env.BASE_URL}assets/doc-hero-kitchen.jpg`;
 
-// Kitchen-canopy documentary base under per-slide tints; labels hold the
-// partnership slots until approved photography arrives.
-const SLIDES = [
-  {
-    label: "Adelaide Crows — partnership photo to follow",
-    grad: "radial-gradient(120% 120% at 20% 0%, rgba(24,69,154,0.45) 0%, rgba(18,48,94,0.6) 55%, rgba(11,28,56,0.78) 100%)",
-  },
-  {
-    label: "Adelaide Oval — partnership photo to follow",
-    grad: "radial-gradient(120% 120% at 80% 10%, rgba(20,90,140,0.45) 0%, rgba(16,43,84,0.6) 55%, rgba(11,28,56,0.78) 100%)",
-  },
-  {
-    label: "Adelaide 36ers — partnership photo to follow",
-    grad: "radial-gradient(120% 120% at 50% 100%, rgba(40,52,110,0.45) 0%, rgba(17,40,80,0.6) 55%, rgba(11,28,56,0.78) 100%)",
-  },
-];
+// Kitchen-canopy documentary base under a single tint; caption holds the
+// slot until approved site photography arrives.
+const HERO_GRAD =
+  "radial-gradient(120% 120% at 20% 0%, rgba(24,69,154,0.45) 0%, rgba(18,48,94,0.6) 55%, rgba(11,28,56,0.78) 100%)";
 
 const STANDARDS = [
   [
@@ -191,19 +179,12 @@ const STORIES = [
 
 export default function Home() {
   usePageMeta(
-    "Elmac Cleaning Services — Commercial Kitchen Exhaust & Industrial Cleaning, SA & NT",
-    "Scheduled kitchen exhaust cleaning to AS1851-2012, grease filter exchange, commercial deep cleaning, pressure washing and industrial cleaning programs — documented and certificated, across South Australia and the Northern Territory."
+    "Kitchen Exhaust & Commercial Cleaning Adelaide | Elmac",
+    "Kitchen exhaust and canopy cleaning to AS1851-2012, grease filter exchange and commercial deep cleaning across Adelaide and regional SA — certificate and photo report on every clean."
   );
 
-  const [slide, setSlide] = useState(0);
   const [load, setLoad] = useState("standard");
   const reduce = useReducedMotion();
-
-  useEffect(() => {
-    if (reduce) return;
-    const t = setInterval(() => setSlide((s) => (s + 1) % SLIDES.length), 4200);
-    return () => clearInterval(t);
-  }, [reduce]);
 
   const cycle = CYCLES[load];
 
@@ -212,19 +193,14 @@ export default function Home() {
       {/* ── 1 · HERO ─────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div className="absolute inset-0 -z-20" aria-hidden="true">
-          {SLIDES.map((s, i) => (
-            <div
-              key={s.label}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-                i === slide ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ backgroundImage: `${s.grad}, url(${HERO_IMG})` }}
-            >
-              <span className="absolute bottom-3.5 right-4 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-white/50">
-                {s.label}
-              </span>
-            </div>
-          ))}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `${HERO_GRAD}, url(${HERO_IMG})` }}
+          >
+            <span className="absolute bottom-3.5 right-4 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-white/50">
+              Commercial kitchen canopy — concept imagery · site photography to follow
+            </span>
+          </div>
         </div>
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(14,37,73,0.94)_0%,rgba(14,37,73,0.7)_46%,rgba(14,37,73,0.28)_100%)]" />
         <div
@@ -252,8 +228,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.08 }}
           >
-            We protect assets, reduce fire risk and keep commercial sites{" "}
-            <span className="text-accent">compliant</span>.
+            We protect assets, reduce fire risk and keep your compliance{" "}
+            <span className="text-accent">evidenced</span>.
           </motion.h1>
           <motion.p
             className="mt-5 max-w-[54ch] text-[clamp(1rem,1.5vw,1.14rem)] text-[#C6CFD6]"
@@ -263,7 +239,8 @@ export default function Home() {
           >
             Industrial asset maintenance delivered through specialist programs — kitchen exhaust cleaning, grease
             filter exchange, pressure washing, high-access work and scheduled preventive maintenance — documented,
-            certificated and built around your compliance obligations.
+            certificated and built around your compliance obligations — across Adelaide, regional South Australia and
+            the Northern Territory.
           </motion.p>
           <motion.div
             className="mt-8 flex flex-wrap items-center gap-3"
@@ -275,7 +252,7 @@ export default function Home() {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-5.5 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#57bce8]"
             >
-              Request a commercial quote
+              Request a quote or inspection
             </MagneticButton>
             <Link
               to="/services"
@@ -292,18 +269,6 @@ export default function Home() {
           >
             Official Supply Partner &amp; Sponsor — Adelaide Crows · Adelaide 36ers · Adelaide Oval
           </motion.p>
-        </div>
-
-        <div className="absolute bottom-5 left-[clamp(20px,5vw,64px)] flex gap-2">
-          {SLIDES.map((s, i) => (
-            <button
-              key={s.label}
-              type="button"
-              aria-label={`Show slide ${i + 1}: ${s.label}`}
-              onClick={() => setSlide(i)}
-              className={`h-1 w-[26px] rounded-sm ${i === slide ? "bg-accent" : "bg-white/[0.22]"}`}
-            />
-          ))}
         </div>
       </section>
 
@@ -549,25 +514,17 @@ export default function Home() {
           <div className="max-w-[62ch] text-[clamp(1.02rem,1.35vw,1.16rem)] text-[#2C353D]">
             <Reveal>
               <p>
-                Welcome to Elmac — the home of Elmaculate service and standards. Elmac Cleaning Services is an industry
-                leader in all professional commercial and industrial cleaning requirements for kitchens, kitchen
-                exhausts and associated extraction and closed duct systems requiring full compliance certification and
-                the highest standard of cleaning and maintenance.
+                Elmac Cleaning Services is a South Australian family business that has spent 30+ years inside the
+                parts of a venue nobody sees until they fail — commercial kitchens, exhaust systems and closed duct
+                runs. We maintain them on documented cycles, and every service closes with the certificate and photo
+                report that prove it. That's what Elmaculate means in practice: not a slogan, a standard.
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <p className="mt-5">
-                We are proud to be associated with most of South Australia and the Northern Territory's leading
-                commercial and industrial kitchens, where cleaning behind the scene is as transparent and important as
-                the experience our clients provide their customers.
-              </p>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-5">
-                A proudly South Australian family-owned business with over{" "}
-                <strong className="font-bold text-ink">30+ years' experience</strong> in the nature and need of
-                commercial and industrial cleaning requirements — especially the strict Australian Standards followed
-                by all commercial kitchens per <strong className="font-bold text-ink">AS1851-2012</strong>.
+                Our crews are in commercial kitchens across Adelaide, regional South Australia and the Northern
+                Territory every week of the year — single-canopy cafés through to venues with 36 sub-sites on a
+                pre-planned annual cycle. The work happens behind the scenes. The evidence doesn't.
               </p>
             </Reveal>
           </div>
@@ -721,7 +678,7 @@ export default function Home() {
             ))}
           </div>
           <DimensionDivider
-            label="real figures from our operations system · refreshed monthly"
+            label="real figures from our operations system"
             className="mt-5"
           />
         </div>
@@ -750,7 +707,7 @@ export default function Home() {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-[0.98rem] font-bold text-ink hover:bg-[#57bce8]"
             >
-              Request a commercial quote
+              Request a quote or inspection
             </MagneticButton>
             <a
               href="tel:1800435622"

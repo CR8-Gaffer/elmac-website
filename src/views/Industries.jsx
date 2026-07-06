@@ -36,7 +36,7 @@ export default function Industries() {
               <h2 className="text-[1.12rem] font-extrabold leading-snug text-ink">{ind.name}</h2>
               <p className="mt-2.5 flex-1 text-[0.92rem] leading-relaxed text-steel-600">{ind.reality}</p>
               <span className="mt-4 text-[0.88rem] font-bold text-accent-deep group-hover:underline">
-                {ind.cta.label} →
+                How we work in {ind.name.toLowerCase()} →
               </span>
             </Link>
           </Reveal>
