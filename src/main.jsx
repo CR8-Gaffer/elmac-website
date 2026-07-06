@@ -23,7 +23,7 @@ import "./styles.css";
 
 // BrowserRouter with real paths: the build step copies index.html into each
 // route directory (plus 404.html) so GitHub Pages serves every URL with a 200.
-// basename comes from Vite's base — "/elmac-website/" on Pages today, "/" once
+// basename comes from Vite's base — the Pages sub-path today, "/" once
 // the custom domain is attached.
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
